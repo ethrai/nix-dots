@@ -31,6 +31,7 @@
     }
   },
   "vim.camelCaseMotion.enable": true,
+  "vim.useSystemClipboard": true,
   "vim.easymotion": true,
   "vim.easymotionKeys": "sadjklewcmpgh",
   "vim.handleKeys": {
