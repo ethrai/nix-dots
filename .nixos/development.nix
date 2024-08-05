@@ -10,7 +10,6 @@
 
   imports = [
     ./tmux.nix
-    ./alacritty.nix
     ./vscode.nix
   ];
 
@@ -35,12 +34,10 @@
     ];
   };
 
-  programs.alacritty.enable = true;
   programs.kitty.enable = true;
 
   home.packages = with pkgs; [
 
-    alacritty
     kitty
     nixfmt-rfc-style
     tree
