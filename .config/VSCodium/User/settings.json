@@ -1,20 +1,21 @@
 {
+  "breadcrumbs.enabled": false,
+  "editor.cursorBlinking": "solid",
   "editor.fontSize": 14.5,
   "editor.formatOnSave": true,
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
-  // "files.autoSave": "afterDelay",
-  "breadcrumbs.enabled": false,
-  "keyboard.dispatch": "keyCode",
-  "nix.enableLanguageServer": true,
-  "nix.serverPath": "nil",
-  "editor.cursorBlinking": "solid",
-  "vim.cursorStylePerMode.insert": "block",
+  "editor.minimap.enabled": false,
   "editor.rulers": [
     80
   ],
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "keyboard.dispatch": "keyCode",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
   "nix.serverSettings": {
     "nil": {
       "diagnostics": {
@@ -30,8 +31,10 @@
       }
     }
   },
+  // "files.autoSave": "afterDelay",
+  "update.mode": "none",
   "vim.camelCaseMotion.enable": true,
-  "vim.useSystemClipboard": true,
+  "vim.cursorStylePerMode.insert": "block",
   "vim.easymotion": true,
   "vim.easymotionKeys": "sadjklewcmpgh",
   "vim.handleKeys": {
@@ -58,7 +61,6 @@
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": " ",
-  "editor.minimap.enabled": false,
   "vim.normalModeKeyBindings": [
     {
       "before": [
@@ -243,6 +245,7 @@
   "vim.smartRelativeLine": true,
   "vim.sneak": true,
   "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindings": [
     {
       "before": [
@@ -316,5 +319,6 @@
   "window.restoreWindows": "none",
   "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "hidden",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "editor.fontFamily": "monospace"
 }

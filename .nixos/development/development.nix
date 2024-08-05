@@ -22,7 +22,6 @@
     kitty
     nixfmt-rfc-style
     tree
-    fish
     neovim
     git
     gh

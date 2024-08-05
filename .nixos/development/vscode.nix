@@ -15,14 +15,24 @@ in
   config = {
     stylix.targets.vscode.enable = false;
     programs.vscode = {
+      mutableExtensionsDir = false; # manage extensions only with home-manager
       package = pkgs.vscode;
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         yzhang.markdown-all-in-one
         jnoortheen.nix-ide
-
         mads-hartmann.bash-ide-vscode
+        christian-kohler.path-intellisense
+        donjayamanne.githistory
+        supermaven.supermaven
+
+        # Go
+        golang.go
+
+        # Python
+        ms-python.python
+        ms-python.debugpy
       ];
     };
 

@@ -66,7 +66,6 @@
     seahorse
     tree
     mpv
-    fish
     chromium
     dunst
     btop
@@ -115,8 +114,13 @@
   };
   services.dunst.enable = true;
 
+  gtk.enable = true;
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+  };
+
   programs.home-manager.enable = true;
-  programs.fish.enable = true;
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
