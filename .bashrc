@@ -3,7 +3,7 @@ alias sb='source ${HOME}/.bashrc'
 alias hel='echo works'
 
 # git aliases
-alaias gst='git status'
+alias gst='git status'
 
 # Soruce stuff
 

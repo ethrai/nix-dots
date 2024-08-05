@@ -12,6 +12,7 @@
     ./tmux.nix
     ./vscode.nix
     ./helix.nix
+    ./bash.nix
   ];
 
   programs.kitty.enable = true;
