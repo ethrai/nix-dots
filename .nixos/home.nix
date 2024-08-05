@@ -9,7 +9,7 @@
 {
   imports = [
     ./hyprland.nix
-    ./development.nix
+    ./development/development.nix
   ];
 
   home = {
