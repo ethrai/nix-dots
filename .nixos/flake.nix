@@ -6,19 +6,16 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     hy3 = {
       url = "github:outfoxxed/hy3"; # where {version} is the hyprland release version
-      # or "github:outfoxxed/hy3" to follow the development branch.
-      # (you may encounter issues if you dont do the same for hyprland)
+
       inputs.hyprland.follows = "hyprland";
     };
+
+    helix.url = "github:helix-editor/helix/master";
 
   };
 

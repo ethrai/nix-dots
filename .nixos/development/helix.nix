@@ -9,6 +9,7 @@
 {
   programs.helix = {
     enable = true;
+    package = inputs.helix.packages.${pkgs.system}.helix;
     defaultEditor = true;
     settings = {
       theme = lib.mkForce "base16_default_dark";
