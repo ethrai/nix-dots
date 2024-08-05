@@ -1,0 +1,319 @@
+{
+  "editor.fontSize": 14.5,
+  "editor.formatOnSave": true,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  // "files.autoSave": "afterDelay",
+  "breadcrumbs.enabled": false,
+  "keyboard.dispatch": "keyCode",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "editor.cursorBlinking": "solid",
+  "vim.cursorStylePerMode.insert": "block",
+  "editor.rulers": [
+    80
+  ],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "nix.serverSettings": {
+    "nil": {
+      "diagnostics": {
+        "ignored": [
+          "unused_binding",
+          "unused_with"
+        ]
+      },
+      "formatting": {
+        "command": [
+          "nixfmt"
+        ]
+      }
+    }
+  },
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "sadjklewcmpgh",
+  "vim.handleKeys": {
+    "<C-b>": false,
+    "<C-d>": false,
+    "<C-e>": false,
+    "<C-f>": false,
+    "<C-g>": false,
+    "<C-h>": true,
+    "<C-i>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-o>": false,
+    "<C-p>": false,
+    "<C-q>": false,
+    "<C-s>": false,
+    "<C-t>": false,
+    "<C-u>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-z>": false
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.leader": " ",
+  "editor.minimap.enabled": false,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        ":nohl"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<C-w>",
+        "h"
+      ],
+      "before": [
+        "<C-h>"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "$"
+      ],
+      "before": [
+        "L"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "e"
+      ],
+      "before": [
+        "e"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "w"
+      ],
+      "before": [
+        "w"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "b"
+      ],
+      "before": [
+        "b"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "<leader>"
+      ],
+      "before": [
+        ","
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "e"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "w"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ],
+      "silent": true
+    },
+    // LSP
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "l"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHower"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ],
+      "silent": true
+    },
+  ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "after": [
+        "<leader>",
+        "e"
+      ],
+      "before": [
+        "e"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "w"
+      ],
+      "before": [
+        "w"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "b"
+      ],
+      "before": [
+        "b"
+      ],
+      "silent": true
+    }
+  ],
+  "vim.smartRelativeLine": true,
+  "vim.sneak": true,
+  "vim.useCtrlKeys": true,
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "$"
+      ],
+      "before": [
+        "L"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "e"
+      ],
+      "before": [
+        "e"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "w"
+      ],
+      "before": [
+        "w"
+      ],
+      "silent": true
+    },
+    {
+      "after": [
+        "<leader>",
+        "b"
+      ],
+      "before": [
+        "b"
+      ],
+      "silent": true
+    }
+  ],
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "hidden",
+  "window.restoreWindows": "none",
+  "window.zoomLevel": 0.5,
+  "workbench.activityBar.location": "hidden",
+  "workbench.startupEditor": "none"
+}
