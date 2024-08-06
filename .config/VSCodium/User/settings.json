@@ -1,5 +1,4 @@
 {
-  "breadcrumbs.enabled": false,
   "editor.cursorBlinking": "solid",
   "editor.fontSize": 14.5,
   "editor.formatOnSave": true,
@@ -12,6 +11,7 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
   "extensions.autoCheckUpdates": false,
+  "editor.mouseWheelZoom": true,
   "extensions.autoUpdate": false,
   "keyboard.dispatch": "keyCode",
   "nix.enableLanguageServer": true,
@@ -39,6 +39,7 @@
   "vim.easymotionKeys": "sadjklewcmpgh",
   "vim.handleKeys": {
     "<C-b>": false,
+    "<C-v>": true,
     "<C-d>": false,
     "<C-e>": false,
     "<C-f>": false,
@@ -53,7 +54,6 @@
     "<C-s>": false,
     "<C-t>": false,
     "<C-u>": false,
-    "<C-v>": false,
     "<C-x>": false,
     "<C-z>": false
   },
