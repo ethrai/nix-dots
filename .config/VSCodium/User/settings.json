@@ -320,5 +320,6 @@
   "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "hidden",
   "workbench.startupEditor": "none",
-  "editor.fontFamily": "monospace"
+  "editor.fontFamily": "monospace",
+  "git.confirmSync": false
 }
