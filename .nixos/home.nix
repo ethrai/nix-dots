@@ -47,8 +47,6 @@
     nautilus
     obsidian
 
-    zoxide
-
     nixfmt-rfc-style
     rofi-wayland
     cliphist
