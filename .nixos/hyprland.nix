@@ -1,7 +1,13 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 
 {
 
+  stylix.targets.hyprland.enable = false;
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -158,7 +164,7 @@
           # 0 - always show gaps
           # 1 - hide gaps with a single window onscreen
           # 2 - 1 but also show the window border
-          no_gaps_when_only = 2; # default: 0
+          no_gaps_when_only = 1; # default: 0
 
           # policy controlling what happens when a node is removed from a group,
           # leaving only a group
@@ -174,9 +180,9 @@
           tab_first_window = true;
 
           # tab group settings
-          tabs = {
+          tabs = with config.lib.stylix.colors; {
             # height of the tab bar
-            height = 14; # default: 15
+            height = 15; # default: 15
 
             # padding between the tab bar and its focused node
             padding = 0; # default: 5
@@ -202,23 +208,15 @@
             # left padding of the window title
             text_padding = 0; # default: 3
 
-            # active tab bar segment color
-            # col.active = $base; # default: 0xff32b4ff
+            "col.active" = "rgb(${base00})"; # default: 0xff32b4ff
+            "col.urgent" = "rgb(${base08})"; # default: 0xff32b4ff
+            "col.inactive" = "rgb(${base01})"; # default: 0xff32b4ff
+
+            "col.text.active" = "rgb(${base05})"; # default: 0xff32b4ff
+            "col.text.urgent" = "rgb(${base05})"; # default: 0xff32b4ff
+            "col.text.inactive" = "rgb(${base06})"; # default: 0xff32b4ff
 
             # urgent tab bar segment color
-            # col.urgent = $red # default: 0xffff4f4f
-
-            # inactive tab bar segment color
-            # col.inactive = $crust # default: 0x80808080
-
-            # active tab bar text color
-            # col.text.active = $text # default: 0xff000000
-
-            # urgent tab bar text color
-            # col.text.urgent = $text # default: 0xff000000
-
-            # inactive tab bar text color
-            # col.text.inactive = $surface2 # default: 0xff000000
           };
 
           # autotiling settings
