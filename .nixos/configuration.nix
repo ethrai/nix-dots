@@ -110,7 +110,26 @@
   stylix.enable = true;
   stylix.autoEnable = true;
   stylix.homeManagerIntegration.autoImport = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
+  stylix.base16Scheme = {
+    base00 = "181818"; # black 1
+    base01 = "282828"; # black 2
+    base02 = "383838"; # grey 1
+    base03 = "585858"; # grey 2
+    base04 = "b8b8b8"; # grey 3
+    base05 = "d8d8d8"; # white 1
+    base06 = "e8e8e8"; # white 2
+    base07 = "f8f8f8"; # white 3
+    base08 = "ab4642"; # red 1
+    base09 = "dc9656"; # orange
+    base0A = "f7ca88"; # yellow
+    base0B = "a1b56c"; # light green
+    base0C = "86c1b9"; # cyan
+    base0D = "7cafc2"; # blue
+    base0E = "ba8baf"; # purple
+    base0F = "a16946"; # brown
+
+  };
   stylix.targets.chromium.enable = false;
 
   stylix.image = /home/sergio/Downloads/nice.png;
