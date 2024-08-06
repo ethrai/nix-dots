@@ -41,6 +41,8 @@
   };
 
   home.packages = with pkgs; [
+    qbittorrent
+
     wlsunset
     nautilus
     obsidian
@@ -117,7 +119,7 @@
   gtk.enable = true;
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
   };
 
   programs.home-manager.enable = true;
