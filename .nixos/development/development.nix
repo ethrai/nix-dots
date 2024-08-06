@@ -12,7 +12,7 @@
     ./tmux.nix
     ./vscode.nix
     ./helix.nix
-    ./bash.nix
+    ./shell.nix
   ];
 
   programs.kitty.enable = true;
@@ -27,7 +27,6 @@
     gh
     httpie
     curl
-    zsh
 
     go
     gopls
@@ -39,5 +38,15 @@
     nil
 
     docker
+
+    # shell
+    zsh
+    zsh-autosuggestions
+    fzf
+    zsh-fzf-tab
+    zoxide
+    zsh-completions
+    zsh-syntax-highlighting
+
   ];
 }

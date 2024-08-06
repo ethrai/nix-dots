@@ -165,6 +165,7 @@
   };
 
   programs.zsh.enable = true;
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sergio = {
@@ -176,7 +177,7 @@
       "video"
       "docker"
     ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     packages = with pkgs; [ ];
   };
 
