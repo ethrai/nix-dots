@@ -23,6 +23,11 @@
     enable = true;
     userEmail = "ryzhkosergej@gmail.com";
     userName = "Sergei Ryzhko";
+    extraConfig = {
+      core = {
+        editor = "hx";
+      };
+    };
   };
 
   nixpkgs = {
@@ -33,6 +38,7 @@
 
   programs.chromium = {
     enable = true;
+    commandLineArgs = [ ];
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
       { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; }
@@ -44,6 +50,7 @@
   };
 
   home.packages = with pkgs; [
+    dconf
     evince
 
     xdg-utils
@@ -129,7 +136,6 @@
     QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;
-    QT_STYLE_OVERRIDE = "kvantum";
 
   };
 
