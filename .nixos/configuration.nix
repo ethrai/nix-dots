@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -68,26 +62,11 @@
     ];
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
-
   hardware.bluetooth.enable = true;
-
-  programs.hyprland = {
-    enable = true;
-    # package = inputs.hyprland.packages."${pkgs.sytsem}".hyprland;
-    # xwayland.enable = true;
-  };
-  # ...
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
+    # NIXOS_OZONE_WL = "1";
   };
 
   services.libinput.enable = true;
@@ -96,43 +75,36 @@
     enable = true;
   };
   services.gnome.gnome-keyring.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  fonts.packages = with pkgs; [
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-  ];
   stylix.enable = true;
+  stylix.polarity = "light";
   stylix.autoEnable = true;
   stylix.homeManagerIntegration.autoImport = true;
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
   stylix.base16Scheme = {
-    base00 = "181818"; # black 1
-    base01 = "282828"; # black 2
-    base02 = "383838"; # grey 1
-    base03 = "585858"; # grey 2
-    base04 = "b8b8b8"; # grey 3
-    base05 = "d8d8d8"; # white 1
-    base06 = "e8e8e8"; # white 2
-    base07 = "f8f8f8"; # white 3
-    base08 = "ab4642"; # red 1
-    base09 = "dc9656"; # orange
-    base0A = "f7ca88"; # yellow
-    base0B = "a1b56c"; # light green
-    base0C = "86c1b9"; # cyan
-    base0D = "7cafc2"; # blue
-    base0E = "ba8baf"; # purple
-    base0F = "a16946"; # brown
+    base00 = "ffffff";
+    base01 = "eeeeee";
+    base02 = "cccccc";
+    base03 = "767676";
+    base04 = "767676";
+    base05 = "444444";
+    base06 = "333333";
+    base07 = "222222";
+    base08 = "d03e3e";
+    base09 = "d7691d";
+    base0A = "ad8200";
+    base0B = "31861f";
+    base0C = "00998f";
+    base0D = "3173c5";
+    base0E = "9e57c2";
+    base0F = "895025";
 
   };
+
   stylix.targets.chromium.enable = false;
 
-  stylix.image = /home/sergio/Downloads/nice.png;
+  stylix.image = /home/sergio/.dots/wallpaper.png;
 
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Classic";
@@ -140,32 +112,53 @@
 
   stylix.fonts = {
     monospace = {
-      package = pkgs.fira-code;
-      name = "Fira Code";
+      package = (pkgs.nerdfonts.override { fonts = [ "Hack" ]; });
+      name = "Hack Nerd Font";
     };
+    serif = config.stylix.fonts.monospace;
+    sansSerif = config.stylix.fonts.monospace;
+    emoji = config.stylix.fonts.monospace;
 
-    sansSerif = {
-      package = pkgs.noto-fonts;
-      name = "Noto Sans";
-    };
+    # sansSerif = {
+    #   package = pkgs.noto-fonts;
+    #   name = "Noto Sans";
+    # };
 
-    serif = config.stylix.fonts.sansSerif;
+    # serif = config.stylix.fonts.sansSerif;
 
-    emoji = {
-      package = pkgs.noto-fonts-emoji;
-      name = "Noto Color Emoji";
-    };
+    # emoji = {
+    #   package = pkgs.noto-fonts-emoji;
+    #   name = "Noto Color Emoji";
+    # };
 
     sizes = {
-      desktop = 13;
-      applications = 13;
-      popups = 13;
+      desktop = 12;
+      applications = 12;
+      popups = 12;
       terminal = 13;
     };
   };
 
+  fonts.packages = with pkgs; [
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    # fira-code
+    # fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+  ];
+
   programs.zsh.enable = true;
-  environment.pathsToLink = [ "/share/zsh" ];
+  programs.fish.enable = true;
+  programs.steam.enable = true;
+  # environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = [
+    "/share/xdg-desktop-portal"
+    "/share/applications"
+    "/share/zsh"
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sergio = {
@@ -178,7 +171,6 @@
       "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
-    packages = with pkgs; [ ];
   };
 
   environment.systemPackages = with pkgs; [

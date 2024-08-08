@@ -102,7 +102,5 @@
     "$mod CTRL, j,  resizeactive,  0  60"
     # Waybar
     "$mod SHIFT, I, exec, pkill -SIGUSR2 waybar"
-
-    "$mod, I, exec, ../scripts/restart_hyprpaper.sh"
   ];
 }

@@ -51,7 +51,7 @@
             text_center = true; # default: false
 
             # font to render the window title with
-            text_font = "Fira Code"; # default: Sans
+            # text_font = "${inputs.stylix.config.fonts.monospace}"; # default: Sans
 
             # height of the window title
             text_height = 10; # default: 8

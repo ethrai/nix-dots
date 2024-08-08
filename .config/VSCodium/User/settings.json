@@ -1,6 +1,6 @@
 {
   "editor.cursorBlinking": "solid",
-  "editor.fontSize": 14.5,
+  "window.zoomLevel": 0.5,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [
@@ -13,6 +13,9 @@
   "extensions.autoCheckUpdates": false,
   "editor.mouseWheelZoom": true,
   "extensions.autoUpdate": false,
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.visualline": "block",
   "keyboard.dispatch": "keyCode",
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nil",
@@ -34,7 +37,6 @@
   // "files.autoSave": "afterDelay",
   "update.mode": "none",
   "vim.camelCaseMotion.enable": true,
-  "vim.cursorStylePerMode.insert": "block",
   "vim.easymotion": true,
   "vim.easymotionKeys": "sadjklewcmpgh",
   "vim.handleKeys": {
@@ -142,7 +144,11 @@
     {
       "after": [
         "<leader>",
-        "<leader>"
+        "<leader>",
+        "<leader>",
+        "b",
+        "d",
+        "w"
       ],
       "before": [
         ","
@@ -317,9 +323,11 @@
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
   "window.restoreWindows": "none",
-  "window.zoomLevel": 0.5,
   "workbench.activityBar.location": "hidden",
   "workbench.startupEditor": "none",
-  "editor.fontFamily": "monospace",
-  "git.confirmSync": false
+  "editor.fontFamily": "Hack Nerd Font",
+  "editor.fontSize": 20,
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Default Light Modern",
 }

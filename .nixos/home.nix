@@ -12,6 +12,8 @@
     ./development/development.nix
   ];
 
+  stylix.image = /home/sergio/.dots/wallpaper.png;
+
   home = {
     username = "sergio";
     homeDirectory = "/home/sergio";
@@ -19,12 +21,13 @@
 
   programs.git = {
     enable = true;
+    userEmail = "ryzhkosergej@gmail.com";
+    userName = "Sergei Ryzhko";
   };
 
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = _: true;
     };
   };
 
@@ -41,17 +44,21 @@
   };
 
   home.packages = with pkgs; [
+    evince
+
+    xdg-utils
+    obs-studio
     qbittorrent
 
     wlsunset
     nautilus
     obsidian
 
-    nixfmt-rfc-style
+    telegram-desktop
+    discord
     rofi-wayland
     cliphist
     wl-clipboard
-    hyprpaper
     hyprlock
     hypridle
     hyprshot
@@ -68,20 +75,56 @@
     mpv
     chromium
     dunst
-    btop
+    htop
     yt-dlp
+
   ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.file = { };
 
+  xdg = {
+    enable = true;
+    portal = {
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-hyprland
+      ];
+      enable = true;
+      config = {
+        preferred = {
+          default = [
+            "gtk"
+            "hyprland"
+          ];
+        };
+      };
+    };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/markdown" = "nvim.desktop";
+        "text/plain" = "nvim.desktop";
+        "image/png" = "pqiv.desktop";
+        "image/jpeg" = "pqiv.desktop";
+        "image/gif" = "org.qutebrowser.qutebrowser.desktop";
+        "application/x-wine-extension-osz" = "osu-stable.desktop";
+        "x-scheme-handler/http" = "chromium.desktop";
+        "x-scheme-handler/https" = "chromium.desktop";
+        "application/pdf" = "org.gnome.Evince.desktop";
+      };
+
+    };
+  };
+
   home.sessionVariables = {
     EDITOR = "hx";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SCREENSHOTS_DIR = "~/screens";
-    XDG_CONFIG_HOME = "/home/sergio/.config";
+    # XDG_CURRENT_DESKTOP = "Hyprland";
+    # XDG_SESSION_TYPE = "wayland";
+    # XDG_SCREENSHOTS_DIR = "~/screens";
+    # XDG_CONFIG_HOME = "/home/sergio/.config";
+    NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFONM_THEME = "qt5ct";
     QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
@@ -127,31 +170,11 @@
     # theme = "dmenu";
   };
 
-  programs.waybar = {
-    enable = true;
-    style = ''
-      * {
-        font-family: Fira Code, Fira Code Symbol;
-      }
-    '';
-    settings = {
-      mainBar = {
-        layer = "top";
-        position = "top";
-        height = 18;
-        # output = [ "eDP-1" ];
-        modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "clock" ];
-        modules-right = [
-          "tray"
-          "temperature"
-          "cpu"
-          "memory"
-          "battery"
-        ];
-      };
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
   programs.hyprlock = {
     enable = true;

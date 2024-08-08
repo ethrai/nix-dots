@@ -30,12 +30,13 @@
     historySubstringSearch = {
       enable = true;
     };
+
     shellAliases = {
-      ll = "ls -l";
-      la = "ls -a";
-      l = "ls -CF";
+      l = "ls -lah";
       cd = "z";
+      d = "docker";
     };
+
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";

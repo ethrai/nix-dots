@@ -8,7 +8,7 @@
 let
   homeDir = config.home.homeDirectory;
   ofSym = config.lib.file.mkOutOfStoreSymlink;
-  code = "Code";
+  code = "VSCodium";
 in
 {
   options = { };
@@ -16,16 +16,23 @@ in
     stylix.targets.vscode.enable = false;
     programs.vscode = {
       mutableExtensionsDir = false; # manage extensions only with home-manager
-      package = pkgs.vscode;
+      package = pkgs.vscodium;
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
-        yzhang.markdown-all-in-one
-        jnoortheen.nix-ide
-        mads-hartmann.bash-ide-vscode
         christian-kohler.path-intellisense
+        # Markdown
+        yzhang.markdown-all-in-one
+
+        # Nix
+        jnoortheen.nix-ide
+
         donjayamanne.githistory
+
         supermaven.supermaven
+
+        # Bash
+        mads-hartmann.bash-ide-vscode
 
         # Go
         golang.go
