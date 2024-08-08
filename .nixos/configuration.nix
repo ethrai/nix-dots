@@ -64,10 +64,7 @@
 
   hardware.bluetooth.enable = true;
 
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    # NIXOS_OZONE_WL = "1";
-  };
+  environment.sessionVariables = { };
 
   services.libinput.enable = true;
   services.thermald.enable = true;
@@ -75,7 +72,6 @@
     enable = true;
   };
   services.gnome.gnome-keyring.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   stylix.enable = true;
   stylix.polarity = "light";
@@ -83,23 +79,22 @@
   stylix.homeManagerIntegration.autoImport = true;
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
   stylix.base16Scheme = {
-    base00 = "ffffff";
-    base01 = "eeeeee";
-    base02 = "cccccc";
-    base03 = "767676";
-    base04 = "767676";
-    base05 = "444444";
-    base06 = "333333";
-    base07 = "222222";
-    base08 = "d03e3e";
-    base09 = "d7691d";
-    base0A = "ad8200";
-    base0B = "31861f";
-    base0C = "00998f";
-    base0D = "3173c5";
-    base0E = "9e57c2";
-    base0F = "895025";
-
+    base00 = "32302f";
+    base01 = "3c3836";
+    base02 = "504945";
+    base03 = "665c54";
+    base04 = "bdae93";
+    base05 = "d5c4a1";
+    base06 = "ebdbb2";
+    base07 = "fbf1c7";
+    base08 = "fb4934";
+    base09 = "fe8019";
+    base0A = "fabd2f";
+    base0B = "b8bb26";
+    base0C = "8ec07c";
+    base0D = "83a598";
+    base0E = "d3869b";
+    base0F = "d65d0e";
   };
 
   stylix.targets.chromium.enable = false;
@@ -115,21 +110,18 @@
       package = (pkgs.nerdfonts.override { fonts = [ "Hack" ]; });
       name = "Hack Nerd Font";
     };
-    serif = config.stylix.fonts.monospace;
-    sansSerif = config.stylix.fonts.monospace;
-    emoji = config.stylix.fonts.monospace;
 
-    # sansSerif = {
-    #   package = pkgs.noto-fonts;
-    #   name = "Noto Sans";
-    # };
+    sansSerif = {
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
+    };
 
-    # serif = config.stylix.fonts.sansSerif;
+    emoji = {
+      package = pkgs.noto-fonts-emoji;
+      name = "Noto Color Emoji";
+    };
 
-    # emoji = {
-    #   package = pkgs.noto-fonts-emoji;
-    #   name = "Noto Color Emoji";
-    # };
+    serif = config.stylix.fonts.sansSerif;
 
     sizes = {
       desktop = 12;
@@ -170,7 +162,7 @@
       "video"
       "docker"
     ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   environment.systemPackages = with pkgs; [
