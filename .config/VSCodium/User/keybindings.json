@@ -288,11 +288,6 @@
         "command": "editor.action.fontZoomOut"
     },
     {
-        "key": "alt+f",
-        "command": "editor.action.inlineSuggest.commit",
-        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
-    },
-    {
         "key": "ctrl+q",
         "command": "-workbench.action.quit"
     },
@@ -307,5 +302,14 @@
     {
         "key": "alt+l",
         "command": "workbench.action.nextEditor"
-    }
+    },
+    {
+        "key": "alt+f",
+        "command": "editor.action.inlineSuggest.commit"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
 ]

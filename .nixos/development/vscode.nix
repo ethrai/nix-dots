@@ -8,7 +8,7 @@
 let
   homeDir = config.home.homeDirectory;
   ofSym = config.lib.file.mkOutOfStoreSymlink;
-  code = "VSCodium";
+  code = "Code";
 in
 {
   options = { };
@@ -16,7 +16,7 @@ in
     stylix.targets.vscode.enable = false;
     programs.vscode = {
       mutableExtensionsDir = false; # manage extensions only with home-manager
-      package = pkgs.vscodium;
+      package = pkgs.vscode;
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
@@ -40,6 +40,9 @@ in
         # Python
         ms-python.python
         ms-python.debugpy
+
+        jdinhlife.gruvbox
+
       ];
     };
 

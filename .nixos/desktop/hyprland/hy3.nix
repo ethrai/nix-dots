@@ -28,7 +28,7 @@
           group_inset = 10; # default: 10
 
           # if a tab group will automatically be created for the first window spawned in a workspace
-          tab_first_window = true;
+          tab_first_window = false;
 
           # tab group settings
           tabs = with config.lib.stylix.colors; {
@@ -76,7 +76,7 @@
             enable = false; # default: false
 
             # make autotile-created groups ephemeral
-            ephemeral_groups = true; # default: true
+            ephemeral_groups = false; # default: true
 
             # if a window would be squished smaller than this width, a vertical split will be created
             # -1 = never automatically split vertically

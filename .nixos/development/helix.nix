@@ -14,7 +14,7 @@
     defaultEditor = true;
     settings = {
 
-      theme = lib.mkForce "base16_default_dark";
+      theme = lib.mkForce "gruvbox_dark_soft";
       editor = {
         cursor-shape = {
           insert = "bar";

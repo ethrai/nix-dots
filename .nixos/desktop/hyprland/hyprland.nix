@@ -36,7 +36,10 @@
         "wl-paste --type image --watch cliphist store"
         "$term"
         "$browser"
-        "$bar &"
+        "waybar &"
+        # for GTK3 apps
+        "gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\""
+        "wlsunset  -l 52.452030 -L 25.397791"
       ];
       xwayland = {
         force_zero_scaling = true;
@@ -47,6 +50,9 @@
         gaps_out = 0;
         allow_tearing = false;
         border_size = 1;
+      };
+      cursor = {
+        no_warps = true;
       };
       input = {
         kb_layout = "us,ru";

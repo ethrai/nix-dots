@@ -16,10 +16,8 @@
     "memory",
     "temperature#cpu",
     "cpu",
-    // "network",
     "pulseaudio",
     "battery"
-    // "custom/power",
   ],
   "hyprland/language": {
     "format": "{}",

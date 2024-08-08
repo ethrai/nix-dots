@@ -13,9 +13,8 @@
     ./vscode.nix
     ./helix.nix
     ./shell.nix
+    ./kitty.nix
   ];
-
-  programs.kitty.enable = true;
 
   home.packages = with pkgs; [
 
