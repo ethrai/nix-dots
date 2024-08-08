@@ -26,6 +26,7 @@
 @define-color crust #11111b;
 @define-color border rgba(183, 189, 248, 0.4);
 @define-color shadow rgb(30, 32, 48);
+
 * {
   border: none;
   border-radius: 0;
@@ -103,90 +104,10 @@ window#waybar.hidden {
   color: @text;
 }
 
-#temperature {
-  /* background-color: @pink; */
-}
-
-#temperature.critical {
-  /* background-color: @red; */
-}
 
 #tray {
   padding: 0 2px;
   border-right: 1px solid @border;
-}
-
-#idle_inhibitor {
-  /* background-color: @rosewater; */
-}
-
-#cpu {
-  /* background-color: @sky; */
-}
-
-
-#custom-mediaplayer {
-  /* background-color: @pink; */
-}
-
-#custom-power {
-}
-
-#memory {
-  /* background-color: @mauve; */
-}
-
-#battery {
-  /* background-color: @green; */
-}
-
-#power-profiles-daemon {
-  /* background-color: @red; */
-  /* padding-right: 7px; */
-}
-
-#power-profiles-daemon.performance {
-  /* background-color: @red; */
-}
-
-#power-profiles-daemon.balanced {
-  /* background-color: @yellow; */
-}
-
-#power-profiles-daemon.power-saver {
-  /* background-color: @teal; */
-}
-
-#battery.warning,
-#battery.critical,
-#battery.urgent {
-  /* background-color: @red; */
-  /* color: @yellow; */
-}
-
-#battery.charging {
-  /* background-color: @green; */
-  /* color: #181825; */
-}
-
-#backlight {
-  /* background-color: @maroon; */
-}
-
-#pulseaudio {
-  /* background-color: @peach; */
-}
-
-#network {
-  /* background-color: @yellow; */
-}
-
-#clock {
-  /* background-color: @lavender; */
-}
-
-#custom-power {
-  /* background-color: @teal; */
 }
 
 #tooltip {

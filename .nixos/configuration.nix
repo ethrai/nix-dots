@@ -107,21 +107,25 @@
 
   stylix.fonts = {
     monospace = {
-      package = (pkgs.nerdfonts.override { fonts = [ "Hack" ]; });
-      name = "Hack Nerd Font";
+      package = (pkgs.nerdfonts.override { fonts = [ "RobotoMono" ]; });
+      name = "RobotoMono Nerd Font";
     };
 
-    sansSerif = {
-      package = pkgs.noto-fonts;
-      name = "Noto Sans";
-    };
+    sansSerif = config.stylix.fonts.monospace;
 
-    emoji = {
-      package = pkgs.noto-fonts-emoji;
-      name = "Noto Color Emoji";
-    };
+    emoji = config.stylix.fonts.monospace;
 
     serif = config.stylix.fonts.sansSerif;
+
+    # sansSerif = {
+    #   package = pkgs.noto-fonts;
+    #   name = "Noto Sans";
+    # };
+
+    # emoji = {
+    #   package = pkgs.noto-fonts-emoji;
+    #   name = "Noto Color Emoji";
+    # };
 
     sizes = {
       desktop = 12;

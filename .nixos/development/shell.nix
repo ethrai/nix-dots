@@ -6,7 +6,6 @@
   ...
 }:
 {
-  programs.fish.enable = true;
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
@@ -17,6 +16,16 @@
     enable = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      #   l = "ls -lah";
+      cd = "z";
+      #   d = "docker";
+      #   g = "g";
+    };
   };
 
   programs.zsh = {
