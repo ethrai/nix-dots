@@ -1,40 +1,26 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}:
+{ config, pkgs, lib, inputs, ... }:
 
 {
-  imports = [
-    ./desktop/desktop.nix
-    ./development/development.nix
-  ];
-
-  stylix.image = /home/sergio/.dots/wallpaper.png;
+  imports = [ ./desktop/desktop.nix ./development/development.nix ];
 
   home = {
     username = "sergio";
     homeDirectory = "/home/sergio";
+
+    pointerCursor = {
+      gtk.enable = true;
+      size = 20;
+    };
   };
 
   programs.git = {
     enable = true;
     userEmail = "ryzhkosergej@gmail.com";
     userName = "Sergei Ryzhko";
-    extraConfig = {
-      core = {
-        editor = "hx";
-      };
-    };
+    extraConfig = { core = { editor = "nvim"; }; };
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs = { config = { allowUnfree = true; }; };
 
   programs.chromium = {
     enable = true;
@@ -45,9 +31,7 @@
     ];
   };
 
-  programs.btop = {
-    enable = true;
-  };
+  programs.btop = { enable = true; };
 
   home.packages = with pkgs; [
     dconf
@@ -94,19 +78,10 @@
   xdg = {
     enable = true;
     portal = {
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-hyprland
-      ];
+      extraPortals =
+        [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
       enable = true;
-      config = {
-        preferred = {
-          default = [
-            "gtk"
-            "hyprland"
-          ];
-        };
-      };
+      config = { preferred = { default = [ "gtk" "hyprland" ]; }; };
     };
     mimeApps = {
       enable = true;
@@ -126,7 +101,6 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "hx";
     # XDG_CURRENT_DESKTOP = "Hyprland";
     # XDG_SESSION_TYPE = "wayland";
     # XDG_SCREENSHOTS_DIR = "~/screens";
@@ -192,30 +166,26 @@
         no_fade_in = false;
       };
 
-      background = [
-        {
-          path = "~/Downloads/nice.png";
-          blur_passes = 3;
-          blur_size = 8;
-        }
-      ];
+      background = [{
+        path = "~/Downloads/nice.png";
+        blur_passes = 3;
+        blur_size = 8;
+      }];
 
-      input-field = [
-        {
-          size = "200, 50";
-          position = "0, -80";
-          monitor = "";
-          dots_center = true;
-          fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
-          outline_thickness = 5;
-          placeholder_text = ''<span foreground="##cad3f5">Password...</span>'';
+      input-field = [{
+        size = "200, 50";
+        position = "0, -80";
+        monitor = "";
+        dots_center = true;
+        fade_on_empty = false;
+        font_color = "rgb(202, 211, 245)";
+        inner_color = "rgb(91, 96, 120)";
+        outer_color = "rgb(24, 25, 38)";
+        outline_thickness = 5;
+        placeholder_text = ''<span foreground="##cad3f5">Password...</span>'';
 
-          shadow_passes = 2;
-        }
-      ];
+        shadow_passes = 2;
+      }];
     };
   };
 }

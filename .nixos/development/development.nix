@@ -14,6 +14,7 @@
     ./helix.nix
     ./shell.nix
     ./kitty.nix
+    ./neovim
   ];
 
   home.packages = with pkgs; [
@@ -27,10 +28,11 @@
       ])
     ))
 
+    gotests
+    gnumake
     kitty
     nixfmt-rfc-style
     tree
-    neovim
     git
     gh
     httpie
@@ -74,6 +76,12 @@
     zsh-completions
     zsh-syntax-highlighting
     jq
+    ripgrep
+    fd
+
+    shfmt
+    shellcheck
+    bash-language-server
 
   ];
 }

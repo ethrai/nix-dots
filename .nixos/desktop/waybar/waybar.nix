@@ -20,7 +20,7 @@ in
         border-radius: 0;
         min-height: 0;
         font-family: 'Roboto Mono';
-        font-size: 16px;
+        font-size: 18px;
       }
 
       window#waybar {
@@ -39,7 +39,7 @@ in
       }
 
       #workspaces {
-        font-size: 16px;
+        font-size: 18px;
         background-color: #${base00};
       }
 
@@ -54,7 +54,7 @@ in
 
       #workspaces button.active {
         color: #${base01};
-        background-color: #${base09};
+        background-color: #${base07};
       }
 
       #workspaces button:hover {

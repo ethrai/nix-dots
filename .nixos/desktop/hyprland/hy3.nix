@@ -59,9 +59,9 @@
             # left padding of the window title
             text_padding = 0; # default: 3
 
-            "col.active" = "rgb(${base01})"; # default: 0xff32b4ff
+            "col.active" = "rgb(${base00})"; # default: 0xff32b4ff
             "col.urgent" = "rgb(${base08})"; # default: 0xff32b4ff
-            "col.inactive" = "rgb(${base00})"; # default: 0xff32b4ff
+            "col.inactive" = "rgb(${base01})"; # default: 0xff32b4ff
 
             "col.text.active" = "rgb(${base05})"; # default: 0xff32b4ff
             "col.text.urgent" = "rgb(${base05})"; # default: 0xff32b4ff

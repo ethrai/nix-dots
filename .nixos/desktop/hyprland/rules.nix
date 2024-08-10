@@ -28,6 +28,8 @@
       "workspace 4,class:^(org.pulseaudio.pavucontrol)$"
       "workspace 5,class:^(org.telegram.desktop)$"
       "workspace 5,class:^(discord)$"
+
+      "opacity 0.8,class:^(kitty)$"
     ];
   };
 }
