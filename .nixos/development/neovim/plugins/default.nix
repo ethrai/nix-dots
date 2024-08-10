@@ -9,6 +9,7 @@
     ./md-preview.nix
     ./neo-tree.nix
     ./none-ls.nix
+    ./supermaven.nix
   ];
   stylix.targets.nixvim.enable = false;
   programs.nixvim = {
@@ -39,7 +40,7 @@
       trim = {
         enable = true;
         settings = {
-          highlight = true;
+          highlight = false;
           ft_blocklist =
             [ "checkhealth" "floaterm" "lspinfo" "neo-tree" "TelescopePrompt" ];
         };

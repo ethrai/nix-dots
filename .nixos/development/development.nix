@@ -1,32 +1,14 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}:
+{ config, pkgs, lib, inputs, ... }:
 
 {
 
-  imports = [
-    ./tmux.nix
-    ./vscode.nix
-    ./helix.nix
-    ./shell.nix
-    ./kitty.nix
-    ./neovim
-  ];
+  imports =
+    [ ./tmux.nix ./vscode.nix ./helix.nix ./shell.nix ./kitty.nix ./neovim ];
 
   home.packages = with pkgs; [
 
-    (python3.withPackages (
-      p:
-      (with p; [
-        python-lsp-server
-        python-lsp-ruff
-        python-lsp-black
-      ])
-    ))
+    (python3.withPackages
+      (p: (with p; [ python-lsp-server python-lsp-ruff python-lsp-black ])))
 
     gotests
     gnumake
@@ -52,6 +34,8 @@
     gomodifytags
     gofumpt
     golines
+    golangci-lint
+    golangci-lint-langserver
 
     # python
 
