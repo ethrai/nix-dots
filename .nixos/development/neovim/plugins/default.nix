@@ -10,6 +10,7 @@
     ./neo-tree.nix
     ./none-ls.nix
     ./supermaven.nix
+    ./leap.nix
   ];
   stylix.targets.nixvim.enable = false;
   programs.nixvim = {
@@ -19,6 +20,8 @@
     };
 
     plugins = {
+
+      surround.enable = true;
 
       gitsigns = {
         enable = true;
