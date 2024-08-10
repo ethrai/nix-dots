@@ -18,6 +18,10 @@
       };
 
       settings.defaults = {
+        layout_config = {
+          horizontal.width = 0.95;
+          preview_width = 0.6;
+        };
         file_ignore_patterns = [
           "^.git/"
           "^.mypy_cache/"
