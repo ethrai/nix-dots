@@ -9,11 +9,11 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    hy3 = {
-      url = "github:outfoxxed/hy3"; # where {version} is the hyprland release version
-
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hy3 = {
+    #   url = "github:outfoxxed/hy3?ref=hl0.41.2";
+    #
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     helix.url = "github:helix-editor/helix/master";
 
@@ -25,33 +25,22 @@
 
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
+    in {
 
       nixosConfigurations = {
         caladan = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
+          specialArgs = { inherit inputs; };
           modules = [
             inputs.stylix.nixosModules.stylix
             inputs.nixvim.nixosModules.nixvim
             ./configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
+              home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.sergio = import ./home.nix;

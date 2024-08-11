@@ -58,12 +58,16 @@
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       libvdpau-va-gl
+      vpl-gpu-rt
     ];
   };
 
   hardware.bluetooth.enable = true;
 
-  environment.sessionVariables = { };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 
   services.libinput.enable = true;
   services.thermald.enable = true;

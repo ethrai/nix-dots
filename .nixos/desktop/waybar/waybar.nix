@@ -1,25 +1,21 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   ofSym = config.lib.file.mkOutOfStoreSymlink;
   homeDir = config.home.homeDirectory;
-in
-{
+in {
   stylix.targets.waybar.enable = false;
   programs.waybar = with config.lib.stylix.colors; {
     enable = true;
+    package = (pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }));
     systemd.enable = true;
     style = ''
       * {
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: 'Roboto Mono';
+        font-family: 'FiraCode Nerd Font';
         font-size: 18px;
       }
 
@@ -109,13 +105,8 @@ in
     '';
   };
 
-  # xdg.configFile = {
-  #   "waybar/" = {
-  #     source = "${config.home.homeDirectory}/.dots/.config/waybar";
-  #     recursive = true;
-  #   };
-  # };
   home.file = {
-    ".config/waybar/config.jsonc".source = ofSym "${homeDir}/.dots/.config/waybar/config.jsonc";
+    ".config/waybar/config.jsonc".source =
+      ofSym "${homeDir}/.dots/.config/waybar/config.jsonc";
   };
 }

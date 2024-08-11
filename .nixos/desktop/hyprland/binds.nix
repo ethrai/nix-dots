@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{ ... }: {
   wayland.windowManager.hyprland.settings.bind = [
     "$mod, R, exec, rofi -show drun"
     "$mod, W, exec, rofi -show window"
@@ -20,27 +17,27 @@
     "$mod, T, togglefloating,"
     "$mod, F, fullscreen"
 
-    "$mod, left, hy3:movefocus, l"
-    "$mod, right, hy3:movefocus, r"
-    "$mod, up, hy3:movefocus, u"
-    "$mod, down, hy3:movefocus, d"
+    "$mod, left, movefocus, l"
+    "$mod, right, movefocus, r"
+    "$mod, up, movefocus, u"
+    "$mod, down, movefocus, d"
 
-    "$mod SHIFT, G, hy3:changegroup, untab"
-    "$mod, G, hy3:makegroup, tab, force_ephemeral"
+    # "$mod SHIFT, G, changegroup, untab"
+    # "$mod, G, makegroup, tab, force_ephemeral"
 
-    "$mod, h, hy3:movefocus, l"
-    "$mod, l, hy3:movefocus, r"
-    "$mod, k, hy3:movefocus, u"
-    "$mod, j, hy3:movefocus, d"
+    "$mod, h, movefocus, l"
+    "$mod, l, movefocus, r"
+    "$mod, k, movefocus, u"
+    "$mod, j, movefocus, d"
 
-    "$mod SHIFT, LEFT, hy3:movewindow, l"
-    "$mod SHIFT, RIGHT, hy3:movewindow, r"
-    "$mod SHIFT, UP, hy3:movewindow, u"
-    "$mod SHIFT, DOWN, hy3:movewindow, d"
-    "$mod SHIFT, H, hy3:movewindow, l"
-    "$mod SHIFT, L, hy3:movewindow, r"
-    "$mod SHIFT, K, hy3:movewindow, u"
-    "$mod SHIFT, J, hy3:movewindow, d"
+    "$mod SHIFT, LEFT, movewindow, l"
+    "$mod SHIFT, RIGHT, movewindow, r"
+    "$mod SHIFT, UP, movewindow, u"
+    "$mod SHIFT, DOWN, movewindow, d"
+    "$mod SHIFT, H, movewindow, l"
+    "$mod SHIFT, L, movewindow, r"
+    "$mod SHIFT, K, movewindow, u"
+    "$mod SHIFT, J, movewindow, d"
 
     "$mod, O, exec, hyprlock"
 
