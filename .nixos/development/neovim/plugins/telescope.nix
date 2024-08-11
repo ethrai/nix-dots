@@ -5,7 +5,7 @@
 
       keymaps = {
         # Find files using Telescope command-line sugar.
-        "<leader>ff" = "git_files";
+        "<leader>ff" = "find_files";
         "<leader>fw" = "live_grep";
         "<leader>b" = "buffers";
         "<leader>fh" = "help_tags";
@@ -13,7 +13,7 @@
         "<leader>fe" = "resume";
 
         # FZF like bindings
-        "<C-p>" = "find_files";
+        "<C-p>" = "git_files";
         "<leader>p" = "oldfiles";
         "<C-f>" = "live_grep";
       };

@@ -6,9 +6,13 @@
       nixvimInjections = true;
 
       settings = {
-        # highlight.enable = true;
+        highlight.enable = true;
+        auto_install = true;
         indent.enable = true;
-        ensure_installed = "all";
+        # sync_install = true;
+        # ensure_installed = "all";
+        # ignore_install = [ "foam" ];
+
       };
       folding = true;
     };

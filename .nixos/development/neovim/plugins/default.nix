@@ -6,6 +6,7 @@
     ./floaterm.nix
     ./treesitter.nix
     ./treesitter-context.nix
+    # ./ts-textobjects.nix
     ./md-preview.nix
     ./neo-tree.nix
     ./none-ls.nix

@@ -102,8 +102,8 @@
 
   stylix.fonts = {
     monospace = {
-      package = (pkgs.nerdfonts.override { fonts = [ "RobotoMono" ]; });
-      name = "RobotoMono Nerd Font";
+      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+      name = "FiraCode Nerd Font";
     };
 
     sansSerif = config.stylix.fonts.monospace;
@@ -112,21 +112,11 @@
 
     serif = config.stylix.fonts.sansSerif;
 
-    # sansSerif = {
-    #   package = pkgs.noto-fonts;
-    #   name = "Noto Sans";
-    # };
-
-    # emoji = {
-    #   package = pkgs.noto-fonts-emoji;
-    #   name = "Noto Color Emoji";
-    # };
-
     sizes = {
-      desktop = 12;
-      applications = 12;
-      popups = 12;
-      terminal = 13;
+      desktop = 13;
+      applications = 13;
+      popups = 13;
+      terminal = 14;
     };
   };
 
@@ -134,8 +124,8 @@
     noto-fonts-cjk
     noto-fonts-emoji
     liberation_ttf
-    # fira-code
-    # fira-code-symbols
+    fira-code
+    fira-code-symbols
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
@@ -162,12 +152,8 @@
 
   environment.systemPackages = with pkgs; [
     helix
-    wget
     git
-    stow
     tmux
-    lm_sensors
-    neovim
 
   ];
 
