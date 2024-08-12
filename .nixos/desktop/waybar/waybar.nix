@@ -20,8 +20,8 @@ in {
       }
 
       window#waybar {
-        background-color: #${base01};
-        color: @text;
+        background-color: #${base00};
+        color: #${base06};
         transition-property: background-color;
         transition-duration: 0.5s;
       }
@@ -44,13 +44,13 @@ in {
         margin: 0px 2px;
         padding: 0px 2px;
         background-color: @transparent;
-        color: @text;
+        color: #${base06};
         min-width: 20px;
       }
 
       #workspaces button.active {
-        color: #${base01};
-        background-color: #${base07};
+        color: #${base00};
+        background-color: #${base06};
       }
 
       #workspaces button:hover {
@@ -78,10 +78,7 @@ in {
         padding: 0px 4px;
         margin: 0px 2px;
         border-radius: 0px;
-        /* box-shadow: 3px 3px 1px 1px alpha(@shadow, 0.7); */
-        /* border: 2px solid @border; */
-        /* background-clip: padding-box; */
-        color: #${base05};
+        color: #${base06};
       }
 
 

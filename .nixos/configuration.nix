@@ -75,30 +75,31 @@
   services.gnome.gnome-keyring.enable = true;
 
   stylix.enable = true;
+  stylix.targets.chromium.enable = false; # No such option in home-manager
+
   stylix.image = /home/sergio/.dots/wallpaper.png;
   stylix.polarity = "dark";
   stylix.autoEnable = true;
   stylix.homeManagerIntegration.autoImport = true;
 
   stylix.base16Scheme = {
-    base00 = "181818";
-    base01 = "282828";
-    base02 = "383838";
-    base03 = "585858";
-    base04 = "b8b8b8";
-    base05 = "d8d8d8";
-    base06 = "e8e8e8";
-    base07 = "f8f8f8";
-    base08 = "ab4642";
-    base09 = "dc9656";
-    base0A = "f7ca88";
-    base0B = "a1b56c";
-    base0C = "86c1b9";
-    base0D = "7cafc2";
-    base0E = "ba8baf";
-    base0F = "a16946";
+    base00 = "181818"; # #181818
+    base01 = "282828"; # #282828
+    base02 = "383838"; # #383838
+    base03 = "585858"; # #585858
+    base04 = "b8b8b8"; # #b8b8b8
+    base05 = "d8d8d8"; # #d8d8d8
+    base06 = "e8e8e8"; # #e8e8e8
+    base07 = "f8f8f8"; # #f8f8f8
+    base08 = "ab4642"; # #ab4642
+    base09 = "dc9656"; # #dc9656
+    base0A = "f7ca88"; # #f7ca88
+    base0B = "a1b56c"; # #a1b56c
+    base0C = "86c1b9"; # #86c1b9
+    base0D = "7cafc2"; # #7cafc2
+    base0E = "ba8baf"; # #ba8baf
+    base0F = "a16946"; # #a16946
   };
-  stylix.targets.chromium.enable = false;
 
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Ice";

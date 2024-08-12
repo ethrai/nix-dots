@@ -2,16 +2,22 @@
 
 {
 
-  imports =
-    [ ./binds.nix ./rules.nix ./hyprpaper.nix ./hyprlock.nix ./hypridle.nix ];
+  imports = [
+    ./hy3.nix
+    ./binds.nix
+    ./rules.nix
+    ./hyprpaper.nix
+    ./hyprlock.nix
+    ./hypridle.nix
+  ];
 
   stylix.targets.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    package =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # package =
+    #   inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     systemd = {
       enable = true;
@@ -43,7 +49,7 @@
         gaps_in = 0;
         gaps_out = 0;
         allow_tearing = false;
-        border_size = 1;
+        border_size = 0;
       };
       cursor = { no_warps = true; };
       input = {
@@ -51,7 +57,7 @@
         kb_options = "caps:swapescape,grp:alt_space_toggle";
         repeat_rate = 45;
         repeat_delay = 175;
-        follow_mouse = 0;
+        follow_mouse = 1;
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
         touchpad = { natural_scroll = false; };

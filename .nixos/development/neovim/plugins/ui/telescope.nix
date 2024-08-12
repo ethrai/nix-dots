@@ -20,8 +20,8 @@
 
       settings.defaults = {
         layout_config = {
-          horizontal.width = 0.95;
-          preview_width = 0.4;
+          horizontal.width = 1.0;
+          preview_width = 0.45;
         };
         file_ignore_patterns = [
           "^.git/"

@@ -1,18 +1,5 @@
 { lib, ... }: {
-  imports = [
-    ./telescope.nix
-    ./lsp.nix
-    ./lualine.nix
-    ./floaterm.nix
-    ./treesitter.nix
-    ./treesitter-context.nix
-    # ./ts-textobjects.nix
-    ./md-preview.nix
-    ./neo-tree.nix
-    ./none-ls.nix
-    ./supermaven.nix
-    ./leap.nix
-  ];
+  imports = [ ./treesitter ./lsp ./ui ./util ./completion ];
   stylix.targets.nixvim.enable = false;
   programs.nixvim = {
     colorschemes.base16 = {

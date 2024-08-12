@@ -7,13 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url =
+      "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=9a09eac79b85c846e3a865a9078a3f8ff65a9259";
 
-    # hy3 = {
-    #   url = "github:outfoxxed/hy3?ref=hl0.41.2";
-    #
-    #   inputs.hyprland.follows = "hyprland";
-    # };
+    hy3 = {
+      url = "github:outfoxxed/hy3?ref=hl0.42.0";
+
+      inputs.hyprland.follows = "hyprland";
+    };
 
     helix.url = "github:helix-editor/helix/master";
 
