@@ -1,13 +1,11 @@
 { config, pkgs, lib, inputs, ... }: {
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  home.packages = with pkgs; [
+    zsh-autosuggestions
+    zsh-fzf-tab
+    zsh-completions
+    zsh-syntax-highlighting
+  ];
 
   programs.zsh = {
     enable = true;

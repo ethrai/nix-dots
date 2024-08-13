@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   stylix.targets.helix.enable = false;
@@ -15,9 +9,7 @@
 
       theme = lib.mkForce "base16_default_dark";
       editor = {
-        cursor-shape = {
-          insert = "bar";
-        };
+        cursor-shape = { insert = "bar"; };
         true-color = true;
       };
 

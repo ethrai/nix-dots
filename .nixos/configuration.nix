@@ -28,6 +28,8 @@
   security.pam.services.hyprlock = { };
   security.rtkit.enable = true;
 
+  services.geoclue2.enable = true;
+
   networking.hostName = "caladan"; # Define your hostname.
   networking.networkmanager.enable =
     true; # Easiest to use and most distros use this by default.
@@ -113,11 +115,23 @@
       name = "FiraCode Nerd Font";
     };
 
-    sansSerif = config.stylix.fonts.monospace;
-
-    emoji = config.stylix.fonts.monospace;
+    sansSerif = {
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
+    };
 
     serif = config.stylix.fonts.sansSerif;
+
+    emoji = {
+      package = pkgs.noto-fonts-emoji;
+      name = "Noto Color Emoji";
+    };
+
+    # sansSerif = config.stylix.fonts.monospace;
+    #
+    # serif = config.stylix.fonts.sansSerif;
+    #
+    # emoji = config.stylix.fonts.monospace;
 
     sizes = {
       desktop = 13;
@@ -150,6 +164,7 @@
     extraGroups = [
       "wheel"
       "input"
+      "audio"
       "networkmanager"
       "video"
       "docker"
@@ -157,12 +172,7 @@
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [
-    helix
-    git
-    tmux
-
-  ];
+  environment.systemPackages = with pkgs; [ helix git tmux docker ];
 
   # Do not touch
   system.stateVersion = "24.05";

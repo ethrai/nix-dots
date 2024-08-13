@@ -9,6 +9,7 @@
     ./hyprpaper.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./waybar.nix
   ];
 
   stylix.targets.hyprland.enable = true;
@@ -40,8 +41,7 @@
         "$term"
         "$browser"
         # for GTK3 apps
-        ''gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"''
-        "wlsunset  -l 52.452030 -L 25.397791"
+        # "wlsunset  -l 52.452030 -L 25.397791"
       ];
       xwayland = { force_zero_scaling = true; };
       general = {

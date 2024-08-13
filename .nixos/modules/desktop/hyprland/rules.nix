@@ -1,15 +1,8 @@
-{
-  inputs,
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ inputs, pkgs, config, lib, ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
-      "float, class:org.pulseaudio.pavucontrol"
       "float,class:blueman-manager"
       "float,title:^(Bitwarden)(.*)$"
       "float,title:^(Location)(.*)$"
