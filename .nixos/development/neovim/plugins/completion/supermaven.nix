@@ -9,6 +9,8 @@
             accept_suggestion = "<C-f>",
             clear_suggestion = "<C-n>",
           },
+          log_level = "off", -- set to "off" to disable logging completely
+
         }
         EOF
       '';

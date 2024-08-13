@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
-let
-  ofSym = config.lib.file.mkOutOfStoreSymlink;
-  homeDir = config.home.homeDirectory;
-in {
+
+{
   stylix.targets.waybar.enable = false;
   programs.waybar = with config.lib.stylix.colors; {
     enable = true;
@@ -102,8 +100,4 @@ in {
     '';
   };
 
-  home.file = {
-    ".config/waybar/config.jsonc".source =
-      ofSym "${homeDir}/.dots/.config/waybar/config.jsonc";
-  };
 }

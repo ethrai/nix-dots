@@ -12,7 +12,7 @@
 
     gotests
     gnumake
-    kitty
+    foot
     nixfmt-rfc-style
     tree
     git

@@ -48,6 +48,7 @@
     telegram-desktop
     discord
     rofi-wayland
+    rofi-emoji-wayland
     cliphist
     wl-clipboard
     hyprlock

@@ -26,6 +26,7 @@
 
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };
+  security.rtkit.enable = true;
 
   networking.hostName = "caladan"; # Define your hostname.
   networking.networkmanager.enable =
@@ -52,6 +53,7 @@
     pulse.enable = true;
   };
   services.openssh.enable = true;
+  hardware.enableAllFirmware = true;
 
   hardware.graphics = {
     enable = true;

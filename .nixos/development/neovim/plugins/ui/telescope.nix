@@ -20,7 +20,7 @@
 
       settings.defaults = {
         layout_config = {
-          horizontal.width = 1.0;
+          horizontal.width = 0.95;
           preview_width = 0.45;
         };
         file_ignore_patterns = [
