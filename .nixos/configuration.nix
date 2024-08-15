@@ -15,10 +15,10 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  # use docker without Root access (Rootless docker)
   virtualisation.docker = {
-    enable = true;
+    enable = true; # Enable docker
     rootless = {
-
       enable = true;
       setSocketVariable = true;
     };
@@ -163,11 +163,11 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
+      "docker"
       "input"
       "audio"
       "networkmanager"
       "video"
-      "docker"
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };

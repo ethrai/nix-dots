@@ -6,8 +6,8 @@
     settings = {
       ipc = "on";
       splash = false;
-      preload = [ "/home/sergio/.dots/wallpaper.jpg" ];
-      wallpaper = [ "eDP-1,/home/sergio/.dots/wallpaper.jpg" ];
+      preload = [ "/home/sergio/.dots/wallpaper.png" ];
+      wallpaper = [ "eDP-1,/home/sergio/.dots/wallpaper.png" ];
     };
   };
 }

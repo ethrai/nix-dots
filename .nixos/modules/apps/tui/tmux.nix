@@ -13,11 +13,14 @@
     plugins = with pkgs; [
       { plugin = tmuxPlugins.sensible; }
       { plugin = tmuxPlugins.vim-tmux-navigator; }
+      { plugin = tmuxPlugins.tmux-fzf; }
+      { plugin = tmuxPlugins.jump; }
     ];
     extraConfig = ''
 
-      set -g default-terminal "tmux-256color"
-      set -ag terminal-overrides ",xterm-256color:RGB"
+      set -g default-terminal "$TERM"
+      set -ag terminal-overrides ",$TERM:Tc"
+
       set -g mouse on
 
       set-option -g status-position bottom
@@ -65,11 +68,6 @@
       bind -T copy-mode-vi Escape send -X cancel
       bind -T copy-mode-vi H send -X start-of-line
       bind -T copy-mode-vi L send -X end-of-line
-
-      # Zoom
-      # copy to Windows clipboard
-      if -b 'command -v clip.exe > /dev/null 2>&1' 'bind y run -b "tmux save-buffer - | clip.exe"'
-      if -b '[ -c /dev/clipboard ]' 'bind y run -b "tmux save-buffer - > /dev/clipboard"'
 
     '';
   };

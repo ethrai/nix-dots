@@ -10,7 +10,7 @@
       };
 
       background = [{
-        path = "~/.dots/wallpaper.jpg";
+        path = "~/.dots/wallpaper.png";
         blur_passes = 3;
         blur_size = 8;
       }];

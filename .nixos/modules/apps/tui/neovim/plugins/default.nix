@@ -7,6 +7,7 @@
       colorscheme = "classic-dark";
     };
 
+    # colorschemes.kanagawa.enable = true;
     plugins = {
 
       surround.enable = true;

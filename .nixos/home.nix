@@ -19,7 +19,10 @@
     dconf
     evince
 
+    cowsay
+
     foot
+    docker
 
     obs-studio
     qbittorrent

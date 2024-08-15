@@ -22,7 +22,7 @@
       "workspace 5,class:^(org.telegram.desktop)$"
       "workspace 5,class:^(discord)$"
 
-      "opacity 0.8,class:^(kitty)$"
+      "opacity 0.9,class:^(Alacritty)$"
     ];
   };
 }

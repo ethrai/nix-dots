@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./alacritty.nix
     ./chromium.nix
     ./imv.nix
     ./kitty.nix
@@ -14,6 +15,7 @@
 
     discord
     signal-desktop
+    telegram-desktop
 
     libreoffice-fresh
     zotero

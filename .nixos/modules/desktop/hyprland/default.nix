@@ -30,9 +30,16 @@
         disable_logs = false;
         enable_stdout_logs = true;
       };
+      decoration = {
+        rounding = 0;
+        blur = {
+          enabled = false;
+          xray = true;
+        };
+      };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
-      "$term" = "kitty";
+      "$term" = "alacritty";
       "$browser" = "chromium";
       "$bar" = "waybar";
       exec-once = [
@@ -40,8 +47,6 @@
         "wl-paste --type image --watch cliphist store"
         "$term"
         "$browser"
-        # for GTK3 apps
-        # "wlsunset  -l 52.452030 -L 25.397791"
       ];
       xwayland = { force_zero_scaling = true; };
       general = {
