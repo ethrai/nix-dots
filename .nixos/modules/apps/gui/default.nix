@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
     ./chromium.nix
+    ./foot.nix
     ./imv.nix
     ./kitty.nix
     ./mpv.nix
@@ -19,10 +20,15 @@
 
     libreoffice-fresh
     zotero
-    okular
+    evince
     obsidian
 
+    nautilus
+    file-roller
+
     spotify
+
+    obs-studio
 
   ];
 

@@ -2,9 +2,8 @@
 
   stylix.fonts = {
     monospace = {
-      # package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
-      package = (pkgs.iosevka.override { set = "SS08"; });
-      name = "Iosevka SS08";
+      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+      name = "FiraCode Nerd Font";
     };
 
     sansSerif = {
@@ -29,7 +28,7 @@
       desktop = 13;
       applications = 13;
       popups = 13;
-      terminal = 15;
+      terminal = 14;
     };
   };
 }

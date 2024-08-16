@@ -13,5 +13,6 @@
     timg
     yazi
     mdcat
+    gh
   ];
 }

@@ -8,7 +8,7 @@
       ###########
       # Options #
       ###########
-      font = "${config.stylix.fonts.sansSerif.name}";
+      font = "${config.stylix.fonts.sansSerif.name} 14";
       adjust-open = "width";
       pages-per-row = 1;
       selection-clipboard = "clipboard";

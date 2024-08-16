@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     # inputs.nixvim.nixosModules.nixvim
     inputs.nixvim.homeManagerModules.nixvim
@@ -26,4 +26,19 @@
 
     luaLoader.enable = true;
   };
+  # TODO: where to put this crap?
+  home.packages = with pkgs; [
+    bash-language-server
+    shfmt
+    shellcheck
+
+    go
+    gopls
+    gomodifytags
+    golangci-lint
+    golangci-lint-langserver
+    gotests
+    gofumpt
+    golines
+  ];
 }

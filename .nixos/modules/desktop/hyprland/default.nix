@@ -12,6 +12,8 @@
     ./waybar.nix
   ];
 
+  home.packages = with pkgs; [ hyprshot hyprpaper ];
+
   stylix.targets.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -39,9 +41,10 @@
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
-      "$term" = "alacritty";
+      "$term" = "foot";
       "$browser" = "chromium";
       "$bar" = "waybar";
+      "$fileManager" = "dolphin";
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

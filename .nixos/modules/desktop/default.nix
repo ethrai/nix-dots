@@ -1,7 +1,16 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ wl-clipboard hyprshot cliphist hyprpaper ];
+  home.packages = with pkgs; [
+    wl-clipboard
+    cliphist
+    playerctl
+    pamixer
+    brightnessctl
+    pavucontrol
+
+    seahorse
+  ];
   imports = [
     ./gtk
     ./hyprland

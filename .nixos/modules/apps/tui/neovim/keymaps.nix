@@ -49,7 +49,16 @@
         "<M-k>" = ":move-2<CR>";
         "<M-j>" = ":move+<CR>";
 
-        "<leader>rp" = ":!remi push<CR>";
+        # Telescope
+
+        #Lspsaga
+        "<leader>a" = "<cmd> Lspsaga code_action()<CR>";
+        "K" = "<cmd> Lspsaga hover_doc()<CR>";
+        "ge" = "<cmd> Lspsaga diagnostic_jump_next()<CR>";
+        "gw" = "<cmd> Lspsaga diagnostic_jump_prev()<CR>";
+        "<F2>" = "<cmd> Lspsaga rename()<CR>";
+        "gp" = "<cmd> Lspsaga peek_definition()<CR>";
+
       };
       visual = lib.mapAttrsToList (key: action: {
         mode = "v";

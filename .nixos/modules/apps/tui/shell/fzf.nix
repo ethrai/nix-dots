@@ -4,5 +4,9 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
     enableBashIntegration = true;
+
+    tmux = {
+      enableShellIntegration = true;
+    };
   };
 }

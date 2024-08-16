@@ -1,4 +1,5 @@
 { config, ... }: {
+  stylix.targets.dunst.enable = false;
   services.dunst = {
     enable = true;
 
@@ -18,8 +19,11 @@
         # The maximum height of a single notification, excluding the frame.
         height = 300;
 
+        # geometry = "300x10-10-50";
+        origin = "bottom-right";
+
         # Offset from the origin
-        offset = "10x50";
+        offset = "10x30";
 
         # Horizontal padding.
         horizontal_padding = 10;
@@ -28,12 +32,12 @@
         frame_color = "#${base01}";
 
         # Set by stylix
-        # font = "${config.stylix.fonts.sansSerif.name}";
+        font = "${config.stylix.fonts.sansSerif.name}";
 
         format = "%s %p\\n%b";
 
         # Math all notifications (low, normal and critical)
-        background = "#${base02}";
+        background = "#${base01}";
         foreground = "#${base07}";
         timeout = 2;
       };

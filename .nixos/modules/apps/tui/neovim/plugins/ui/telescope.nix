@@ -10,12 +10,16 @@
         "<leader>b" = "buffers";
         "<leader>fh" = "help_tags";
         "<leader>fd" = "diagnostics";
-        "<leader>fe" = "resume";
+        "<leader>f<CR>" = "resume";
 
         # FZF like bindings
-        "<C-p>" = "git_files";
+        "<leader>fF" = "git_files";
         "<leader>p" = "oldfiles";
-        "<C-f>" = "live_grep";
+
+        "<leader>fs" = "lsp_document_symbols";
+        "<leader>fS" = "lsp_dynamic_workspace_symbols";
+        "<leader>fr" = "lsp_references";
+
       };
 
       settings.defaults = {
