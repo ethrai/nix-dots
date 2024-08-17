@@ -1,6 +1,11 @@
+
+
+
+
 { config, lib, pkgs, inputs, ... }: {
   wayland.windowManager.hyprland = {
-    plugins = [ inputs.hy3.packages.x86_64-linux.hy3 ];
+    plugins = [ pkgs.hyprlandPlugins.hy3 ];
+
 
     settings = {
       plugin = {

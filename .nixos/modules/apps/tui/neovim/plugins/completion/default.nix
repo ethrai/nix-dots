@@ -1,1 +1,5 @@
-{ imports = [ ./snippets.nix ./lspkind.nix ./supermaven.nix ./cmp.nix ]; }
+
+
+
+
+{ imports = [ ./snippets.nix ./lspkind.nix  ./cmp.nix ]; }

@@ -7,11 +7,9 @@
 
       settings = {
         highlight.enable = true;
-        auto_install = true;
         indent.enable = true;
-        # sync_install = true;
-        # ensure_installed = "all";
-        # ignore_install = [ "foam" ];
+        ignore_install = [ "foam" ];
+        ensure_installed = "all";
 
       };
       folding = true;
