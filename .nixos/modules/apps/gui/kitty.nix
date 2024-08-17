@@ -28,11 +28,6 @@
       # "ctrl+j" = "neighboring_window down";
       # "ctrl+k" = "neighboring_window up";
 
-      "ctrl+j" = "kitten pass_keys.py bottom ctrl+j";
-      "ctrl+k" = "kitten pass_keys.py top    ctrl+k";
-      "ctrl+h" = "kitten pass_keys.py left   ctrl+h";
-      "ctrl+l" = "kitten pass_keys.py right  ctrl+l";
-
       "kitty_mod+t" = "new_tab_with_cwd";
       "kitty_mod+0" = "goto_tab 0";
       "kitty_mod+1" = "goto_tab 1";
@@ -50,8 +45,6 @@
       "alt+2" = "split_window -h";
       # Windows
       "alt+s" = "toggle_layout stack";
-
-      "Alt+d" = "kitten kitty_grab/grab.py";
 
     };
   };

@@ -6,12 +6,11 @@
     settings.main = {
       layer = "top";
       position = "bottom";
-      height = 24;
+      height = 28;
 
       fixed-center = false;
 
       modules-right = [
-        "hyprland/language"
         "backlight"
         "pulseaudio"
         "memory"
@@ -27,8 +26,8 @@
 
     style = with config.lib.stylix.colors; ''
       * {
-        font-family: "${config.stylix.fonts.sansSerif.name} ${config.stylix.fonts.emoji.name}";
-        font-size: 18px;
+        font-family: "${config.stylix.fonts.monospace.name}";
+        font-size: 20px;
         min-height: 0;
         border: none;
         margin: 0;
@@ -41,7 +40,7 @@
 
       window#waybar {
         background: #${base00};
-        color: #${base06};
+        color: #${base05};
         border: none;
         margin: 0;
         padding: 0;
@@ -56,13 +55,14 @@
       #clock,
       #clock-date,
       #custom-notifications
+      #tray
       {
         border: none;
-        padding: 0px 4px;
-        margin: 0px 2px;
+        padding: 0px 2px;
+        margin: 0px 4px;
         background: #${base00};
-        font-size: 18px;
-        color: #${base06};
+        font-size: 20px;
+        color: #${base05};
       }
 
       #pulseaudio.muted,

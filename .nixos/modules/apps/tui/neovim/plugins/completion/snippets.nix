@@ -1,18 +1,20 @@
 { pkgs, ... }: {
-  programs.nixvim.plugins = {
-    friendly-snippets.enable = true;
+  programs.nixvim = {
+    plugins = {
+      friendly-snippets.enable = true;
 
-    luasnip = {
-      enable = true;
-      settings = {
-        enable_autosnippets = true;
-        store_selection_keys = "<Tab>";
+      luasnip = {
+        enable = true;
+        settings = {
+          enable_autosnippets = true;
+          store_selection_keys = "<Tab>";
+        };
+        fromVscode = [{
+          lazyLoad = true;
+          paths = "${pkgs.vimPlugins.friendly-snippets}";
+        }];
       };
-      fromVscode = [{
-        lazyLoad = true;
-        paths = "${pkgs.vimPlugins.friendly-snippets}";
-      }];
-    };
 
+    };
   };
 }

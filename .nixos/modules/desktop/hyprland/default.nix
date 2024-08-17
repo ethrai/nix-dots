@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, ... }:
+{ inputs, pkgs, ... }:
 
 {
 
@@ -14,7 +14,7 @@
 
   home.packages = with pkgs; [ hyprshot hyprpaper ];
 
-  stylix.targets.hyprland.enable = true;
+  stylix.targets.hyprland.enable = false;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -41,7 +41,7 @@
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
-      "$term" = "foot";
+      "$term" = "kitty";
       "$browser" = "chromium";
       "$bar" = "waybar";
       "$fileManager" = "dolphin";
@@ -50,6 +50,7 @@
         "wl-paste --type image --watch cliphist store"
         "$term"
         "$browser"
+        "telegram-desktop"
       ];
       xwayland = { force_zero_scaling = true; };
       general = {
@@ -57,7 +58,7 @@
         gaps_in = 0;
         gaps_out = 0;
         allow_tearing = false;
-        border_size = 0;
+        border_size = 1;
       };
       cursor = { no_warps = true; };
       input = {
@@ -78,11 +79,6 @@
       };
 
     };
-    extraConfig = ''
-      xwayland {
-          force_zero_scaling = true
-      }
-    '';
   };
 
 }

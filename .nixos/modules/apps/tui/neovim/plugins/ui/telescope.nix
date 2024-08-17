@@ -13,12 +13,12 @@
         "<leader>f<CR>" = "resume";
 
         # FZF like bindings
-        "<leader>fF" = "git_files";
+        "<leader>fg" = "git_files";
         "<leader>p" = "oldfiles";
 
         "<leader>fs" = "lsp_document_symbols";
-        "<leader>fS" = "lsp_dynamic_workspace_symbols";
-        "<leader>fr" = "lsp_references";
+        "<leader>fa" = "lsp_dynamic_workspace_symbols";
+        "gr" = "lsp_references";
 
       };
 

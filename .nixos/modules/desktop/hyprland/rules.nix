@@ -21,11 +21,11 @@
       "workspace 3,class:^(org.gnome.Nautilus)$"
       "workspace 3,class:^(org.gnome.FileRoller)$"
       "workspace 8,class:^(org.pulseaudio.pavucontrol)$"
-      "workspace 0,class:^(org.telegram.desktop)$"
+      "workspace 5,class:^(org.telegram.desktop)$"
       "workspace 9,class:^(discord)$"
 
-      "opacity 0.93,class:^(foot)$"
-      "fullscreen,class:^(foot)$"
+      # "opacity 0.90,class:^(kitty)$"
+      "fullscreen,class:^(kitty)$"
     ];
   };
 }

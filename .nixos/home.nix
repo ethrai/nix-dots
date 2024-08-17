@@ -15,62 +15,7 @@
     # };
   };
 
-  home.packages = with pkgs; [
-    dconf
-    evince
-
-    cowsay
-
-    foot
-    docker
-
-    obs-studio
-    qbittorrent
-
-    wlsunset
-    nautilus
-    playerctl
-    pamixer
-    brightnessctl
-    pavucontrol
-    nwg-look
-    seahorse
-    tree
-
-    go
-    gopls
-    gomodifytags
-    golangci-lint
-    golangci-lint-langserver
-    gotests
-    gofumpt
-    golines
-
-    tree
-    git
-    gh
-    httpie
-    curl
-
-    nixfmt-rfc-style
-    nil
-
-    # markdown
-    marksman
-
-    prettierd
-
-    # js
-    nodejs_22
-
-    # rust
-    cargo
-    rustc
-
-    shfmt
-    shellcheck
-    bash-language-server
-  ];
+  home.packages = with pkgs; [ docker ];
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 

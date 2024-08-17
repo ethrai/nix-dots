@@ -52,12 +52,12 @@
         # Telescope
 
         #Lspsaga
-        "<leader>a" = "<cmd> Lspsaga code_action()<CR>";
-        "K" = "<cmd> Lspsaga hover_doc()<CR>";
-        "ge" = "<cmd> Lspsaga diagnostic_jump_next()<CR>";
-        "gw" = "<cmd> Lspsaga diagnostic_jump_prev()<CR>";
-        "<F2>" = "<cmd> Lspsaga rename()<CR>";
-        "gp" = "<cmd> Lspsaga peek_definition()<CR>";
+        "<leader>a" = "<cmd> Lspsaga code_action<CR>";
+        "K" = "<cmd> Lspsaga hover_doc<CR>";
+        "ge" = "<cmd> Lspsaga diagnostic_jump_next<CR>";
+        "gw" = "<cmd> Lspsaga diagnostic_jump_prev<CR>";
+        "gp" = "<cmd> Lspsaga peek_definition<CR>";
+        "<F2>" = "<cmd> Lspsaga rename<CR>";
 
       };
       visual = lib.mapAttrsToList (key: action: {

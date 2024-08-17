@@ -1,8 +1,17 @@
 { config, ... }: {
-
+  stylix.targets.waybar.enable = false;
   programs.waybar = {
     settings.main = {
       modules-left = [ "hyprland/workspaces" ];
+
+      modules-right = [ "hyprland/language" ];
+
+      "hyprland/language" = {
+        "format" = "{}";
+        "format-en" = " US";
+        "format-ru" = " RU";
+        "on-click" = "hyprctl switchxkblayout evision-usb-device next";
+      };
 
       "hyprland/workspaces" = {
         persistent-workspaces = {
@@ -24,8 +33,10 @@
     };
 
     style = with config.lib.stylix.colors; ''
+
+
       #workspaces {
-        font-size: 18px;
+        font-size: 20px;
         border: none;
         padding: 0;
         margin: 0;
@@ -41,14 +52,15 @@
       }
 
       #workspaces button.active {
-        color: #${base06};
-        border: 1px solid #${base06};
+        color: #${base05};
+        border: 1px solid #${base05};
         background: #${base00};
       }
       #workspaces button.urgent {
-        background: #${base08};
+        color: #${base05};
+        border: 2px solid #${base08};
+        background: #${base00};
       }
-      /* Empty */
     '';
   };
 }

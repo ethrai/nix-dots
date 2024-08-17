@@ -59,7 +59,7 @@
 
             "col.text.active" = "rgb(${base05})"; # default: 0xff32b4ff
             "col.text.urgent" = "rgb(${base05})"; # default: 0xff32b4ff
-            "col.text.inactive" = "rgb(${base06})"; # default: 0xff32b4ff
+            "col.text.inactive" = "rgb(${base05})"; # default: 0xff32b4ff
 
             # urgent tab bar segment color
           };

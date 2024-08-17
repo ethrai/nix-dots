@@ -7,15 +7,15 @@
         keymaps = {
           silent = true;
           # managed by lspsaga
-          # diagnostic = {
-          #   # Navigate in diagnostics
-          #   "gw" = "goto_prev";
-          #   "ge" = "goto_next";
-          # };
+          diagnostic = {
+            # Navigate in diagnostics
+            # "gw" = "goto_prev";
+            # "ge" = "goto_next";
+          };
 
           lspBuf = {
             gd = "definition";
-            gr = "references";
+            # gr = "references";
             gt = "type_definition";
             gi = "implementation";
             # lspsaga

@@ -4,10 +4,10 @@
   xdg = {
     enable = true;
     portal = {
+      enable = true;
       extraPortals =
         [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
-      enable = true;
-      config = { preferred = { default = [ "gtk" "hyprland" ]; }; };
+      config = { preferred = { default = [ "hyprland" ]; }; };
     };
   };
 }

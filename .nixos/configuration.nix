@@ -27,6 +27,7 @@
   security.polkit.enable = true;
   security.pam.services.hyprlock = { };
   security.rtkit.enable = true;
+  programs.hyprland.enable = true;
 
   services.geoclue2.enable = true;
 
@@ -87,59 +88,59 @@
   stylix.homeManagerIntegration.autoImport = true;
 
   stylix.base16Scheme = {
-    base00 = "181818"; # #181818
-    base01 = "282828"; # #282828
-    base02 = "383838"; # #383838
-    base03 = "585858"; # #585858
-    base04 = "b8b8b8"; # #b8b8b8
-    base05 = "d8d8d8"; # #d8d8d8
-    base06 = "e8e8e8"; # #e8e8e8
-    base07 = "f8f8f8"; # #f8f8f8
-    base08 = "ab4642"; # #ab4642
-    base09 = "dc9656"; # #dc9656
-    base0A = "f7ca88"; # #f7ca88
-    base0B = "a1b56c"; # #a1b56c
-    base0C = "86c1b9"; # #86c1b9
-    base0D = "7cafc2"; # #7cafc2
-    base0E = "ba8baf"; # #ba8baf
-    base0F = "a16946"; # #a16946
+    base00 = "1e1e2e"; # base #1e1e2e
+    base01 = "181825"; # mantle #181825
+    base02 = "313244"; # surface0 #313244
+    base03 = "45475a"; # surface1 #45475a
+    base04 = "585b70"; # surface2 #585b70
+    base05 = "cdd6f4"; # text #cdd6f4
+    base06 = "cba6f7"; # mauve #cba6f7
+    base07 = "b4befe"; # lavender #b4befe
+    base08 = "f38ba8"; # red #f38ba8
+    base09 = "fab387"; # peach #fab387
+    base0A = "f9e2af"; # yellow #f9e2af
+    base0B = "a6e3a1"; # green #a6e3a1
+    base0C = "94e2d5"; # teal #94e2d5
+    base0D = "89b4fa"; # blue #89b4fa
+    base0E = "f5e0dc"; # rosewater #f5e0dc
+    base0F = "f2cdcd"; # flamingo #f2cdcd
   };
 
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Ice";
   stylix.cursor.size = 20;
 
-  stylix.fonts = {
-    monospace = {
-      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
-      name = "FiraCode Nerd Font";
-    };
-
-    sansSerif = {
-      package = pkgs.noto-fonts;
-      name = "Noto Sans";
-    };
-
-    serif = config.stylix.fonts.sansSerif;
-
-    emoji = {
-      package = pkgs.noto-fonts-emoji;
-      name = "Noto Color Emoji";
-    };
-
-    # sansSerif = config.stylix.fonts.monospace;
-    #
-    # serif = config.stylix.fonts.sansSerif;
-    #
-    # emoji = config.stylix.fonts.monospace;
-
-    sizes = {
-      desktop = 13;
-      applications = 13;
-      popups = 13;
-      terminal = 14;
-    };
-  };
+  # stylix.fonts = {
+  #   monospace = {
+  #     package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
+  #     name = "FiraCode Nerd Font";
+  #   };
+  #
+  #   sansSerif = {
+  #     package = pkgs.noto-fonts;
+  #     name = "Noto Sans";
+  #   };
+  #
+  #   serif = config.stylix.fonts.sansSerif;
+  #
+  #   emoji = {
+  #     package = pkgs.noto-fonts-emoji;
+  #     name = "Noto Color Emoji";
+  #   };
+  #
+  #   # sansSerif = config.stylix.fonts.monospace;
+  #   #
+  #   # serif = config.stylix.fonts.sansSerif;
+  #   #
+  #   # emoji = config.stylix.fonts.monospace;
+  #
+  #   sizes = {
+  #     desktop = 13;
+  #     applications = 13;
+  #     popups = 13;
+  #     terminal = 14;
+  #   };
+  # };
 
   fonts.packages = with pkgs; [
     noto-fonts-cjk
@@ -172,7 +173,14 @@
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [ helix git tmux docker ];
+  environment.systemPackages = with pkgs; [
+    helix
+    git
+    tmux
+    docker
+    seatd
+    libseat
+  ];
 
   # Do not touch
   system.stateVersion = "24.05";

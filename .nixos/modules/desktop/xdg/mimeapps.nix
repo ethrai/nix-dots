@@ -11,7 +11,7 @@
 
       "x-scheme-handler/http" = "chromium.desktop";
       "x-scheme-handler/https" = "chromium.desktop";
-      "application/pdf" = "org.gnome.Evince.desktop";
+      "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
       "application/zip" = "org.gnome.FileRoller.desktop";
 
     };
