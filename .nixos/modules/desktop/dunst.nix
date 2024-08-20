@@ -1,7 +1,7 @@
 { config, lib, ... }: {
   stylix.targets.dunst.enable = true;
   services.dunst = {
-    enable = true;
+    enable = false;
 
     # For settings: man dunst.5
     # also available here: https://github.com/dunst-project/dunst/blob/master/docs/dunst.5.pod

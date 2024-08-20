@@ -17,10 +17,10 @@
     ./waybar
     ./xdg
     ./cliphist.nix
-    ./dunst.nix
     ./fonts.nix
     ./gammastep.nix
     ./gnome-keyring.nix
+    ./mako.nix
     ./rofi.nix
   ];
 }

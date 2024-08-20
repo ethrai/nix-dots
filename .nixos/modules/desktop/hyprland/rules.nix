@@ -1,6 +1,4 @@
-{ inputs, pkgs, config, lib, ... }:
-
-{
+{ ... }: {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
       "float,class:blueman-manager"
@@ -22,7 +20,9 @@
       "workspace 3,class:^(org.gnome.FileRoller)$"
       "workspace 8,class:^(org.pulseaudio.pavucontrol)$"
       "workspace 5,class:^(org.telegram.desktop)$"
-      "workspace 9,class:^(discord)$"
+      "workspace 6,class:^(discord)$"
+      "workspace 7,title:^(Spotify Free)$"
+      "workspace 11,class:^(obsidian)$"
 
       "opacity 0.87,class:^(kitty)$"
     ];
