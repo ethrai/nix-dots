@@ -1,9 +1,28 @@
-pkgs: {
+{ pkgs, ... }: {
 
-  backlight = {
-    device = "intel_backlight";
-    format = " {percent}%";
-    scroll-step = 10.0;
+  "hyprland/language" = {
+    "format" = "{}";
+    "format-en" = "US";
+    "format-ru" = "RU";
+    "on-click" = "hyprctl switchxkblayout evision-usb-device next";
+  };
+
+  "hyprland/workspaces" = {
+    persistent-workspaces = {
+      "1" = [ ];
+      "2" = [ ];
+      "3" = [ ];
+      "4" = [ ];
+      "5" = [ ];
+      "6" = [ ];
+      "7" = [ ];
+      "8" = [ ];
+      "9" = [ ];
+      "10" = [ ];
+    };
+
+    enable-bar-scroll = true;
+    disable-scroll-wraparound = true;
   };
 
   pulseaudio = {
@@ -11,39 +30,29 @@ pkgs: {
     format-bluetooth = "{volume}%{icon}";
     format-muted = "󰖁muted";
     format-icons = {
-      headphone = "   ";
+      headphone = " ";
       hands-free = "󰋎 ";
-      headset = " 󰋎 ";
-      default = " 󰕾 ";
+      headset = "󰋎 ";
+      default = "󰕾 ";
     };
 
-    # Interaction
-    scroll-step = 5;
+    # Interaction scroll-step = 5;
     on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
     on-click-right = "pavucontrol";
   };
 
   memory = {
     interval = 1;
-    format = " {:02}%";
+    format = "{:02}%";
   };
 
   cpu = {
     interval = 1;
     tooltip = false;
     # format = " {usage:02}%";
-    format = " {usage:02}%";
+    format = "{usage:02}%";
     # format = "  {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15} {usage:02}%";
     format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-  };
-
-  network = {
-    tooltip = false;
-
-    format = "{ifname}";
-    format-wifi = " {essid}";
-    format-ethernet = "󰈀 {ipaddr}";
-    format-disconnected = "";
   };
 
   battery = {
@@ -58,18 +67,16 @@ pkgs: {
 
   clock = {
     interval = 5;
-    format = " {:%H:%M}";
+    format = "{:%H:%M}";
   };
 
   "clock#date" = {
     interval = 5;
-    format = " {:%d/%m/%Y}";
+    format = "{:%d/%m/%Y}";
   };
 
-  "custom/notifications" = import ./notifications.nix pkgs;
-
   tray = {
-    icon-size = 20;
+    icon-size = 26;
     spacing = 2;
   };
 }

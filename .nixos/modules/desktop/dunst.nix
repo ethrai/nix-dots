@@ -1,5 +1,5 @@
-{ config, ... }: {
-  stylix.targets.dunst.enable = false;
+{ config, lib, ... }: {
+  stylix.targets.dunst.enable = true;
   services.dunst = {
     enable = true;
 
@@ -32,7 +32,7 @@
         frame_color = "#${base01}";
 
         # Set by stylix
-        font = "${config.stylix.fonts.sansSerif.name}";
+        font = lib.mkForce "${config.stylix.fonts.sansSerif.name}";
 
         format = "%s %p\\n%b";
 

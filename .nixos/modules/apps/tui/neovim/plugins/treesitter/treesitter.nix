@@ -1,29 +1,60 @@
-{
-  programs.nixvim.plugins = {
-    treesitter = {
+{ pkgs, ... }: {
+  programs.nixvim = {
+    plugins.treesitter = {
       enable = true;
-
-      nixvimInjections = true;
-
       settings = {
-        highlight.enable = true;
         indent.enable = true;
-        ignore_install = [ "foam" ];
-        ensure_installed = "all";
-
+        highlight.enable = true;
       };
-      folding = true;
+      folding = false;
+      nixvimInjections = true;
+      grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
     };
 
-    treesitter-refactor = {
-      enable = true;
-      highlightDefinitions = {
+    plugins.treesitter-textobjects = {
+      enable = false;
+      package = pkgs.vimPlugins.nvim-treesitter-textobjects;
+      select = {
         enable = true;
-        # Set to false if you have an `updatetime` of ~100.
-        clearOnCursorMove = false;
+        lookahead = true;
+        keymaps = {
+          "aa" = "@parameter.outer";
+          "ia" = "@parameter.inner";
+          "af" = "@function.outer";
+          "if" = "@function.inner";
+          "ac" = "@class.outer";
+          "ic" = "@class.inner";
+          "ii" = "@conditional.inner";
+          "ai" = "@conditional.outer";
+          "il" = "@loop.inner";
+          "al" = "@loop.outer";
+          "at" = "@comment.outer";
+        };
+      };
+      move = {
+        enable = true;
+        gotoNextStart = {
+          "]m" = "@function.outer";
+          "]]" = "@class.outer";
+        };
+        gotoNextEnd = {
+          "]M" = "@function.outer";
+          "][" = "@class.outer";
+        };
+        gotoPreviousStart = {
+          "[m" = "@function.outer";
+          "[[" = "@class.outer";
+        };
+        gotoPreviousEnd = {
+          "[M" = "@function.outer";
+          "[]" = "@class.outer";
+        };
+      };
+      swap = {
+        enable = true;
+        swapNext = { "<leader>a" = "@parameters.inner"; };
+        swapPrevious = { "<leader>A" = "@parameter.outer"; };
       };
     };
-
-    hmts.enable = true;
   };
 }

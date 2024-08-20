@@ -1,20 +1,19 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, ... }:
 
 {
 
   imports = [
+    ./appearance.nix
     ./binds.nix
     ./rules.nix
     ./hy3.nix
     ./hyprpaper.nix
     ./hyprlock.nix
     ./hypridle.nix
-    ./waybar.nix
   ];
 
   home.packages = with pkgs; [ hyprshot hyprpaper ];
 
-  stylix.targets.hyprland.enable = false;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -26,24 +25,17 @@
       variables = [ "--all" ];
     };
 
-    settings = {
+    settings = with config.lib.stylix.colors; {
       debug = {
         disable_logs = false;
         enable_stdout_logs = true;
-      };
-      decoration = {
-        rounding = 0;
-        blur = {
-          enabled = false;
-          xray = true;
-        };
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
       "$term" = "kitty";
       "$browser" = "chromium";
       "$bar" = "waybar";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "nautilus";
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -52,13 +44,6 @@
         "telegram-desktop"
       ];
       xwayland = { force_zero_scaling = true; };
-      general = {
-        layout = "hy3";
-        gaps_in = 0;
-        gaps_out = 0;
-        allow_tearing = false;
-        border_size = 1;
-      };
       cursor = { no_warps = true; };
       input = {
         kb_layout = "us,ru";
@@ -71,7 +56,6 @@
         touchpad = { natural_scroll = false; };
       };
       gestures = { workspace_swipe = true; };
-      animations = { enabled = false; };
       device = {
         name = "tpps/2-elan-trackpoint";
         sensitivity = -0.5;

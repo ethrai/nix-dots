@@ -1,4 +1,1 @@
-{
-  imports =
-    [ ./treesitter.nix ./treesitter-textobjects.nix ./treesitter-context.nix ];
-}
+{ imports = [ ./treesitter.nix ./treesitter-context.nix ]; }

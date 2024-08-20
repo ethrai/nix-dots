@@ -24,8 +24,7 @@
       "workspace 5,class:^(org.telegram.desktop)$"
       "workspace 9,class:^(discord)$"
 
-      # "opacity 0.90,class:^(kitty)$"
-      "fullscreen,class:^(kitty)$"
+      "opacity 0.87,class:^(kitty)$"
     ];
   };
 }

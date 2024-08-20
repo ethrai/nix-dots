@@ -1,4 +1,5 @@
 { pkgs, config, ... }: {
+  stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -6,20 +7,20 @@
     settings.main = {
       layer = "top";
       position = "bottom";
-      height = 28;
+      height = 24;
 
       fixed-center = false;
 
+      modules-left = [ "hyprland/workspaces" ];
+
       modules-right = [
-        "backlight"
+        "hyprland/language"
         "pulseaudio"
         "memory"
         "cpu"
-        "network"
         "battery"
         "clock"
         "clock#date"
-        "custom/notifications"
         "tray"
       ];
     } // (import ./modules pkgs);
@@ -27,7 +28,7 @@
     style = with config.lib.stylix.colors; ''
       * {
         font-family: "${config.stylix.fonts.monospace.name}";
-        font-size: 20px;
+        font-size: 22px;
         min-height: 0;
         border: none;
         margin: 0;
@@ -54,7 +55,8 @@
       #battery,
       #clock,
       #clock-date,
-      #custom-notifications
+      #custom-notifications,
+      #language,
       #tray
       {
         border: none;
@@ -63,6 +65,8 @@
         background: #${base00};
         font-size: 20px;
         color: #${base05};
+        border: 1px solid #${base07};
+        border-radius: 4px;
       }
 
       #pulseaudio.muted,
@@ -70,6 +74,34 @@
       {
           background: #${base00};
           color: #${base08};
+      }
+
+      #workspaces {
+        font-size: 20px;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #workspaces button {
+        padding: 0 2px;
+        border: 1px solid #${base03};
+        border-radius: 4px;
+        margin: 0 2px 0 0;
+        background: #${base00};
+        color: #${base03};
+        min-width: 20px;
+      }
+
+      #workspaces button.active {
+        color: #${base05};
+        border: 1px solid #${base05};
+        background: #${base00};
+      }
+      #workspaces button.urgent {
+        color: #${base05};
+        border: 2px solid #${base08};
+        background: #${base00};
       }
     '';
   };

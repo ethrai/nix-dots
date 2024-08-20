@@ -23,7 +23,6 @@
 
         # close by Ctrl+x
         "<C-x>" = ":close<CR>";
-
         # save by Space+s or Ctrl+s
         "<leader>s" = ":w<CR>";
         "<C-s>" = ":w<CR>";
@@ -55,24 +54,24 @@
         "<leader>a" = "<cmd> Lspsaga code_action<CR>";
         "K" = "<cmd> Lspsaga hover_doc<CR>";
         "ge" = "<cmd> Lspsaga diagnostic_jump_next<CR>";
-        "gw" = "<cmd> Lspsaga diagnostic_jump_prev<CR>";
-        "gp" = "<cmd> Lspsaga peek_definition<CR>";
-        "<F2>" = "<cmd> Lspsaga rename<CR>";
+          "gp" = "<cmd> Lspsaga peek_definition<CR>";
+          "gw" = "<cmd> Lspsaga diagnostic_jump_prev<CR>";
+          "<F2>" = "<cmd> Lspsaga rename<CR>";
 
-      };
+        };
       visual = lib.mapAttrsToList (key: action: {
         mode = "v";
         inherit action key;
       }) {
-        # better indenting
-        ">" = ">gv";
-        "<" = "<gv";
-        # "<TAB>" = ">gv";
-        # "<S-TAB>" = "<gv";
+          # better indenting
+          ">" = ">gv";
+          "<" = "<gv";
+          # "<TAB>" = ">gv";
+          # "<S-TAB>" = "<gv";
 
-        # move selected line / block of text in visual mode
-        "K" = ":m '<-2<CR>gv=gv";
-        "J" = ":m '>+1<CR>gv=gv";
+          # move selected line / block of text in visual mode
+          "J" = ":m '>+1<CR>gv=gv";
+          "K" = ":m '<-2<CR>gv=gv";
       };
     in config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; }
     (normal ++ visual);

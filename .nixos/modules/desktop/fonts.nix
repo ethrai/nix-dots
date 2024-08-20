@@ -5,32 +5,26 @@
 
   stylix.fonts = {
     monospace = {
-      package = (pkgs.iosevka.override { set = [ "SS08" ]; });
-      name = "Iosevka SS08";
+      package = pkgs.iosevka;
+      name = "Iosevka";
     };
 
-    # sansSerif = {
-    #   package = pkgs.noto-fonts;
-    #   name = "Noto Sans";
-    # };
-    #
-    # serif = config.stylix.fonts.sansSerif;
-    #
-    # emoji = {
-    #   package = pkgs.noto-fonts-emoji;
-    #   name = "Noto Color Emoji";
-    # };
+    sansSerif = {
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
+    };
 
-    sansSerif = config.stylix.fonts.monospace;
+    serif = config.stylix.fonts.sansSerif;
 
-    serif = config.stylix.fonts.monospace;
-
-    emoji = config.stylix.fonts.monospace;
+    emoji = {
+      package = pkgs.noto-fonts-emoji;
+      name = "Noto Color Emoji";
+    };
 
     sizes = {
-      desktop = 15;
-      applications = 15;
-      popups = 15;
+      desktop = 14;
+      applications = 14;
+      popups = 14;
       terminal = 16;
     };
   };

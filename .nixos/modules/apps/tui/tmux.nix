@@ -20,19 +20,18 @@
         extraConfig = ''
 
 
-          set -g @catppuccin_window_left_separator " █"
-          set -g @catppuccin_window_right_separator "█ "
+          set -g @catppuccin_window_left_separator " "
+          set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"
           set -g @catppuccin_window_number_position "right"
           set -g @catppuccin_window_default_fill "number"
           set -g @catppuccin_window_default_text "#W"
           set -g @catppuccin_window_current_fill "number"
           set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
-          set -g @catppuccin_status_modules_right "directory user host"
+          set -g @catppuccin_status_modules_right " "
           set -g @catppuccin_status_modules_left "session"
-          set -g @catppuccin_status_left_separator  " █"
-          set -g @catppuccin_status_middle_separator " █"
-          set -g @catppuccin_status_right_separator "█ "
+          set -g @catppuccin_status_right_separator " "
+          set -g @catppuccin_status_left_separator  " "
           set -g @catppuccin_status_right_separator_inverse "no"
           set -g @catppuccin_status_fill "icon"
           set -g @catppuccin_status_connect_separator "no"
@@ -92,7 +91,7 @@
 
 
       # Pane resizing
-      bind -n M-j resize-pane -Z # zoom
+      bind -n M-z resize-pane -Z # zoom
       bind -r H resize-pane -L 2
       bind -r J resize-pane -D 2
       bind -r K resize-pane -U 2

@@ -1,8 +1,6 @@
 { ... }: {
   wayland.windowManager.hyprland.settings = {
 
-    "$fileManager" = "dolphin";
-
     bind = [
 
       "$mod, E, exec, $fileManager"
