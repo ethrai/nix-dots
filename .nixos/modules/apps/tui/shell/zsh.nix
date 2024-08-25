@@ -26,6 +26,7 @@
       d = "docker";
       g = "git";
       v = "nvim";
+      t = "tmux";
     };
 
     oh-my-zsh = {

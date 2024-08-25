@@ -15,6 +15,17 @@
     yazi
     mdcat
     gh
+    docker
+
+    go
+    gopls
+    gomodifytags
+    golangci-lint
+    golangci-lint-langserver
+    gotests
+    impl
+    gofumpt
+    golines
 
     inputs.nixvim.packages.${system}.default
   ];

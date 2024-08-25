@@ -5,21 +5,35 @@
   stylix.targets.tmux.enable = false;
   programs.tmux = {
     enable = true;
-    package = pkgs.tmux;
     historyLimit = 100000;
+    terminal = "screen-256color";
+    sensibleOnTop = true;
     keyMode = "vi";
     escapeTime = 0;
     baseIndex = 1;
     clock24 = true;
     plugins = with pkgs; [
-      { plugin = tmuxPlugins.sensible; }
+      { plugin = tmuxPlugins.resurrect; }
       { plugin = tmuxPlugins.vim-tmux-navigator; }
       { plugin = tmuxPlugins.jump; }
       {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '10'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.tmux-fzf;
+        extraConfig = ''
+          TMUX_FZF_OPTIONS="-p -w 90% -h 50% -m"
+          TMUX_FZF_LAUNCH_KEY="a"
+          TMUX_FZF_ORDER="session|window|pane"
+        '';
+      }
+      {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
-
-
           set -g @catppuccin_window_left_separator " "
           set -g @catppuccin_window_right_separator " "
           set -g @catppuccin_window_middle_separator " █"
@@ -36,43 +50,14 @@
           set -g @catppuccin_status_fill "icon"
           set -g @catppuccin_status_connect_separator "no"
           # set -g @catppuccin_date_time_text "%H:%M"
-
-        '';
-      }
-      {
-        plugin = tmuxPlugins.tmux-fzf;
-        extraConfig = ''
-          TMUX_FZF_OPTIONS="-p -w 90% -h 50% -m"
-          TMUX_FZF_LAUNCH_KEY="a"
-          TMUX_FZF_ORDER="session|window|pane"
-
-        '';
-      }
-      {
-        plugin = tmuxPlugins.resurrect;
-        extraConfig = ''
-          set -g @resurrect-strategy-vim 'session'
-          set -g @resurrect-strategy-nvim 'session'
-
-
-          set -g @resurrect-capture-pane-contents 'on'
-
-          # https://discourse.nixos.org/t/how-to-get-tmux-resurrect-to-restore-neovim-sessions/30819/5
-          resurrect_dir="${config.home.homeDirectory}/.tmux/resurrect"
-          set -g @resurrect-dir $resurrect_dir
-          set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
-        '';
-      }
-      {
-        plugin = tmuxPlugins.continuum;
-        extraConfig = ''
-          set -g @continuum-save-interval '30'
         '';
       }
     ];
     extraConfig = ''
       set -g default-terminal "$TERM"
       set -ag terminal-overrides ",$TERM:Tc"
+      set -g status-bg default
+      set -g status-style bg=default
 
       set -g mouse on
 
@@ -85,10 +70,6 @@
       bind M-a send-prefix
 
       bind-key x kill-pane
-
-
-      # Session
-
 
       # Pane resizing
       bind -n M-z resize-pane -Z # zoom

@@ -39,9 +39,12 @@
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "$term"
         "$browser"
         "telegram-desktop"
+        "$fileManager"
+        "spotify"
+        "obsidian"
+        "$term"
       ];
       xwayland = { force_zero_scaling = true; };
       cursor = { no_warps = true; };

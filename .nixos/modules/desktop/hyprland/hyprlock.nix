@@ -4,9 +4,9 @@
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 50;
+        grace = 300;
         hide_cursor = true;
-        no_fade_in = false;
+        no_fade_in = true;
       };
 
       background = [{

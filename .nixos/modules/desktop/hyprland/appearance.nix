@@ -16,8 +16,8 @@
         gaps_out = 5;
         allow_tearing = false;
         border_size = 2;
-        "col.active_border" = "rgb(${base06}) rgb(${base0D}) 45deg";
-        "col.inactive_border" = "0x00000000";
+        "col.active_border" = "rgba(${base06}aa) rgba(${base0D}aa) 45deg";
+        "col.inactive_border" = "rgba(${base01}aa)";
       };
       animations = {
         enabled = true;

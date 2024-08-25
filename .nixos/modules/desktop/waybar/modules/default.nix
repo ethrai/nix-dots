@@ -76,7 +76,7 @@
   };
 
   tray = {
-    icon-size = 26;
+    icon-size = 22;
     spacing = 2;
   };
 }

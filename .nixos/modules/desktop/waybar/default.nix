@@ -28,7 +28,7 @@
     style = with config.lib.stylix.colors; ''
       * {
         font-family: "${config.stylix.fonts.monospace.name}";
-        font-size: 22px;
+        font-size: 20px;
         min-height: 0;
         border: none;
         margin: 0;
@@ -40,10 +40,11 @@
       }
 
       window#waybar {
-        background: #${base00};
+        background: rgba(30, 30, 46, 0.9447);
         color: #${base05};
         border: none;
-        margin: 0;
+        margin: 0 5px;
+        border-radius: 4px;
         padding: 0;
       }
 
@@ -62,7 +63,7 @@
         border: none;
         padding: 0px 2px;
         margin: 0px 4px;
-        background: #${base00};
+        background: rgba(30, 30, 46, 0.9447);
         font-size: 20px;
         color: #${base05};
         border: 1px solid #${base07};
@@ -72,7 +73,7 @@
       #pulseaudio.muted,
       #custom-notifications.off
       {
-          background: #${base00};
+          background: rgba(30, 30, 46, 0.9447);
           color: #${base08};
       }
 
@@ -88,7 +89,7 @@
         border: 1px solid #${base03};
         border-radius: 4px;
         margin: 0 2px 0 0;
-        background: #${base00};
+        background: rgba(30, 30, 46, 0.9447);
         color: #${base03};
         min-width: 20px;
       }
@@ -96,12 +97,12 @@
       #workspaces button.active {
         color: #${base05};
         border: 1px solid #${base05};
-        background: #${base00};
+        background: rgba(30, 30, 46, 0.9447);
       }
       #workspaces button.urgent {
         color: #${base05};
         border: 2px solid #${base08};
-        background: #${base00};
+        background: rgba(30, 30, 46, 0.9447);
       }
     '';
   };
