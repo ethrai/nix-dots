@@ -1,6 +1,13 @@
 { pkgs, ... }: {
-  imports =
-    [ ./ohmyposh.nix ./zoxide.nix ./fzf.nix ./zsh.nix ./eza.nix ./fd.nix ];
+  imports = [
+    ./ohmyposh.nix
+    ./zoxide.nix
+    ./fzf.nix
+    ./khal.nix
+    ./zsh.nix
+    ./eza.nix
+    ./fd.nix
+  ];
 
   home.sessionVariables = {
     TMUX_FZF_OPTIONS = "-p -w 90% -h 55% -m";

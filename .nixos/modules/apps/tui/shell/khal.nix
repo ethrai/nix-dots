@@ -1,0 +1,1 @@
+{ programs.khal.enable = true; }

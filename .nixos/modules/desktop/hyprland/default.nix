@@ -33,7 +33,7 @@
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
       "$term" = "kitty";
-      "$browser" = "chromium";
+      "$browser" = "firefox";
       "$bar" = "waybar";
       "$fileManager" = "nautilus";
       exec-once = [
@@ -50,7 +50,7 @@
       cursor = { no_warps = true; };
       input = {
         kb_layout = "us,ru";
-        kb_options = "caps:swapescape,grp:alt_space_toggle";
+        kb_options = "caps:swapescape,grp:alt_space_toggle,caps:ctrl_modifier";
         repeat_rate = 45;
         repeat_delay = 175;
         follow_mouse = 1;

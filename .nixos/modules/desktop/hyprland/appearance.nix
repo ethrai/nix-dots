@@ -4,20 +4,24 @@
   wayland.windowManager.hyprland = {
     settings = with config.lib.stylix.colors; {
       decoration = {
-        rounding = 4;
+        rounding = 0;
         blur = {
-          enabled = true;
+          enabled = false;
+          size = 18;
           xray = true;
+          popups = true;
+          passes = 5;
+          new_optimizations = true;
         };
       };
       general = {
         layout = "hy3";
-        gaps_in = 2;
-        gaps_out = 5;
+        gaps_in = 0;
+        gaps_out = 0;
         allow_tearing = false;
-        border_size = 2;
-        "col.active_border" = "rgba(${base06}aa) rgba(${base0D}aa) 45deg";
-        "col.inactive_border" = "rgba(${base01}aa)";
+        border_size = 0;
+        "col.active_border" = "rgb(${base06}) rgb(${base0D}) 45deg";
+        "col.inactive_border" = "rgb(${base01}";
       };
       animations = {
         enabled = true;
@@ -27,23 +31,18 @@
           "easeOutCirc, 0, 0.55, 0.45, 1"
           "easeOutCubic, 0.33, 1, 0.68, 1"
           "easeinoutsine, 0.37, 0, 0.63, 1"
+          "easeOutBack,0.34,1.56,0.64,1"
+          "easeInBack,0.36,0,0.66,-0.56"
+          "easeInCubic,0.32,0,0.67,0"
+          "easeInOutCubic,0.65,0,0.35,1"
         ];
 
         animation = [
-          # Windows
-          "windowsIn, 1, 3, easeOutCubic, popin 30%" # window open
-          "windowsOut, 1, 3, fluent_decel, popin 70%" # window close.
-          "windowsMove, 1, 2, easeinoutsine, slide" # everything in between, moving, dragging, resizing.
-
-          # Fade
-          "fadeIn, 1, 3, easeOutCubic" # fade in (open) -> layers and windows
-          "fadeOut, 1, 2, easeOutCubic" # fade out (close) -> layers and windows
-          "fadeSwitch, 0, 1, easeOutCirc" # fade on changing activewindow and its opacity
-          "fadeShadow, 1, 10, easeOutCirc" # fade on changing activewindow for shadows
-          "fadeDim, 1, 4, fluent_decel" # the easing of the dimming of inactive windows
-          "border, 1, 2.7, easeOutCirc" # for animating the border's color switch speed
-          "borderangle, 1, 30, fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
-          "workspaces, 1, 4, easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
+          "windowsIn,1,3,easeOutBack,popin"
+          "windowsOut,1,3,easeInBack,popin"
+          "fadeIn,0"
+          "fadeOut,1,3,easeInCubic"
+          "workspaces,1,2,easeInOutCubic,slide"
         ];
       };
     };

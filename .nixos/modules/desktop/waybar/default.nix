@@ -40,7 +40,7 @@
       }
 
       window#waybar {
-        background: rgba(30, 30, 46, 0.9447);
+        background: #${base01};
         color: #${base05};
         border: none;
         margin: 0 5px;
@@ -63,17 +63,17 @@
         border: none;
         padding: 0px 2px;
         margin: 0px 4px;
-        background: rgba(30, 30, 46, 0.9447);
+        background: #${base01};
         font-size: 20px;
         color: #${base05};
-        border: 1px solid #${base07};
-        border-radius: 4px;
+      /* border-radius: 4px; */
+        /* margin: 0 5px; */
       }
 
       #pulseaudio.muted,
       #custom-notifications.off
       {
-          background: rgba(30, 30, 46, 0.9447);
+          background: #${base01};
           color: #${base08};
       }
 
@@ -87,9 +87,9 @@
       #workspaces button {
         padding: 0 2px;
         border: 1px solid #${base03};
-        border-radius: 4px;
+        border-radius: 0px;
         margin: 0 2px 0 0;
-        background: rgba(30, 30, 46, 0.9447);
+        background: #${base01};
         color: #${base03};
         min-width: 20px;
       }
@@ -97,12 +97,12 @@
       #workspaces button.active {
         color: #${base05};
         border: 1px solid #${base05};
-        background: rgba(30, 30, 46, 0.9447);
+        background: #${base01};
       }
       #workspaces button.urgent {
         color: #${base05};
         border: 2px solid #${base08};
-        background: rgba(30, 30, 46, 0.9447);
+        background: #${base01};
       }
     '';
   };

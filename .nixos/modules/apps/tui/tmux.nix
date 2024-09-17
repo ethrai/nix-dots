@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 
 {
-
   stylix.targets.tmux.enable = false;
   programs.tmux = {
     enable = true;
@@ -14,42 +13,13 @@
     clock24 = true;
     plugins = with pkgs; [
       { plugin = tmuxPlugins.resurrect; }
+      { plugin = tmuxPlugins.continuum; }
       { plugin = tmuxPlugins.vim-tmux-navigator; }
       { plugin = tmuxPlugins.jump; }
       {
-        plugin = tmuxPlugins.continuum;
+        plugin = tmuxPlugins.session-wizard;
         extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '10'
-        '';
-      }
-      {
-        plugin = tmuxPlugins.tmux-fzf;
-        extraConfig = ''
-          TMUX_FZF_OPTIONS="-p -w 90% -h 50% -m"
-          TMUX_FZF_LAUNCH_KEY="a"
-          TMUX_FZF_ORDER="session|window|pane"
-        '';
-      }
-      {
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_window_left_separator " "
-          set -g @catppuccin_window_right_separator " "
-          set -g @catppuccin_window_middle_separator " █"
-          set -g @catppuccin_window_number_position "right"
-          set -g @catppuccin_window_default_fill "number"
-          set -g @catppuccin_window_default_text "#W"
-          set -g @catppuccin_window_current_fill "number"
-          set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
-          set -g @catppuccin_status_modules_right " "
-          set -g @catppuccin_status_modules_left "session"
-          set -g @catppuccin_status_right_separator " "
-          set -g @catppuccin_status_left_separator  " "
-          set -g @catppuccin_status_right_separator_inverse "no"
-          set -g @catppuccin_status_fill "icon"
-          set -g @catppuccin_status_connect_separator "no"
-          # set -g @catppuccin_date_time_text "%H:%M"
+          set -g @session-wizard 't'
         '';
       }
     ];

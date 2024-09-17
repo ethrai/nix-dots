@@ -1,10 +1,10 @@
-{
+{ config, ... }: {
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 300;
+        grace = 0;
         hide_cursor = true;
         no_fade_in = true;
       };
@@ -60,7 +60,7 @@
           text = ''cmd[update:1000] echo "$TIME"'';
           color = "rgba(200, 200, 200, 1.0)";
           font_size = 55;
-          font_family = "Fira Semibold";
+          font_family = "${config.stylix.fonts.monospace.name}";
           position = "-100, 70";
           halign = "right";
           valign = "bottom";
@@ -72,7 +72,7 @@
           text = "$USER";
           color = "rgba(200, 200, 200, 1.0)";
           font_size = "20";
-          font_family = "Fira Semibold";
+          font_family = "${config.stylix.fonts.monospace.name}";
           position = "-100, 160";
           halign = "right";
           valign = "bottom";

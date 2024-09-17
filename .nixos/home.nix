@@ -20,6 +20,7 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.sessionVariables = {
+    EDITOR = "nvim";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFONM_THEME = "qt5ct";
     QT_QPA_PLATFORM = "wayland";

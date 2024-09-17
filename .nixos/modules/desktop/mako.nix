@@ -3,14 +3,14 @@
   services = {
     mako = with config.lib.stylix.colors; {
       enable = true;
-      font = "${config.stylix.fonts.monospace.name} 15";
-      padding = "15";
+      font = "${config.stylix.fonts.monospace.name} 16";
+      padding = "12";
       defaultTimeout = 3000;
       borderSize = 2;
-      borderRadius = 4;
-      backgroundColor = "#${base00}DD";
-      borderColor = "#${base07}DD";
-      progressColor = "over #${base02}DD";
+      borderRadius = 0;
+      backgroundColor = "#${base00}";
+      borderColor = "#${base06}";
+      progressColor = "over #${base02}";
       margin = "10,10,30,10";
       textColor = "#${base05}";
       layer = "top";
@@ -20,8 +20,8 @@
       extraConfig = ''
         text-alignment=center
         [urgency=high]
-        default-timeout=10000000
-        border-color=#${base08}DD
+        default-timeout=200
+        border-color=#${base08}
       '';
     };
   };

@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   stylix.enable = true;
-  stylix.targets.chromium.enable = false; # No such option in home-manager
 
   stylix.image = /home/sergio/.dots/wallpaper.png;
   stylix.polarity = "dark";

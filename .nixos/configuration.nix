@@ -19,12 +19,30 @@
     };
   };
 
-  security.polkit.enable = true;
-  security.pam.services.hyprlock = { };
-  security.rtkit.enable = true;
-  programs.hyprland.enable = true;
+  security = {
+    polkit.enable = true;
+    pam.services.hyprlock = { };
+    rtkit.enable = true;
+  };
 
-  services.geoclue2.enable = true;
+  services = {
+    geoclue2.enable = true;
+
+    logind.extraConfig = "";
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+    openssh.enable = true;
+
+    libinput.enable = true;
+    thermald.enable = true;
+    tlp = { enable = true; };
+    gnome.gnome-keyring.enable = true;
+    gnome.evolution-data-server.enable = true;
+  };
 
   networking.hostName = "caladan"; # Define your hostname.
   networking.networkmanager.enable =
@@ -44,66 +62,55 @@
     useXkbConfig = true;
   };
 
-  # Sound
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
+  hardware = {
+    enableAllFirmware = true;
+    bluetooth.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        libvdpau-va-gl
+        vpl-gpu-rt
+      ];
+    };
   };
-  services.openssh.enable = true;
-  hardware.enableAllFirmware = true;
-
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      libvdpau-va-gl
-      vpl-gpu-rt
-    ];
-  };
-
-  hardware.bluetooth.enable = true;
 
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
     WLR_NO_HARDWARE_CURSORS = "1";
+    EDITOR = "nvim";
   };
 
-  services.libinput.enable = true;
-  services.thermald.enable = true;
-  services.tlp = { enable = true; };
-  services.gnome.gnome-keyring.enable = true;
-
-  stylix.enable = true;
-  stylix.targets.chromium.enable = false; # No such option in home-manager
-
-  stylix.image = /home/sergio/.dots/wallpaper.png;
-  stylix.polarity = "dark";
-  stylix.autoEnable = true;
-  stylix.homeManagerIntegration.autoImport = true;
-
-  stylix.base16Scheme = {
-    base00 = "1e1e2e"; # base #1e1e2e
-    base01 = "181825"; # mantle #181825
-    base02 = "313244"; # surface0 #313244
-    base03 = "45475a"; # surface1 #45475a
-    base04 = "585b70"; # surface2 #585b70
-    base05 = "cdd6f4"; # text #cdd6f4
-    base06 = "cba6f7"; # mauve #cba6f7
-    base07 = "b4befe"; # lavender #b4befe
-    base08 = "f38ba8"; # red #f38ba8
-    base09 = "fab387"; # peach #fab387
-    base0A = "f9e2af"; # yellow #f9e2af
-    base0B = "a6e3a1"; # green #a6e3a1
-    base0C = "94e2d5"; # teal #94e2d5
-    base0D = "89b4fa"; # blue #89b4fa
-    base0E = "f5e0dc"; # rosewater #f5e0dc
-    base0F = "f2cdcd"; # flamingo #f2cdcd
+  stylix = {
+    enable = true;
+    image = /home/sergio/.dots/wallpaper.png;
+    polarity = "dark";
+    autoEnable = true;
+    homeManagerIntegration.autoImport = true;
+    base16Scheme = {
+      base00 = "181818"; # #181818
+      base01 = "282828"; # #282828
+      base02 = "383838"; # #383838
+      base03 = "585858"; # #585858
+      base04 = "b8b8b8"; # #b8b8b8
+      base05 = "d8d8d8"; # #d8d8d8
+      base06 = "e8e8e8"; # #e8e8e8
+      base07 = "f8f8f8"; # #f8f8f8
+      base08 = "ab4642"; # #ab4642
+      base09 = "dc9656"; # #dc9656
+      base0A = "f7ca88"; # #f7ca88
+      base0B = "a1b56c"; # #a1b56c
+      base0C = "86c1b9"; # #86c1b9
+      base0D = "7cafc2"; # #7cafc2
+      base0E = "ba8baf"; # #ba8baf
+      base0F = "a16946"; # #a16946
+    };
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
   };
-
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
-  stylix.cursor.size = 20;
 
   fonts.packages = with pkgs; [
     noto-fonts-cjk
@@ -114,13 +121,22 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
+    corefonts
+    vistafonts
   ];
 
-  programs.zsh.enable = true;
-  programs.steam.enable = true;
+  programs = {
+    hyprland.enable = true;
+    zsh.enable = true;
+    dconf.enable = true;
+  };
   # environment.pathsToLink = [ "/share/zsh" ];
-  environment.pathsToLink =
-    [ "/share/xdg-desktop-portal" "/share/applications" "/share/zsh" ];
+
+  environment = {
+    pathsToLink =
+      [ "/share/xdg-desktop-portal" "/share/applications" "/share/zsh" ];
+    systemPackages = with pkgs; [ helix git tmux docker seatd libseat ];
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sergio = {
@@ -135,15 +151,6 @@
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
-
-  environment.systemPackages = with pkgs; [
-    helix
-    git
-    tmux
-    docker
-    seatd
-    libseat
-  ];
 
   # Do not touch
   system.stateVersion = "24.05";

@@ -13,33 +13,37 @@
           group_inset = 10; # default: 10
 
           # if a tab group will automatically be created for the first window spawned in a workspace
-          tab_first_window = false;
+          tab_first_window = true;
 
           # tab group settings
           tabs = with config.lib.stylix.colors; {
             # height of the tab bar
-            height = 2; # default: 15
+            height = 15; # default: 15
 
             # padding between the tab bar and its focused node
-            padding = 6; # default: 5
+            padding = 0; # default: 5
 
-            render_text = false; # default: true
+            rounding = 0;
+
+            render_text = true; # default: true
 
             # height of the window title
-            text_height = 10; # default: 8
+            text_height = 13; # default: 8
+
+            text_font = "${config.stylix.fonts.monospace.name}";
+            text_center = true;
 
             # left padding of the window title
-            text_padding = 0; # default: 3
+            text_padding = 3; # default: 3
 
-            "col.active" = "rgb(${base06})"; # default: 0xff32b4ff
+            "col.active" = "rgb(${base01})"; # default: 0xff32b4ff
             "col.urgent" = "rgb(${base08})"; # default: 0xff32b4ff
-            "col.inactive" = "rgb(${base01})"; # default: 0xff32b4ff
+            "col.inactive" = "rgb(${base02})"; # default: 0xff32b4ff
 
-            # "col.text.active" = "rgb(${base05})"; # default: 0xff32b4ff
-            # "col.text.urgent" = "rgb(${base05})"; # default: 0xff32b4ff
-            # "col.text.inactive" = "rgb(${base05})"; # default: 0xff32b4ff
+            "col.text.active" = "rgb(${base05})"; # default: 0xff32b4ff
+            "col.text.urgent" = "rgb(${base01})"; # default: 0xff32b4ff
+            "col.text.inactive" = "rgb(${base05})"; # default: 0xff32b4ff
 
-            # urgent tab bar segment color
           };
 
           # autotiling settings

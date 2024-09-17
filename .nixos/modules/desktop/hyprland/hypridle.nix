@@ -13,7 +13,7 @@
       listener = [
 
         {
-          timeout = 150; # 2.5min.
+          timeout = 300; # 5min.
           on-timeout =
             "brightnessctl -s set 5%"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
           on-resume = "brightnessctl -r"; # monitor backlight restore.
@@ -21,7 +21,7 @@
 
         # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
         {
-          timeout = 150; # 2.5min.
+          timeout = 300; # 5min.
           on-timeout =
             "brightnessctl -sd tpacpi::kbd_backlight set 0"; # turn off keyboard backlight.
           on-resume =
@@ -29,13 +29,13 @@
         }
 
         {
-          timeout = 300; # 5min
+          timeout = 360; # 6min
           on-timeout =
             "loginctl lock-session"; # lock screen when timeout has passed
         }
 
         {
-          timeout = 330; # 5.5min
+          timeout = 390; # 6.5min
           on-timeout =
             "hyprctl dispatch dpms off"; # screen off when timeout has passed
           on-resume =

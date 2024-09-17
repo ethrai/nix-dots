@@ -117,6 +117,13 @@
       ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
       ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
 
+      # Screenshot a window
+      "$mod, PRINT, exec, hyprshot -m window"
+      # Screenshot a monitor
+      ", PRINT, exec, hyprshot -m output"
+      # Screenshot a region
+      "$mod SHIFT, PRINT, exec, hyprshot -m region"
+
       # Window resizing                           X  Y
       "$mod CTRL, left,  resizeactive, -60 0"
       "$mod CTRL, right, resizeactive,  60 0"

@@ -4,14 +4,19 @@
     [ (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) ];
 
   stylix.fonts = {
+    # monospace = {
+    #   package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS08"; };
+    #   name = "Iosevka Term SS08";
+    # };
+
     monospace = {
-      package = pkgs.iosevka;
-      name = "Iosevka";
+      package = pkgs.ibm-plex;
+      name = "IBM Plex Mono";
     };
 
     sansSerif = {
-      package = pkgs.noto-fonts;
-      name = "Noto Sans";
+      package = pkgs.ibm-plex;
+      name = "IBM Plex Sans";
     };
 
     serif = config.stylix.fonts.sansSerif;

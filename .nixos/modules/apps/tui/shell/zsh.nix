@@ -11,6 +11,7 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+    localVariables = { EDITOR = "nvim"; };
     autosuggestion.enable = true;
     defaultKeymap = "emacs";
     dotDir = ".config/zsh";

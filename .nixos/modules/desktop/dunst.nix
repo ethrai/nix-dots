@@ -1,5 +1,6 @@
 { config, lib, ... }: {
   stylix.targets.dunst.enable = true;
+
   services.dunst = {
     enable = false;
 
