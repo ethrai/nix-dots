@@ -23,16 +23,14 @@
       setSocketVariable = true;
     };
   };
-
   security = {
     polkit.enable = true;
     pam.services.hyprlock = { };
-    fstrim.enable = lib.mkDefault true;
     rtkit.enable = true;
   };
 
   services = {
-    throttled.enable = lib.mkDefault true;
+    fstrim.enable = lib.mkDefault true;
     geoclue2.enable = true;
 
     # Autdio stuff
@@ -64,7 +62,8 @@
   console = {
     earlySetup = true;
     packages = [ pkgs.terminus_font ];
-    font = "ter-124b";
+    font =
+      lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
     useXkbConfig = true;
   };
 
@@ -76,6 +75,7 @@
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         libvdpau-va-gl
+        intel-vaapi-driver
         vpl-gpu-rt
       ];
     };

@@ -7,7 +7,6 @@
     fstrim.enable = true;
 
     openssh.enable = true;
-    thermald.enable = true;
     tlp = { enable = true; };
 
     geoclue2.enable = true;
