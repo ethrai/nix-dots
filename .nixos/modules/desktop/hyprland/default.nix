@@ -26,7 +26,7 @@
     settings = {
       debug = {
         disable_logs = false;
-        enable_stdout_logs = true;
+        enable_stdout_logs = false;
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";

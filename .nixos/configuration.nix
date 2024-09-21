@@ -3,16 +3,29 @@
   boot = {
     initrd.kernelModules = [ "i915" ];
     kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
       # Force use of the thinkpad_acpi driver for backlight control.
       # This allows the backlight save/load systemd service to work.
       "acpi_backlight=native"
     ];
 
+    plymouth = { enable = true; };
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+      timeout = 0;
     };
     kernelPackages = pkgs.linuxPackages_latest;
+
+    # Fancy
   };
 
   # use docker without Root access (Rootless docker)
@@ -32,6 +45,7 @@
   services = {
     fstrim.enable = lib.mkDefault true;
     geoclue2.enable = true;
+    getty.autologinUser = "sergio";
 
     # Autdio stuff
     pipewire = {
@@ -62,10 +76,22 @@
   console = {
     earlySetup = true;
     packages = [ pkgs.terminus_font ];
-    font =
-      lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-v32n.psf.gz";
-    useXkbConfig = true;
+    font = lib.mkDefault "ter-132n";
+    keyMap = "us";
   };
+
+  # fucker does creepy shit when Hyprland ran from it
+  # services.kmscon = {
+  #   enable = true;
+  #   useXkbConfig = true;
+  #   fonts = [{
+  #     name = "${config.stylix.fonts.monospace.name}";
+  #     package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS14"; };
+  #   }];
+  #   extraConfig = ''
+  #     font-size=17
+  #   '';
+  # };
 
   hardware = {
     enableAllFirmware = true;
@@ -115,6 +141,29 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 24;
+    };
+  };
+
+  stylix.fonts = {
+    monospace = {
+      package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS14"; };
+      name = "Iosevka Term SS14";
+    };
+
+    sansSerif = config.stylix.fonts.monospace;
+
+    serif = config.stylix.fonts.monospace;
+
+    emoji = {
+      package = pkgs.noto-fonts-emoji;
+      name = "Noto Color Emoji";
+    };
+
+    sizes = {
+      desktop = 14;
+      applications = 14;
+      popups = 14;
+      terminal = 17;
     };
   };
 
