@@ -17,22 +17,20 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # package =
-    #   inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     systemd = {
       enable = true;
       variables = [ "--all" ];
     };
 
-    settings = with config.lib.stylix.colors; {
+    settings = {
       debug = {
         disable_logs = false;
         enable_stdout_logs = true;
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
-      "$term" = "kitty";
+      "$term" = "foot";
       "$browser" = "firefox";
       "$bar" = "waybar";
       "$fileManager" = "nautilus";

@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     jq
+
     ripgrep
     fd
     curl
@@ -18,7 +19,7 @@
     docker
     zip
     unzip
-
+    catppuccinifier-cli
     # kuber
     kubectl
     kubernetes
@@ -58,6 +59,9 @@
     ginkgo
     gotestsum
     govulncheck
+
+    spring-boot-cli
+    jdk21
 
     inputs.nixvim.packages.${system}.default
   ];

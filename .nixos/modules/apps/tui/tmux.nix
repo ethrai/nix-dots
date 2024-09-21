@@ -1,6 +1,4 @@
-{ pkgs, config, ... }:
-
-{
+{ pkgs, config, ... }: {
   stylix.targets.tmux.enable = false;
   programs.tmux = {
     enable = true;
@@ -12,8 +10,25 @@
     baseIndex = 1;
     clock24 = true;
     plugins = with pkgs; [
-      { plugin = tmuxPlugins.resurrect; }
-      { plugin = tmuxPlugins.continuum; }
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-strategy-vim 'session'
+          set -g @resurrect-strategy-nvim 'session'
+
+          set -g @resurrect-save 'S'
+          set -g @resurrect-restore 'R'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15'
+        '';
+      }
       { plugin = tmuxPlugins.vim-tmux-navigator; }
       { plugin = tmuxPlugins.jump; }
       {
@@ -22,20 +37,43 @@
           set -g @session-wizard 't'
         '';
       }
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor 'frappe'
+          set -g @catppuccin_window_right_separator "█ "
+          set -g @catppuccin_window_number_position "right"
+          set -g @catppuccin_window_middle_separator " | "
+
+          set -g @catppuccin_window_default_fill "none"
+
+          set -g @catppuccin_window_current_fill "all"
+
+          set -g @catppuccin_status_modules_left "session"
+          set -g @catppuccin_status_modules_right "application user host"
+          set -g @catppuccin_status_left_separator "█"
+          set -g @catppuccin_status_right_separator "█ "
+        '';
+      }
     ];
-    extraConfig = ''
-      set -g default-terminal "$TERM"
-      set -ag terminal-overrides ",$TERM:Tc"
+    extraConfig = with config.lib.stylix.colors; ''
+      # Status line settings
+      set-option -g status-position top
+
       set -g status-bg default
       set -g status-style bg=default
+      setw -g window-status-current-style fg=red
+      set -g status-left-length 30 # could be any number
+
+
+      set -g default-terminal "$TERM"
+      set -ag terminal-overrides ",$TERM:Tc"
 
       set -g mouse on
 
-      set-option -g status-position top
 
       unbind C-b
-      # set -g prefix C-a
-      # bind C-a send-prefix
+      # bind C-a send-prefix set -g prefix C-a
       set -g prefix M-a
       bind M-a send-prefix
 

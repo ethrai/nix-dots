@@ -1,8 +1,13 @@
-{ pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ];
-
+{ pkgs, lib, config, ... }: {
+  imports = [ ./hardware-configuration.nix ./acpi_call.nix ];
   boot = {
     initrd.kernelModules = [ "i915" ];
+    kernelParams = [
+      # Force use of the thinkpad_acpi driver for backlight control.
+      # This allows the backlight save/load systemd service to work.
+      "acpi_backlight=native"
+    ];
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -22,23 +27,24 @@
   security = {
     polkit.enable = true;
     pam.services.hyprlock = { };
+    fstrim.enable = lib.mkDefault true;
     rtkit.enable = true;
   };
 
   services = {
+    throttled.enable = lib.mkDefault true;
     geoclue2.enable = true;
 
-    logind.extraConfig = "";
-
+    # Autdio stuff
     pipewire = {
       enable = true;
       alsa.enable = true;
       pulse.enable = true;
     };
+
     openssh.enable = true;
 
     libinput.enable = true;
-    thermald.enable = true;
     tlp = { enable = true; };
     gnome.gnome-keyring.enable = true;
     gnome.evolution-data-server.enable = true;
@@ -88,26 +94,26 @@
     autoEnable = true;
     homeManagerIntegration.autoImport = true;
     base16Scheme = {
-      base00 = "181818"; # #181818
-      base01 = "282828"; # #282828
-      base02 = "383838"; # #383838
-      base03 = "585858"; # #585858
-      base04 = "b8b8b8"; # #b8b8b8
-      base05 = "d8d8d8"; # #d8d8d8
-      base06 = "e8e8e8"; # #e8e8e8
-      base07 = "f8f8f8"; # #f8f8f8
-      base08 = "ab4642"; # #ab4642
-      base09 = "dc9656"; # #dc9656
-      base0A = "f7ca88"; # #f7ca88
-      base0B = "a1b56c"; # #a1b56c
-      base0C = "86c1b9"; # #86c1b9
-      base0D = "7cafc2"; # #7cafc2
-      base0E = "ba8baf"; # #ba8baf
-      base0F = "a16946"; # #a16946
+      base00 = "1A1B26"; # #1A1B26
+      base01 = "16161E"; # #16161E
+      base02 = "2F3549"; # #2F3549
+      base03 = "444B6A"; # #444B6A
+      base04 = "787C99"; # #787C99
+      base05 = "A9B1D6"; # #A9B1D6
+      base06 = "CBCCD1"; # #CBCCD1
+      base07 = "D5D6DB"; # #D5D6DB
+      base08 = "F7768E"; # #F7768E
+      base09 = "A9B1D6"; # #A9B1D6
+      base0A = "0DB9D7"; # #0DB9D7
+      base0B = "9ECE6A"; # #9ECE6A
+      base0C = "B4F9F8"; # #B4F9F8
+      base0D = "2AC3DE"; # #2AC3DE
+      base0E = "BB9AF7"; # #BB9AF7
+      base0F = "C0CAF5"; # #C0CAF5
     };
     cursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
   };
@@ -128,6 +134,7 @@
   programs = {
     hyprland.enable = true;
     zsh.enable = true;
+    fish.enable = true;
     dconf.enable = true;
   };
   # environment.pathsToLink = [ "/share/zsh" ];

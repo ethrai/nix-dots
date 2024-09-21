@@ -27,6 +27,8 @@
     QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;
 
+    GOROOT = "${pkgs.go}/share/go";
+
   };
 
   gtk.enable = true;

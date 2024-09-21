@@ -4,22 +4,14 @@
     [ (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; }) ];
 
   stylix.fonts = {
-    # monospace = {
-    #   package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS08"; };
-    #   name = "Iosevka Term SS08";
-    # };
-
     monospace = {
-      package = pkgs.ibm-plex;
-      name = "IBM Plex Mono";
+      package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS14"; };
+      name = "Iosevka Term SS14";
     };
 
-    sansSerif = {
-      package = pkgs.ibm-plex;
-      name = "IBM Plex Sans";
-    };
+    sansSerif = config.stylix.fonts.monospace;
 
-    serif = config.stylix.fonts.sansSerif;
+    serif = config.stylix.fonts.monospace;
 
     emoji = {
       package = pkgs.noto-fonts-emoji;
@@ -30,7 +22,7 @@
       desktop = 14;
       applications = 14;
       popups = 14;
-      terminal = 16;
+      terminal = 17;
     };
   };
 }

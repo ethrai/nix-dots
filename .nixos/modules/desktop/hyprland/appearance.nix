@@ -6,11 +6,11 @@
       decoration = {
         rounding = 0;
         blur = {
-          enabled = false;
-          size = 18;
+          enabled = true;
+          size = 8;
           xray = true;
           popups = true;
-          passes = 5;
+          passes = 1;
           new_optimizations = true;
         };
       };

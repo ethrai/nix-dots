@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  programs.java.enable = true;
   imports = [
     ./shell
     ./direnv.nix
@@ -9,5 +10,6 @@
     ./tmux.nix
     ./yazi.nix
     ./ytdlp.nix
+    ./zellij.nix
   ];
 }

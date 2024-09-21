@@ -1,32 +1,22 @@
 { config, ... }: {
-  stylix.targets.kitty.enable = true;
+  stylix.targets.kitty.enable = false;
   programs.kitty = {
+    themeFile = "tokyo_night_night";
     enable = true;
-    # theme = "Catppuccin-Mocha";
-    settings = with config.lib.stylix.colors; {
-      cursor = "#${base05}";
-      cursor_text_color = "#${base00}";
+    settings = {
+      cursor_shape = "block";
       cursor_shape_unfocused = "hollow";
       cursor_blink_intevall = 0;
-
-      cursor_beam_thickness = 3;
       enable_audio_bell = "no";
+      background_opacity = "0.85";
     };
-    keybindings = {
-      kitty_mod = "ctrl+shift";
-      "kitty_mod+enter" = "launch --cwd=current";
-
-      "f1" = "next_layout";
-      "kitty_mod+a" = "set_tab_title";
-      "alt+`" = "select_tab";
-
-      "kitty_mod+l" = "next_tab";
-      "kitty_mod+h" = "previous_tab";
-
+    shellIntegration.enableZshIntegration = true;
+    shellIntegration.mode = "no-cursor";
+    font = {
+      name = "${config.stylix.fonts.monospace.name}";
+      size = 16;
     };
-
     extraConfig = ''
-
       # Seti-UI + Custom
       symbol_map U+E5FA-U+E6AC Symbols Nerd Font
 
@@ -74,8 +64,6 @@
       # nonicons contains icons in the range: U+F101-U+F27D
       # U+F167 is HTML logo, but YouTube logo in Symbols Nerd Font
       symbol_map U+F102,U+F116-U+F118,U+F12F,U+F13E,U+F1AF,U+F1BF,U+F1CF,U+F1FF,U+F20F,U+F21F-U+F220,U+F22E-U+F22F,U+F23F,U+F24F,U+F25F nonicons
-
-
     '';
   };
 }

@@ -22,7 +22,7 @@
     historySubstringSearch = { enable = true; };
 
     shellAliases = {
-      l = "ls -lah";
+      l = "eza -l";
       cd = "z";
       d = "docker";
       g = "git";
@@ -32,8 +32,7 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "robbyrussell";
-      plugins = [ "git" "history" "colored-man-pages" ];
+      plugins = [ "git" "history" ];
     };
   };
 }

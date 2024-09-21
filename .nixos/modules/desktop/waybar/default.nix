@@ -21,7 +21,6 @@
         "battery"
         "clock"
         "clock#date"
-        "tray"
       ];
     } // (import ./modules pkgs);
 
@@ -41,7 +40,7 @@
 
       window#waybar {
         background: #${base01};
-        color: #${base05};
+        color: #${base07};
         border: none;
         margin: 0 5px;
         border-radius: 4px;
@@ -65,9 +64,7 @@
         margin: 0px 4px;
         background: #${base01};
         font-size: 20px;
-        color: #${base05};
-      /* border-radius: 4px; */
-        /* margin: 0 5px; */
+        color: #${base07};
       }
 
       #pulseaudio.muted,
@@ -86,21 +83,21 @@
 
       #workspaces button {
         padding: 0 2px;
-        border: 1px solid #${base03};
+        border: 1px solid #${base04};
         border-radius: 0px;
         margin: 0 2px 0 0;
         background: #${base01};
-        color: #${base03};
+        color: #${base04};
         min-width: 20px;
       }
 
       #workspaces button.active {
-        color: #${base05};
-        border: 1px solid #${base05};
+        color: #${base07};
+        border: 1px solid #${base07};
         background: #${base01};
       }
       #workspaces button.urgent {
-        color: #${base05};
+        color: #${base08};
         border: 2px solid #${base08};
         background: #${base01};
       }

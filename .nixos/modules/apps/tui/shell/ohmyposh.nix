@@ -1,7 +1,8 @@
 {
   programs.oh-my-posh = {
-    enable = true;
+    enable = false;
     enableZshIntegration = true;
-    useTheme = "pure";
+    enableFishIntegration = true;
+    useTheme = "catppuccin_frappe";
   };
 }

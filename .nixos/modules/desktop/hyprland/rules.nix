@@ -1,4 +1,4 @@
-{ ... }: {
+{
   wayland.windowManager.hyprland.settings = {
     layerrule = [ ];
     windowrulev2 = [
@@ -16,6 +16,12 @@
       "float,title:^(File Upload)(.*)$"
       "float,title:^(KCalc)(.*)$"
 
+      "fullscreen,class:^(kitty)$"
+      "opacity 0.75,class:^(kitty)$"
+
+      "fullscreen,class:^(foot)$"
+      "opacity 0.75,class:^(foot)$"
+
       "workspace 2,class:^(firefox)$"
       "workspace 3,class:^(org.gnome.Nautilus)$"
       "workspace 3,class:^(org.gnome.FileRoller)$"
@@ -27,7 +33,6 @@
       "workspace 8,class:^(libreoffice-writer)$"
       "workspace 9,class:^(org.telegram.desktop)$"
       "workspace 11,class:^(obsidian)$"
-
     ];
 
   };

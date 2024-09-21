@@ -18,7 +18,7 @@
           # tab group settings
           tabs = with config.lib.stylix.colors; {
             # height of the tab bar
-            height = 15; # default: 15
+            height = 16; # default: 15
 
             # padding between the tab bar and its focused node
             padding = 0; # default: 5
@@ -28,21 +28,21 @@
             render_text = true; # default: true
 
             # height of the window title
-            text_height = 13; # default: 8
+            text_height = 12; # default: 8
 
             text_font = "${config.stylix.fonts.monospace.name}";
             text_center = true;
 
             # left padding of the window title
-            text_padding = 3; # default: 3
+            text_padding = 2; # default: 3
 
-            "col.active" = "rgb(${base01})"; # default: 0xff32b4ff
-            "col.urgent" = "rgb(${base08})"; # default: 0xff32b4ff
-            "col.inactive" = "rgb(${base02})"; # default: 0xff32b4ff
+            "col.active" = "rgb(${base01})";
+            "col.urgent" = "rgb(${base08})";
+            "col.inactive" = "rgb(${base00})"; # frappe base
 
-            "col.text.active" = "rgb(${base05})"; # default: 0xff32b4ff
-            "col.text.urgent" = "rgb(${base01})"; # default: 0xff32b4ff
-            "col.text.inactive" = "rgb(${base05})"; # default: 0xff32b4ff
+            "col.text.active" = "rgb(${base07})"; # default: 0xff32b4ff
+            "col.text.urgent" = "rgb(${base02})"; # default: 0xff32b4ff
+            "col.text.inactive" = "rgb(${base06})"; # default: 0xff32b4ff
 
           };
 

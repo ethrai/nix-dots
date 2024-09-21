@@ -1,9 +1,10 @@
 { pkgs, ... }: {
   imports = [
-    ./ohmyposh.nix
+    ./starship.nix
     ./zoxide.nix
     ./fzf.nix
     ./khal.nix
+    ./fish.nix
     ./zsh.nix
     ./eza.nix
     ./fd.nix
