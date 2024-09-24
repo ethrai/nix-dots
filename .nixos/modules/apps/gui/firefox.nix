@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   stylix.targets.firefox.enable = true;
   stylix.targets.firefox.profileNames = [ "default" ];
   programs.firefox = {
@@ -28,8 +28,8 @@
           "browser.bookmarks.addedImportButton" = true;
 
           # Don't ask for download dir
-          "browser.download.useDownloadDir" = false;
 
+          "browser.download.useDownloadDir" = false;
           # Disable crappy home activity stream page
           "browser.newtabpage.activity-stream.feeds.topsites" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
@@ -101,55 +101,16 @@
           "privacy.trackingprotection.enabled" = true;
           "dom.security.https_only_mode" = true;
         };
-        search = {
-          force = true;
-          default = "google";
-          order = [ "Google" "DuckDuckGo" "Nix Packages" ];
-          engines = {
-            "Nix Packages" = {
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }];
-              icon =
-                "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@np" ];
-            };
-            "NixOS Wiki" = {
-              urls = [{
-                template = "https://nixos.wiki/index.php?search={searchTerms}";
-              }];
-              iconUpdateURL = "https://nixos.wiki/favicon.png";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
-              definedAliases = [ "@nw" ];
-            };
-            "Searx" = {
-              urls = [{
-                template = "https://searx.aicampground.com/?q={searchTerms}";
-              }];
-              iconUpdateURL = "https://nixos.wiki/favicon.png";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
-              definedAliases = [ "@searx" ];
-            };
-            "Bing".metaData.hidden = true;
-            "Google".metaData.alias =
-              "@g"; # builtin engines only support specifying one additional alias
-          };
-        };
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          sponsorblock
+          youtube-shorts-block
+
           ublock-origin
+
           bitwarden
+          tridactyl
+
           darkreader
-          vimium
         ];
       };
     };

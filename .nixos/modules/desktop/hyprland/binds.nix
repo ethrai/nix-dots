@@ -10,8 +10,6 @@
       "$mod, R, exec, rofi -show drun"
       "$mod, W, exec, rofi -show window"
       "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-      "$mod, F2, exec, rofi -modi emoji -show emoji"
-      "$mod, P, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
 
       "$mod, Q, exec, $term"
       "$mod, C, killactive"

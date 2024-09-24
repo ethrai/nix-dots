@@ -22,5 +22,6 @@
     ./gnome-keyring.nix
     ./mako.nix
     ./rofi.nix
+    ./xremap.nix
   ];
 }

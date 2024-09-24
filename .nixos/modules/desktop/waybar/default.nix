@@ -84,7 +84,7 @@
       #workspaces button {
         padding: 0 2px;
         border: 1px solid #${base04};
-        border-radius: 0px;
+        border-radius: 5px;
         margin: 0 2px 0 0;
         background: #${base01};
         color: #${base04};

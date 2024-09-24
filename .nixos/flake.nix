@@ -7,7 +7,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
     nixvim.url = "github:ethrai/nixvim";
-    nur.url = "github:nix-community/NUR";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nur.url = "github:nix-community/NUR";
+    xremap-flake.url = "github:xremap/nix-flake";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -21,19 +27,6 @@
         caladan = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            {
-              nixpkgs.overlays = [ inputs.nur.overlay ];
-            }
-            # ({ pkgs, ... }:
-            #   let
-            #     nur-no-pkgs = import inputs.nur {
-            #       nurpkgs = import nixpkgs { system = "x86_64-linux"; };
-            #     };
-            #   in {
-            #     imports = [ nur-no-pkgs.repos.iopq.modules.xraya ];
-            #     services.xraya.enable = true;
-            #   })
-            inputs.nur.nixosModules.nur
             inputs.stylix.nixosModules.stylix
             # inputs.nixvim.nixosModules.nixvim
             ./configuration.nix

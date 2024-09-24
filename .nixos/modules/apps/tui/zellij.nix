@@ -8,6 +8,7 @@
       pane_frames = false;
       theme = lib.mkDefault "tokyo-night";
       default_layout = "compact";
+      ui = { pane_frames = { rounded_corners = true; }; };
     };
   };
 }

@@ -25,7 +25,7 @@
 
     settings = {
       debug = {
-        disable_logs = false;
+        disable_logs = true;
         enable_stdout_logs = false;
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
@@ -37,18 +37,19 @@
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "$term"
         "$browser"
         "telegram-desktop"
         "$fileManager"
         "spotify"
         "obsidian"
-        "$term"
       ];
       xwayland = { force_zero_scaling = true; };
       cursor = { no_warps = true; };
       input = {
         kb_layout = "us,ru";
-        kb_options = "caps:swapescape,grp:alt_space_toggle,caps:ctrl_modifier";
+        # kb_options = "caps:swapescape,grp:alt_space_toggle,caps:ctrl_modifier";
+        kb_options = "grp:alt_space_toggle";
         repeat_rate = 45;
         repeat_delay = 175;
         follow_mouse = 1;

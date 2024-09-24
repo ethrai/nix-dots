@@ -1,27 +1,36 @@
-{ pkgs, lib, config, ... }: {
-  imports = [ ./hardware-configuration.nix ./acpi_call.nix ];
+{ pkgs, lib, config, inputs, ... }: {
+  imports = [
+    ./hardware-configuration.nix
+    ./acpi_call.nix
+    inputs.xremap-flake.nixosModules.default
+  ];
   boot = {
-    initrd.kernelModules = [ "i915" ];
+    initrd = {
+      kernelModules = [ "i915" ];
+      verbose = false;
+    };
+    consoleLogLevel = 0;
+    plymouth = { enable = true; };
     kernelParams = [
       "quiet"
       "splash"
       "boot.shell_on_fail"
+      "i915.fastboot=1"
+      "loglevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
-      "udev.log_priority=3"
-      # Force use of the thinkpad_acpi driver for backlight control.
+      "udev.log_priority=3" # Force use of the thinkpad_acpi driver for backlight control.
       # This allows the backlight save/load systemd service to work.
       "acpi_backlight=native"
     ];
 
-    plymouth = { enable = true; };
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        editor = false;
+      };
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = lib.mkDefault 0;
     };
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -45,7 +54,24 @@
   services = {
     fstrim.enable = lib.mkDefault true;
     geoclue2.enable = true;
-    getty.autologinUser = "sergio";
+    greetd = let
+      tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+      session = "${pkgs.hyprland}/bin/Hyprland";
+      username = "sergio";
+    in {
+      enable = true;
+      settings = {
+        initial_session = {
+          command = "${session}";
+          user = "${username}";
+        };
+        default_session = {
+          command =
+            "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${session}";
+          user = "greeter";
+        };
+      };
+    };
 
     # Autdio stuff
     pipewire = {
@@ -60,6 +86,22 @@
     tlp = { enable = true; };
     gnome.gnome-keyring.enable = true;
     gnome.evolution-data-server.enable = true;
+
+    xremap = {
+      enable = true;
+      withWlroots = true;
+      userName = "sergio";
+      config = {
+        modmap = [{
+          name = "power caps";
+          remap.CapsLock = {
+            held = "leftctrl";
+            alone = "esc";
+            alone_timeout_millis = 100;
+          };
+        }];
+      };
+    };
   };
 
   networking.hostName = "caladan"; # Define your hostname.
@@ -74,26 +116,14 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    earlySetup = true;
+    font = "ter-132n";
     packages = [ pkgs.terminus_font ];
-    font = lib.mkDefault "ter-132n";
-    keyMap = "us";
+    useXkbConfig = true;
+    earlySetup = false;
   };
 
-  # fucker does creepy shit when Hyprland ran from it
-  # services.kmscon = {
-  #   enable = true;
-  #   useXkbConfig = true;
-  #   fonts = [{
-  #     name = "${config.stylix.fonts.monospace.name}";
-  #     package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS14"; };
-  #   }];
-  #   extraConfig = ''
-  #     font-size=17
-  #   '';
-  # };
-
   hardware = {
+    uinput.enable = true;
     enableAllFirmware = true;
     bluetooth.enable = true;
     graphics = {
@@ -146,8 +176,8 @@
 
   stylix.fonts = {
     monospace = {
-      package = pkgs.iosevka-bin.override { variant = "SGr-IosevkaTermSS14"; };
-      name = "Iosevka Term SS14";
+      package = pkgs.iosevka-bin.override { variant = "SS08"; };
+      name = "Iosevka SS08";
     };
 
     sansSerif = config.stylix.fonts.monospace;
@@ -161,7 +191,7 @@
 
     sizes = {
       desktop = 14;
-      applications = 14;
+      applications = 15;
       popups = 14;
       terminal = 17;
     };
@@ -201,6 +231,7 @@
       "wheel"
       "docker"
       "input"
+      "uinput"
       "audio"
       "networkmanager"
       "video"

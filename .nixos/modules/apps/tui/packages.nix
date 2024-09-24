@@ -62,6 +62,8 @@
 
     spring-boot-cli
     jdk21
+    gradle
+    maven
 
     inputs.nixvim.packages.${system}.default
   ];

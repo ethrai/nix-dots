@@ -3,21 +3,17 @@
 {
   imports = [ ./modules/desktop ./modules/apps ];
 
-  nixpkgs = { config = { allowUnfree = true; }; };
+  programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "sergio";
     homeDirectory = "/home/sergio";
-
-    # pointerCursor = {
-    #   gtk.enable = true;
-    #   size = 20;
-    # };
   };
 
   home.packages = with pkgs; [ docker ];
 
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.05";
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -37,7 +33,5 @@
     enable = true;
     platformTheme.name = "gtk";
   };
-
-  programs.home-manager.enable = true;
 
 }

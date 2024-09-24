@@ -38,7 +38,7 @@
 
             "col.active" = "rgb(${base01})";
             "col.urgent" = "rgb(${base08})";
-            "col.inactive" = "rgb(${base00})"; # frappe base
+            "col.inactive" = "rgb(${base02})"; # frappe base
 
             "col.text.active" = "rgb(${base07})"; # default: 0xff32b4ff
             "col.text.urgent" = "rgb(${base02})"; # default: 0xff32b4ff

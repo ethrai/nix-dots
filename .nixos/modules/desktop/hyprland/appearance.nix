@@ -6,12 +6,16 @@
       decoration = {
         rounding = 0;
         blur = {
-          enabled = true;
-          size = 8;
-          xray = true;
-          popups = true;
-          passes = 1;
+          enabled = false;
+          special = false;
           new_optimizations = true;
+          popups = true;
+          xray = true;
+          size = 24;
+          passes = 2;
+          noise = 0.1;
+          brightness = 1;
+          contrast = 1;
         };
       };
       general = {

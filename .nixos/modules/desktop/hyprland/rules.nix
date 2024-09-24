@@ -17,21 +17,27 @@
       "float,title:^(KCalc)(.*)$"
 
       "fullscreen,class:^(kitty)$"
-      "opacity 0.75,class:^(kitty)$"
+      # "opacity 0.91777,class:^(kitty)$"
 
       "fullscreen,class:^(foot)$"
-      "opacity 0.75,class:^(foot)$"
+      # "opacity 0.91777,class:^(foot)$"
+
+      "fullscreen,class:^(obsidian)$"
+      # "opacity 0.91777,class:^(obsidian)$"
 
       "workspace 2,class:^(firefox)$"
-      "workspace 3,class:^(org.gnome.Nautilus)$"
-      "workspace 3,class:^(org.gnome.FileRoller)$"
-      "workspace 4,class:^(org.pwmt.zathura)$"
-      "workspace 5,class:^(mpv)$"
-      "workspace 6,class:^(discord)$"
-      "workspace 7,title:^(Spotify Free)$"
-      "workspace 7,title:^(Spotify)$"
-      "workspace 8,class:^(libreoffice-writer)$"
-      "workspace 9,class:^(org.telegram.desktop)$"
+      "noinitialfocus,class:^(firefox)$"
+      "workspace 3,class:^(org.pwmt.zathura)$"
+      "workspace 4,class:^(mpv)$"
+      "workspace 5,class:^(discord)$"
+      "workspace 6,title:^(Spotify Free)$"
+      "noinitialfocus,class:^(Spotiify Free)$"
+
+      "workspace 7,class:^(libreoffice-writer)$"
+      "workspace 7,initialTitle:^(libreoffice-startcenter)$"
+
+      "workspace 8,class:^(org.telegram.desktop)$"
+      "noinitialfocus,class:^(org.telegram.desktop)$"
       "workspace 11,class:^(obsidian)$"
     ];
 
