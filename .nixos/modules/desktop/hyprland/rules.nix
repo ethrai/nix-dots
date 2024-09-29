@@ -17,10 +17,7 @@
       "float,title:^(KCalc)(.*)$"
 
       "fullscreen,class:^(kitty)$"
-      # "opacity 0.87999,class:^(kitty)$"
-
-      "fullscreen,class:^(foot)$"
-      # "opacity 0.87999,class:^(foot)$"
+      "opacity 0.943377,class:^(kitty)$"
 
       "fullscreen,class:^(obsidian)$"
       # "opacity 0.87999,class:^(obsidian)$"

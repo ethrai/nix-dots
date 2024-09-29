@@ -6,7 +6,7 @@
       decoration = {
         rounding = 0;
         blur = {
-          enabled = true;
+          enabled = false;
           special = false;
           new_optimizations = true;
           popups = true;

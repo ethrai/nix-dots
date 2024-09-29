@@ -160,13 +160,13 @@
   stylix.fonts = {
 
     monospace = {
-      name = "Jetbrains Mono";
       package = pkgs.jetbrains-mono;
+      name = "JetBrains Mono";
     };
 
-    sansSerif = config.stylix.fonts.serif;
+    serif = config.stylix.fonts.sansSerif;
 
-    serif = {
+    sansSerif = {
       package = pkgs.inter;
       name = "Inter";
     };

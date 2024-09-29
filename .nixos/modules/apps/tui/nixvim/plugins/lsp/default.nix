@@ -6,5 +6,6 @@
 
     ./languages/nix.nix
     ./languages/go.nix
+    ./languages/web.nix
   ];
 }

@@ -8,14 +8,16 @@
         gitsigns = true;
         notify = true;
         treesitter = true;
-        indent_blankline.enabled = true;
+        indent_blankline = {
+          enabled = true;
+          colored_indent_levels = true;
+        };
         leap = true;
         lsp_saga = true;
         noice = true;
         dap = true;
         dap_ui = true;
 
-        rainbow_delimiters = true;
         telescope = {
           enabled = true;
           style = "nvchad";

@@ -5,7 +5,7 @@
     ts-comments.enable = true;
     ts-context-commentstring.enable = true;
     ts-autotag.enable = true;
-    rainbow-delimiters.enable = true;
+    rainbow-delimiters.enable = false;
     nvim-surround.enable = true;
     nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;
