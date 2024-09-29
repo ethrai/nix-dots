@@ -14,7 +14,7 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -27,6 +27,7 @@
         caladan = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            inputs.xremap-flake.nixosModules.default
             inputs.stylix.nixosModules.stylix
             # inputs.nixvim.nixosModules.nixvim
             ./configuration.nix

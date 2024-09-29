@@ -1,25 +1,11 @@
 { pkgs, lib, config, inputs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-    ./acpi_call.nix
-    inputs.xremap-flake.nixosModules.default
-  ];
+  imports = [ ./hardware-configuration.nix ./acpi_call.nix ];
   boot = {
-    initrd = {
-      kernelModules = [ "i915" ];
-      verbose = false;
-    };
-    consoleLogLevel = 0;
-    plymouth = { enable = true; };
+    initrd = { kernelModules = [ "i915" ]; };
+    plymouth = { enable = false; };
     kernelParams = [
-      "quiet"
-      "splash"
-      "boot.shell_on_fail"
       "i915.fastboot=1"
-      "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3" # Force use of the thinkpad_acpi driver for backlight control.
+      "boot.shell_on_fail"
       # This allows the backlight save/load systemd service to work.
       "acpi_backlight=native"
     ];
@@ -33,8 +19,6 @@
       timeout = lib.mkDefault 0;
     };
     kernelPackages = pkgs.linuxPackages_latest;
-
-    # Fancy
   };
 
   # use docker without Root access (Rootless docker)
@@ -97,7 +81,6 @@
           remap.CapsLock = {
             held = "leftctrl";
             alone = "esc";
-            alone_timeout_millis = 100;
           };
         }];
       };
@@ -119,7 +102,7 @@
     font = "ter-132n";
     packages = [ pkgs.terminus_font ];
     useXkbConfig = true;
-    earlySetup = false;
+    earlySetup = true;
   };
 
   hardware = {
@@ -146,7 +129,7 @@
   stylix = {
     enable = true;
     image = /home/sergio/.dots/wallpaper.png;
-    polarity = "dark";
+    polarity = "light";
     autoEnable = true;
     homeManagerIntegration.autoImport = true;
     base16Scheme = {
@@ -175,14 +158,18 @@
   };
 
   stylix.fonts = {
+
     monospace = {
       package = pkgs.iosevka-bin.override { variant = "SS08"; };
       name = "Iosevka SS08";
     };
 
-    sansSerif = config.stylix.fonts.monospace;
+    sansSerif = config.stylix.fonts.serif;
 
-    serif = config.stylix.fonts.monospace;
+    serif = {
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
+    };
 
     emoji = {
       package = pkgs.noto-fonts-emoji;
@@ -191,9 +178,9 @@
 
     sizes = {
       desktop = 14;
-      applications = 15;
+      applications = 14;
       popups = 14;
-      terminal = 17;
+      terminal = 16;
     };
   };
 

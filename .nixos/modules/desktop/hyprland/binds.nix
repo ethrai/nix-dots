@@ -23,8 +23,8 @@
       "$mod, up, hy3:movefocus, u"
       "$mod, down, hy3:movefocus, d"
 
-      "$mod SHIFT, G, hy3:changegroup, untab"
-      "$mod, G, hy3:makegroup, tab, force_ephemeral"
+      # "$mod SHIFT, G, hy3:changegroup, untab"
+      # "$mod, G, hy3:makegroup, tab, force_ephemeral"
 
       "$mod, h, hy3:movefocus, l"
       "$mod, l, hy3:movefocus, r"

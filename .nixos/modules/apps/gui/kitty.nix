@@ -8,7 +8,6 @@
       cursor_shape_unfocused = "hollow";
       cursor_blink_intevall = 0;
       enable_audio_bell = "no";
-      background_opacity = "0.85";
     };
     shellIntegration.enableZshIntegration = true;
     shellIntegration.mode = "no-cursor";

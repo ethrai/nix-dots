@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     jq
-
     ripgrep
     fd
     curl
@@ -59,11 +58,17 @@
     ginkgo
     gotestsum
     govulncheck
+    go-migrate
+    sqlite
+    sqlite-utils
 
     spring-boot-cli
-    jdk21
     gradle
     maven
+    lombok
+
+
+    anki-bin
 
     inputs.nixvim.packages.${system}.default
   ];

@@ -8,7 +8,7 @@
       image = [ "imv.desktop" ];
       mail = [ "thunderbird.desktop" ];
       powerpoint = [ "libreoffice-impress.desktop" ];
-      terminal = [ "kitty.desktop" ];
+      terminal = [ "foot.desktop" ];
       video = [ "vlc.desktop" ];
       word = [ "libreoffice-writer.desktop" ];
     in {
