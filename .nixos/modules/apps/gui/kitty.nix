@@ -1,7 +1,7 @@
 { config, ... }: {
   stylix.targets.kitty.enable = false;
   programs.kitty = {
-    themeFile = "tokyo_night_night";
+    themeFile = "Catppuccin-Macchiato";
     enable = true;
     settings = {
       cursor_shape = "block";
@@ -13,7 +13,7 @@
     shellIntegration.mode = "no-cursor";
     font = {
       name = "${config.stylix.fonts.monospace.name}";
-      size = 14;
+      size = 15;
     };
     extraConfig = ''
       # Seti-UI + Custom

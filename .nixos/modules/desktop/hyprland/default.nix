@@ -30,7 +30,7 @@
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
-      "$term" = "foot";
+      "$term" = "kitty";
       "$browser" = "firefox";
       "$bar" = "waybar";
       "$fileManager" = "nautilus";

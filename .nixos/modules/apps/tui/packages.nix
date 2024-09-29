@@ -19,7 +19,7 @@
     zip
     unzip
     catppuccinifier-cli
-    # kuber
+
     kubectl
     kubernetes
     kind
@@ -67,9 +67,6 @@
     maven
     lombok
 
-
     anki-bin
-
-    inputs.nixvim.packages.${system}.default
   ];
 }

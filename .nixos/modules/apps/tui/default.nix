@@ -1,10 +1,10 @@
 { pkgs, ... }: {
-  programs.java.enable = true;
   imports = [
     ./shell
     ./direnv.nix
     ./bat.nix
     ./btop.nix
+    ./nixvim
     ./git.nix
     ./packages.nix
     ./tmux.nix

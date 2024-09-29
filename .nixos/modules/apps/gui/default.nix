@@ -3,7 +3,6 @@
     ./alacritty.nix
     ./chromium.nix
     ./firefox.nix
-    ./foot.nix
     ./imv.nix
     ./kitty.nix
     ./mpv.nix
