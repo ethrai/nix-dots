@@ -5,7 +5,7 @@
   programs.rofi = {
     enable = true;
 
-    font = lib.mkForce "${config.stylix.fonts.monospace.name} 16";
+    font = lib.mkForce "${config.stylix.fonts.serif.name} 14";
     package = pkgs.rofi-wayland;
   };
 }

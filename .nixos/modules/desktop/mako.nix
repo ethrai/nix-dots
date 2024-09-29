@@ -3,7 +3,7 @@
   services = {
     mako = with config.lib.stylix.colors; {
       enable = true;
-      font = "${config.stylix.fonts.monospace.name} 16";
+      font = "${config.stylix.fonts.serif.name} 14";
       padding = "12";
       defaultTimeout = 3000;
       borderSize = 2;

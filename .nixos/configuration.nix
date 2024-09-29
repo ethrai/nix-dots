@@ -133,22 +133,22 @@
     autoEnable = true;
     homeManagerIntegration.autoImport = true;
     base16Scheme = {
-      base00 = "1A1B26"; # #1A1B26
-      base01 = "16161E"; # #16161E
-      base02 = "2F3549"; # #2F3549
-      base03 = "444B6A"; # #444B6A
-      base04 = "787C99"; # #787C99
-      base05 = "A9B1D6"; # #A9B1D6
-      base06 = "CBCCD1"; # #CBCCD1
-      base07 = "D5D6DB"; # #D5D6DB
-      base08 = "F7768E"; # #F7768E
-      base09 = "A9B1D6"; # #A9B1D6
-      base0A = "0DB9D7"; # #0DB9D7
-      base0B = "9ECE6A"; # #9ECE6A
-      base0C = "B4F9F8"; # #B4F9F8
-      base0D = "2AC3DE"; # #2AC3DE
-      base0E = "BB9AF7"; # #BB9AF7
-      base0F = "C0CAF5"; # #C0CAF5
+      base00 = "24273a"; # base #24273a
+      base01 = "1e2030"; # mantle #1e2030
+      base02 = "363a4f"; # surface0 #363a4f
+      base03 = "494d64"; # surface1 #494d64
+      base04 = "5b6078"; # surface2 #5b6078
+      base05 = "cad3f5"; # text #cad3f5
+      base06 = "f4dbd6"; # rosewater #f4dbd6
+      base07 = "b7bdf8"; # lavender #b7bdf8
+      base08 = "ed8796"; # red #ed8796
+      base09 = "f5a97f"; # peach #f5a97f
+      base0A = "eed49f"; # yellow #eed49f
+      base0B = "a6da95"; # green #a6da95
+      base0C = "8bd5ca"; # teal #8bd5ca
+      base0D = "8aadf4"; # blue #8aadf4
+      base0E = "c6a0f6"; # mauve #c6a0f6
+      base0F = "f0c6c6"; # flamingo #f0c6c6
     };
     cursor = {
       package = pkgs.bibata-cursors;
@@ -160,15 +160,15 @@
   stylix.fonts = {
 
     monospace = {
-      package = pkgs.iosevka-bin.override { variant = "SS08"; };
-      name = "Iosevka SS08";
+      name = "Jetbrains Mono";
+      package = pkgs.jetbrains-mono;
     };
 
     sansSerif = config.stylix.fonts.serif;
 
     serif = {
-      package = pkgs.noto-fonts;
-      name = "Noto Sans";
+      package = pkgs.inter;
+      name = "Inter";
     };
 
     emoji = {
@@ -180,7 +180,7 @@
       desktop = 14;
       applications = 14;
       popups = 14;
-      terminal = 16;
+      terminal = 14;
     };
   };
 

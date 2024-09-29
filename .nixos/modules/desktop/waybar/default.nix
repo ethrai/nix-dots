@@ -26,8 +26,8 @@
 
     style = with config.lib.stylix.colors; ''
       * {
-        font-family: "${config.stylix.fonts.monospace.name}";
-        font-size: 20px;
+        font-family: "${config.stylix.fonts.serif.name}";
+        font-size: 14px;
         min-height: 0;
         border: none;
         margin: 0;

@@ -8,7 +8,7 @@
       ###########
       # Options #
       ###########
-      font = "${config.stylix.fonts.monospace.name} 14";
+      font = "${config.stylix.fonts.serif.name} 14";
       adjust-open = "width";
       pages-per-row = 1;
       selection-clipboard = "clipboard";

@@ -13,7 +13,7 @@
     shellIntegration.mode = "no-cursor";
     font = {
       name = "${config.stylix.fonts.monospace.name}";
-      size = 16;
+      size = 14;
     };
     extraConfig = ''
       # Seti-UI + Custom
