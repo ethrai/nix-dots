@@ -1,20 +1,7 @@
 { config, ... }: {
-  stylix.targets.kitty.enable = false;
   programs.kitty = {
-    themeFile = "Catppuccin-Macchiato";
     enable = true;
-    settings = {
-      cursor_shape = "block";
-      cursor_shape_unfocused = "hollow";
-      cursor_blink_intevall = 0;
-      enable_audio_bell = "no";
-    };
-    shellIntegration.enableZshIntegration = true;
-    shellIntegration.mode = "no-cursor";
-    font = {
-      name = "${config.stylix.fonts.monospace.name}";
-      size = 15;
-    };
+    settings = { enable_audio_bell = false; cursor_blink_interval = 0; };
     extraConfig = ''
       # Seti-UI + Custom
       symbol_map U+E5FA-U+E6AC Symbols Nerd Font

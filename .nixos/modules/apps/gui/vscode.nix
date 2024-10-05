@@ -1,23 +1,16 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}:
+{ config, pkgs, lib, inputs, ... }:
 let
   homeDir = config.home.homeDirectory;
   ofSym = config.lib.file.mkOutOfStoreSymlink;
   code = "Code";
-in
-{
+in {
   options = { };
   config = {
     stylix.targets.vscode.enable = false;
     programs.vscode = {
       mutableExtensionsDir = false; # manage extensions only with home-manager
       package = pkgs.vscode;
-      enable = true;
+      enable = false;
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim
         christian-kohler.path-intellisense
@@ -47,8 +40,10 @@ in
     };
 
     home.file = {
-      ".config/${code}/User/settings.json".source = ofSym "${homeDir}/.dots/.config/VSCodium/User/settings.json";
-      ".config/${code}/User/keybindings.json".source = ofSym "${homeDir}/.dots/.config/VSCodium/User/keybindings.json";
+      ".config/${code}/User/settings.json".source =
+        ofSym "${homeDir}/.dots/.config/VSCodium/User/settings.json";
+      ".config/${code}/User/keybindings.json".source =
+        ofSym "${homeDir}/.dots/.config/VSCodium/User/keybindings.json";
     };
 
   };

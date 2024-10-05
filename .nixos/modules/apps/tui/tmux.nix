@@ -56,7 +56,7 @@
         '';
       }
     ];
-    extraConfig = with config.lib.stylix.colors; ''
+    extraConfig = ''
       # Status line settings
       set-option -g status-position top
 

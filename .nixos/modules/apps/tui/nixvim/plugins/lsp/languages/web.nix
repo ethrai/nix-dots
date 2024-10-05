@@ -38,49 +38,10 @@
       eslint.enable = true;
       emmet-ls.enable = true;
       cssls.enable = true;
-      biome = {
-        enable = true;
-        filetypes = [
-          "javascript"
-          "javascriptreact"
-          "typescript"
-          "typescriptreact"
-          "json"
-          "jsonc"
-        ];
-      };
     };
     none-ls = {
       enable = true;
-      sources = {
-        formatting = {
-          prettierd = {
-            enable = true;
-            settings = ''
-              {
-                filetypes = {
-                  -- "javascript", -- now done by biome
-                  -- "javascriptreact", -- now done by biome
-                  -- "typescript", -- now done by biome
-                  -- "typescriptreact", -- now done by biome
-                  -- "json", -- now done by biome
-                  -- "jsonc", -- now done by biome
-                  "vue",
-                  "css",
-                  "scss",
-                  "less",
-                  "html",
-                  "yaml",
-                  "markdown",
-                  "markdown.mdx",
-                  "graphql",
-                  "handlebars",
-                },
-              }
-            '';
-          };
-        };
-      };
+      sources = { formatting = { prettierd = { enable = true; }; }; };
     };
   };
 }

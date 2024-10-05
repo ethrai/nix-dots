@@ -17,10 +17,8 @@
       "float,title:^(KCalc)(.*)$"
 
       "fullscreen,class:^(kitty)$"
-      "opacity 0.943377,class:^(kitty)$"
 
       "fullscreen,class:^(obsidian)$"
-      # "opacity 0.87999,class:^(obsidian)$"
 
       "workspace 2,class:^(firefox)$"
       "workspace 3,class:^(org.pwmt.zathura)$"
@@ -32,7 +30,7 @@
       "workspace 7,initialTitle:^(libreoffice-startcenter)$"
 
       "workspace 8,class:^(org.telegram.desktop)$"
-      "workspace 11,class:^(obsidian)$"
+      "workspace 9,class:^(obsidian)$"
     ];
 
   };

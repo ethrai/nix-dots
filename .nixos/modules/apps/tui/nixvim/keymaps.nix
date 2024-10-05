@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{
   programs.nixvim = {
     globals.mapleader = " ";
     keymaps = [
@@ -6,6 +6,19 @@
         mode = [ "n" ];
         key = "Y";
         action = "y$";
+        options.silent = true;
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>w";
+        action = "<cmd>w<cr>";
+        options.silent = true;
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>W";
+        action = "<cmd>W<cr>";
+        options.silent = true;
       }
       {
         mode = [ "n" ];
@@ -16,21 +29,25 @@
         mode = [ "n" ];
         key = "L";
         action = "$";
+        options.silent = true;
       }
       {
         mode = [ "n" ];
         key = "H";
         action = "^";
+        options.silent = true;
       }
       {
         mode = [ "v" ];
         key = ">";
         action = ">gv";
+        options.silent = true;
       }
       {
         mode = [ "v" ];
         key = "<";
         action = "<gv";
+        options.silent = true;
       }
       {
         mode = [ "n" "x" ];
@@ -68,11 +85,34 @@
           silent = true;
         };
       }
+      # Windows
+      {
+        mode = "n";
+        key = "<leader>w-";
+        action = "<C-W>s";
+        options = {
+          silent = true;
+          desc = "Split Window Below";
+          remap = true;
+        };
+
+      }
+      {
+        mode = "n";
+        key = "<leader>w|";
+        action = "<C-W>v";
+        options = {
+          silent = true;
+          desc = "Split Window Right";
+          remap = true;
+        };
+      }
       {
         mode = "n";
         key = "<C-h>";
         action = "<C-w>h";
         options = {
+          silent = true;
           desc = "Go to Left Window";
           remap = true;
         };
@@ -82,8 +122,10 @@
         key = "<C-j>";
         action = "<C-w>j";
         options = {
+          silent = true;
           desc = "Go to Lower Window";
           remap = true;
+
         };
       }
       {
@@ -91,8 +133,10 @@
         key = "<C-k>";
         action = "<C-w>k";
         options = {
+          silent = true;
           desc = "Go to Upper Window";
           remap = true;
+
         };
       }
       {
@@ -100,15 +144,21 @@
         key = "<C-l>";
         action = "<C-w>l";
         options = {
+          silent = true;
+
           desc = "Go to Right Window";
           remap = true;
+
         };
       }
       {
         mode = "n";
         key = "<C-Up>";
         action = "<cmd>resize +2<cr>";
-        options = { desc = "Increase Window Height"; };
+        options = {
+          silent = true;
+          desc = "Increase Window Height";
+        };
       }
       {
         mode = "n";
@@ -134,10 +184,12 @@
         action = "<cmd>noh<cr><esc>";
         options = { desc = "Escape and Clear hlsearch"; };
       }
+      # Search
       {
         mode = "n";
         key = "n";
         action = "'Nn'[v:searchforward].'zv'";
+
         options = {
           expr = true;
           desc = "Next Search Result";
@@ -147,6 +199,7 @@
         mode = "x";
         key = "n";
         action = "'Nn'[v:searchforward]";
+
         options = {
           expr = true;
           desc = "Next Search Result";
@@ -156,6 +209,7 @@
         mode = "o";
         key = "n";
         action = "'Nn'[v:searchforward]";
+
         options = {
           expr = true;
           desc = "Next Search Result";
@@ -165,6 +219,7 @@
         mode = "n";
         key = "N";
         action = "'nN'[v:searchforward].'zv'";
+
         options = {
           expr = true;
           desc = "Prev Search Result";
@@ -174,6 +229,7 @@
         mode = "x";
         key = "N";
         action = "'nN'[v:searchforward]";
+
         options = {
           expr = true;
           desc = "Prev Search Result";
@@ -186,30 +242,6 @@
         options = {
           expr = true;
           desc = "Prev Search Result";
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>cd";
-        action = "vim.diagnostic.open_float";
-        options = { desc = "Line Diagnostics"; };
-      }
-      {
-        mode = "n";
-        key = "<leader>w-";
-        action = "<C-W>s";
-        options = {
-          desc = "Split Window Below";
-          remap = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>w|";
-        action = "<C-W>v";
-        options = {
-          desc = "Split Window Right";
-          remap = true;
         };
       }
     ];

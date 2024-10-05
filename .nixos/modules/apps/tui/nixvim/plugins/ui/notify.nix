@@ -2,12 +2,13 @@
   programs.nixvim = {
     plugins.notify = {
       enable = true;
-      fps = 60;
-      render = "default";
-      timeout = 2500;
+      fps = 30;
+      render = "minimal";
+      timeout = 2000;
       topDown = true;
       stages = "static";
-      maxWidth = 60;
+      level = 3;
+      maxWidth = 30;
       minimumWidth = 30;
     };
 

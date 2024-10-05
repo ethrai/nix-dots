@@ -6,6 +6,7 @@
       "wheel"
       "docker"
       "input"
+      "uinput"
       "audio"
       "networkmanager"
       "video"

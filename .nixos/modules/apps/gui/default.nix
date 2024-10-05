@@ -4,19 +4,19 @@
     ./chromium.nix
     ./firefox.nix
     ./imv.nix
-    ./kitty.nix
     ./mpv.nix
-    ./vscode.nix
+    ./kitty.nix
     ./zathura.nix
   ];
 
   home.packages = with pkgs; [
     libnotify
-    dconf
 
     discord
     signal-desktop
     telegram-desktop
+    skypeforlinux
+    # firefox
 
     libreoffice-fresh
     zotero

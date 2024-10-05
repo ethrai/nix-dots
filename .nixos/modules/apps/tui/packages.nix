@@ -62,6 +62,8 @@
     sqlite
     sqlite-utils
 
+    nodejs
+
     spring-boot-cli
     gradle
     maven

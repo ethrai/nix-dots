@@ -7,7 +7,6 @@
     ./nixvim
     ./git.nix
     ./packages.nix
-    ./tmux.nix
     ./yazi.nix
     ./ytdlp.nix
     ./zellij.nix

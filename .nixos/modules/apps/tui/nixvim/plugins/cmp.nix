@@ -7,7 +7,7 @@
         settings = {
           sources = [
             { name = "luasnip"; }
-            { name = "async_path"; }
+            { name = "path"; }
             { name = "nvim_lsp"; }
             { name = "buffer"; }
           ];
@@ -36,7 +36,8 @@
             '';
           };
           snippet = {
-            expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+            expand =
+              "function(args) require('luasnip').lsp_expand(args.body) end";
           };
         };
       };

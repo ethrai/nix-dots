@@ -1,6 +1,7 @@
 {
   imports = [
     # Completion
+    ./auto-session.nix
     ./cmp.nix
     ./lspkind.nix
     ./luasnip.nix
@@ -15,6 +16,6 @@
 
     ./navigation
 
-    ./catppuccin.nix
+    ./themes/kanagawa.nix
   ];
 }

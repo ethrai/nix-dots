@@ -12,10 +12,7 @@
             end
           '';
         };
-        indent = {
-          enable = true;
-          disable = [ "go" ];
-        };
+        indent.enable = false;
         incremental_selection = { enable = true; };
       };
       nixvimInjections = true;

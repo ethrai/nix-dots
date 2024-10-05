@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  stylix.targets.fish.enable = true;
+  stylix.targets.fish.enable = false;
   programs.fish = {
     enable = true;
     shellAliases = {

@@ -14,19 +14,22 @@
             "^secrets/"
             "build/"
             "bin/"
+            "*.o"
+            "*.class"
           ];
-          layout_strategy = "horizontal";
+          layout_strategy = "vertical";
           layout_config = {
-            horizontal = {
-              prompt_position = "bottom";
-              preview_width = 0.45;
-            };
             width = 0.95;
-            height = 0.75;
-            vertical = { prompt_position = "bottom"; };
+            height = 0.99;
+            vertical = {
+              mirror = true;
+              prompt_position = "top";
+              preview_cutoff = 0;
+            };
           };
           sorting_strategy = "ascending";
         };
+        pickers = { find_files = { hidden = true; }; };
       };
       keymaps = {
         "<leader><space>" = { action = "find_files"; };

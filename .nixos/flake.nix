@@ -32,14 +32,13 @@
           modules = [
             inputs.xremap-flake.nixosModules.default
             inputs.stylix.nixosModules.stylix
-            # inputs.nixvim.homeManagerModules.nixvim
             ./configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.sergio = import ./home.nix;
+              home-manager.users.sergio = { imports = [ ./home.nix ]; };
             }
 
           ];

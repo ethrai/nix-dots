@@ -4,7 +4,7 @@
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 0;
+        grace = 60;
         hide_cursor = true;
         no_fade_in = true;
       };
@@ -12,7 +12,7 @@
       background = [{
         path = "~/.dots/wallpaper.png";
         blur_passes = 3;
-        blur_size = 8;
+        blur_size = 14;
       }];
 
       input-field = [{
@@ -60,7 +60,7 @@
           text = ''cmd[update:1000] echo "$TIME"'';
           color = "rgba(200, 200, 200, 1.0)";
           font_size = 55;
-          font_family = "${config.stylix.fonts.serif.name}";
+          font_family = "Inter";
           position = "-100, 70";
           halign = "right";
           valign = "bottom";
@@ -72,7 +72,7 @@
           text = "$USER";
           color = "rgba(200, 200, 200, 1.0)";
           font_size = "20";
-          font_family = "${config.stylix.fonts.serif.name}";
+          font_family = "Inter";
           position = "-100, 160";
           halign = "right";
           valign = "bottom";

@@ -1,1 +1,4 @@
-{ imports = [ ./nixvim.nix ./options.nix ./keymaps.nix ./plugins ]; }
+{
+  imports =
+    [ ./nixvim.nix ./autocmds.nix ./options.nix ./keymaps.nix ./plugins ];
+}

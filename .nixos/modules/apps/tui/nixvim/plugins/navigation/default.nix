@@ -1,1 +1,1 @@
-{ imports = [ ./oil.nix ./telescope.nix ]; }
+{ imports = [ ./neotree.nix ./telescope.nix ]; }

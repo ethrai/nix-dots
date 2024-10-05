@@ -1,10 +1,8 @@
 {
   programs.nixvim = {
-    plugins.lsp-format.enable = true;
     plugins.none-ls = {
-      enableLspFormat = true;
-      settings = { updateInInsert = false; };
       enable = true;
+      settings = { updateInInsert = true; };
       sources = {
         diagnostics = {
           checkmake.enable = true;
@@ -16,5 +14,16 @@
         };
       };
     };
+
+    keymaps = [{
+      mode = [ "n" "v" ];
+      key = "<leader>fw";
+      action = "<cmd>lua vim.lsp.buf.format()<cr>";
+      options = {
+        silent = true;
+        desc = "Format";
+      };
+    }];
   };
+
 }

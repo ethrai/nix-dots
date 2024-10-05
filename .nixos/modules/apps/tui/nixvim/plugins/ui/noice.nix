@@ -12,11 +12,13 @@
         "cmp.entry.get_documentation" = true;
         "command_palette" = false;
       };
-      signature = { enabled = true; };
-      hover.enabled = false;
-      progress.enabled = true;
+      signature.enabled = true;
+      progress.enabled = false;
     };
-    popupmenu.enabled = true;
+    popupmenu = {
+      enabled = true;
+      backend = "cmp";
+    };
     presets = {
       bottom_search = true;
       command_palette = false;
@@ -24,5 +26,6 @@
       long_message_to_split = false;
     };
     notify = { enabled = true; };
+    cmdline = { enabled = true; };
   };
 }

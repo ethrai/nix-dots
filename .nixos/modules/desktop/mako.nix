@@ -1,18 +1,13 @@
 { config, ... }: {
-  stylix.targets.mako.enable = false;
   services = {
-    mako = with config.lib.stylix.colors; {
+    mako = {
       enable = true;
-      font = "${config.stylix.fonts.serif.name} 14";
+      # font = "JetBrainsMono Nerd Font";
       padding = "12";
       defaultTimeout = 3000;
-      borderSize = 2;
+      borderSize = 6;
       borderRadius = 0;
-      backgroundColor = "#${base00}";
-      borderColor = "#${base06}";
-      progressColor = "over #${base02}";
       margin = "10,10,30,10";
-      textColor = "#${base05}";
       layer = "top";
       icons = true;
       actions = true;
@@ -21,7 +16,6 @@
         text-alignment=center
         [urgency=high]
         default-timeout=200
-        border-color=#${base08}
       '';
     };
   };

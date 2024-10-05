@@ -2,7 +2,7 @@
 
   stylix.targets.hyprland.enable = false;
   wayland.windowManager.hyprland = {
-    settings = with config.lib.stylix.colors; {
+    settings = {
       decoration = {
         rounding = 0;
         blur = {
@@ -24,8 +24,6 @@
         gaps_out = 0;
         allow_tearing = false;
         border_size = 0;
-        "col.active_border" = "rgb(${base06}) rgb(${base0D}) 45deg";
-        "col.inactive_border" = "rgb(${base01}";
       };
       animations = {
         enabled = true;

@@ -2,8 +2,8 @@
 
   "hyprland/language" = {
     "format" = "{}";
-    "format-en" = "US";
-    "format-ru" = "RU";
+    "format-en" = "US";
+    "format-ru" = "RU";
     "on-click" = "hyprctl switchxkblayout evision-usb-device next";
   };
 
@@ -26,43 +26,31 @@
   };
 
   pulseaudio = {
-    format = "{icon}{volume}%";
-    format-bluetooth = "{volume}%{icon}";
-    format-muted = "󰖁muted";
-    format-icons = {
-      headphone = " ";
-      hands-free = "󰋎 ";
-      headset = "󰋎 ";
-      default = "󰕾 ";
-    };
+    format = "AUDIO:{volume}%";
+    format-bluetooth = "AUDIO(BL):{volume}%";
+    format-muted = "AUDIO(MUTED)";
 
-    # Interaction scroll-step = 5;
     on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
     on-click-right = "pavucontrol";
   };
 
   memory = {
     interval = 1;
-    format = "{:02}%";
+    format = "MEM:{:02}%";
   };
 
   cpu = {
     interval = 1;
     tooltip = false;
-    # format = " {usage:02}%";
-    format = "{usage:02}%";
-    # format = "  {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15} {usage:02}%";
-    format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+    format = "CPU:{usage:02}%";
   };
 
   battery = {
     tooltip = false;
 
-    format = "{icon}{capacity}%";
-    format-full = "{icon}{capacity}%󰚥";
-    format-charging = "{icon}{capacity}%󰚥";
-
-    format-icons = [ "" "" "" "" "" ];
+    format = "BAT:{capacity}%";
+    format-full = "BAT(F):{capacity}%";
+    format-charging = "BAT(C):{capacity}%";
   };
 
   clock = {
@@ -75,8 +63,4 @@
     format = "{:%d/%m/%Y}";
   };
 
-  tray = {
-    icon-size = 22;
-    spacing = 2;
-  };
 }

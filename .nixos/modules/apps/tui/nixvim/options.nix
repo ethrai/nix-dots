@@ -7,6 +7,19 @@
       signs = true;
     };
 
+    extraConfigLuaPre = ''
+      vim.diagnostic.config({
+          signs = {
+              text = {
+                  [vim.diagnostic.severity.ERROR] = " ",
+                  [vim.diagnostic.severity.WARN] = " ",
+                  [vim.diagnostic.severity.INFO] = " ",
+                  [vim.diagnostic.severity.HINT] = " ",
+              },
+          }
+      })
+    '';
+
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
@@ -28,7 +41,6 @@
       swapfile = false; # Disable the swap file
       modeline = true; # Tags such as 'vim:ft=sh'
       modelines = 100; # Sets the type of modelines
-      background = "dark";
       undofile = true; # Automatically save and restore undo history
       signcolumn = "yes";
       incsearch =
@@ -40,6 +52,7 @@
         true; # Override the 'ignorecase' option if the search pattern contains upper case characters
       scrolloff = 3; # Number of screen lines to show around the cursor
       cursorline = false; # Highlight the screen line of the cursor
+      colorcolumn = "80";
       cursorcolumn = false; # Highlight the screen column of the cursor
       laststatus = 3; # When to use a status line for the last window
       fileencoding = "utf-8"; # File-content encoding for the current buffer

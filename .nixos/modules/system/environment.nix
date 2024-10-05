@@ -1,17 +1,12 @@
 { pkgs, ... }: {
-  environment.pathsToLink =
-    [ "/share/xdg-desktop-portal" "/share/applications" "/share/zsh" ];
+  environment = {
+    sessionVariables = {
+      LIBVA_DRIVER_NAME = "iHD";
+      EDITOR = "nvim";
+    };
 
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-    WLR_NO_HARDWARE_CURSORS = "1";
+    pathsToLink =
+      [ "/share/xdg-desktop-portal" "/share/applications" "/share/zsh" ];
+    systemPackages = with pkgs; [ helix git tmux docker seatd libseat ];
   };
-  environment.systemPackages = with pkgs; [
-    helix
-    git
-    tmux
-    docker
-    seatd
-    libseat
-  ];
 }
