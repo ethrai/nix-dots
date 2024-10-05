@@ -12,6 +12,7 @@
       video = [ "vlc.desktop" ];
       word = [ "libreoffice-writer.desktop" ];
     in {
+
       "text/markdown" = editor;
       "text/plain" = editor;
       "application/json" = editor;

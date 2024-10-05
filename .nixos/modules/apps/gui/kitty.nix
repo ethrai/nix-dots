@@ -1,7 +1,8 @@
-{ config, ... }: {
+{ config, lib, ... }: {
   programs.kitty = {
     enable = true;
     settings = { enable_audio_bell = false; cursor_blink_interval = 0; };
+    font.size = lib.mkForce 14;
     extraConfig = ''
       # Seti-UI + Custom
       symbol_map U+E5FA-U+E6AC Symbols Nerd Font

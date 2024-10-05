@@ -10,6 +10,11 @@
       }
       {
         mode = [ "n" ];
+        key = ";";
+        action = ":";
+      }
+      {
+        mode = [ "n" ];
         key = "<leader>w";
         action = "<cmd>w<cr>";
         options.silent = true;
@@ -19,11 +24,6 @@
         key = "<leader>W";
         action = "<cmd>W<cr>";
         options.silent = true;
-      }
-      {
-        mode = [ "n" ];
-        key = ";";
-        action = ":";
       }
       {
         mode = [ "n" ];
@@ -86,27 +86,6 @@
         };
       }
       # Windows
-      {
-        mode = "n";
-        key = "<leader>w-";
-        action = "<C-W>s";
-        options = {
-          silent = true;
-          desc = "Split Window Below";
-          remap = true;
-        };
-
-      }
-      {
-        mode = "n";
-        key = "<leader>w|";
-        action = "<C-W>v";
-        options = {
-          silent = true;
-          desc = "Split Window Right";
-          remap = true;
-        };
-      }
       {
         mode = "n";
         key = "<C-h>";

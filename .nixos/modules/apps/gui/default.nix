@@ -16,12 +16,12 @@
     signal-desktop
     telegram-desktop
     skypeforlinux
-    # firefox
 
     libreoffice-fresh
     zotero
     evince
     obsidian
+    zed-editor
 
     nautilus
     file-roller

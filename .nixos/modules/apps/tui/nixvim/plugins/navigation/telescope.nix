@@ -24,7 +24,7 @@
             vertical = {
               mirror = true;
               prompt_position = "top";
-              preview_cutoff = 0;
+              preview_cutoff = 20;
             };
           };
           sorting_strategy = "ascending";
