@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ config, pkgs, ... }: {
   wayland.windowManager.hyprland = {
     plugins = [ pkgs.hyprlandPlugins.hy3 ];
 
@@ -13,14 +13,13 @@
           tabs = {
             height = 8;
             padding = 0;
-            rounding = 0;
+            rounding = 8;
             render_text = false; # default: true
 
-            "col.active" = "rgb(${base0D})";
+            "col.active" = "rgb(${base07})";
+            "col.inactive" = "rgb(${base00})";
             "col.urgent" = "rgb(${base08})";
-            "col.inactive" = "rgb(${base02})";
           };
-          autotile.enable = false; # default: false
         };
       };
     };
