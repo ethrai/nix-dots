@@ -20,7 +20,7 @@
           layout_strategy = "vertical";
           layout_config = {
             width = 0.95;
-            height = 0.99;
+            height = 0.95;
             vertical = {
               mirror = true;
               prompt_position = "top";
@@ -29,7 +29,11 @@
           };
           sorting_strategy = "ascending";
         };
-        pickers = { find_files = { hidden = true; }; };
+        pickers = {
+          find_files = { hidden = true; previewer = false; };
+          lsp_document_symbols.previewer = false;
+          current_buffer_fuzzy_find.previewer = false;
+        };
       };
       keymaps = {
         "<leader><space>" = { action = "find_files"; };
