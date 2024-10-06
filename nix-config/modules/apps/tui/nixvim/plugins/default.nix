@@ -16,6 +16,6 @@
 
     ./navigation
 
-    ./themes/kanagawa.nix
+    ./themes/catppuccin.nix
   ];
 }

@@ -1,6 +1,8 @@
-{ config, lib, ... }: {
+{ lib, ... }: {
   programs.kitty = {
     enable = true;
+    themeFile = lib.mkForce "rose-pine-moon";
+    # themeFile = lib.mkForce "rose-pine-dawn";
     settings = { enable_audio_bell = false; cursor_blink_interval = 0; };
     font.size = lib.mkForce 14;
     extraConfig = ''
