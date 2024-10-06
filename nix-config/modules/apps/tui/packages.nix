@@ -34,7 +34,7 @@
     protonvpn-cli
 
     wireshark
-    ciscoPacketTracer8
+   #  ciscoPacketTracer8
 
     nasm
 
