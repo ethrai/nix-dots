@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{
   imports = [
     ./alacritty.nix
     ./chromium.nix
@@ -6,30 +6,8 @@
     ./imv.nix
     ./mpv.nix
     ./kitty.nix
+    ./packages.nix
     ./zathura.nix
-  ];
-
-  home.packages = with pkgs; [
-    libnotify
-
-    discord
-    signal-desktop
-    telegram-desktop
-    skypeforlinux
-
-    libreoffice-fresh
-    zotero
-    evince
-    obsidian
-    zed-editor
-
-    nautilus
-    file-roller
-
-    spotify
-
-    obs-studio
-
   ];
 
   services = {

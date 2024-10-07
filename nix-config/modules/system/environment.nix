@@ -3,6 +3,7 @@
     sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";
       EDITOR = "nvim";
+      NIXOS_OZONE_WL = "1";
     };
 
     pathsToLink =

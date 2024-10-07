@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   imports = [
     ./shell
     ./direnv.nix
@@ -9,6 +9,6 @@
     ./packages.nix
     ./yazi.nix
     ./ytdlp.nix
-    ./zellij.nix
+    ./zellij/zellij.nix
   ];
 }

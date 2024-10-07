@@ -1,16 +1,4 @@
-{ pkgs, ... }:
-
 {
-  home.packages = with pkgs; [
-    wl-clipboard
-    cliphist
-    playerctl
-    pamixer
-    brightnessctl
-    pavucontrol
-
-    seahorse
-  ];
   imports = [
     ./hyprland
     ./waybar
@@ -22,6 +10,6 @@
     ./gnome-keyring.nix
     ./mako.nix
     ./rofi.nix
-    ./xremap.nix
+    ./dconf.nix
   ];
 }

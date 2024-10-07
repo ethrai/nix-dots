@@ -15,15 +15,16 @@
       "float,title:^(Library)(.*)$"
       "float,title:^(File Upload)(.*)$"
       "float,title:^(KCalc)(.*)$"
-
+      
       "fullscreen,class:^(kitty)$"
-
       "fullscreen,class:^(obsidian)$"
 
-      "workspace 2,class:^(firefox)$"
-      "workspace 3,class:^(org.pwmt.zathura)$"
-      "workspace 4,class:^(mpv)$"
-      "workspace 5,class:^(discord)$"
+      "workspace 1,class:^(firefox)$"
+
+      "workspace 2,class:^(kitty)$"
+
+      "workspace 4,class:^(org.pwmt.zathura)$"
+      "workspace 5,class:^(mpv)$"
       "workspace 6,title:^(Spotify Free)$"
 
       "workspace 7,class:^(libreoffice-writer)$"

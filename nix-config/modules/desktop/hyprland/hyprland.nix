@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [ hyprshot hyprpaper ];
 
   wayland.windowManager.hyprland = {
@@ -20,28 +20,26 @@
       "$term" = "kitty";
       "$browser" = "firefox";
       "$bar" = "waybar";
+      "$notes" = "obsidian";
       exec-once = [
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "$term"
         "$browser"
         "telegram-desktop"
-        "spotify"
-        "obsidian"
       ];
       xwayland = { force_zero_scaling = true; };
       cursor = { no_warps = true; };
       input = {
         kb_layout = "us,ru";
-        # kb_options = "caps:swapescape,grp:alt_space_toggle,caps:ctrl_modifier";
-        kb_options = "grp:alt_space_toggle";
+        kb_options = "grp:alt_shift_toggle";
         repeat_rate = 45;
-        repeat_delay = 175;
+        repeat_delay = 160;
         follow_mouse = 1;
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
         touchpad = { natural_scroll = false; };
       };
-      gestures = { workspace_swipe = true; };
+      gestures = { workspace_swipe = false; };
       device = {
         name = "tpps/2-elan-trackpoint";
         sensitivity = -0.5;

@@ -1,0 +1,18 @@
+default_layout "compact"
+pane_frames false
+rose-pine-moon {
+	default {
+		bg "#44415a"
+		black "#393552"
+		blue "#9ccfd8"
+		cyan "#ea9a97"
+		fg "#e0def4"
+		green "#3e8fb0"
+		magenta "#c4a7e7"
+		orange "#fe640b"
+		red "#eb6f92"
+		white "#e0def4"
+		yellow "#f6c177"
+	}
+}
+simplified_ui true

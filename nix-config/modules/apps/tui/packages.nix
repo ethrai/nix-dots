@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     jq
     ripgrep
@@ -30,11 +30,7 @@
     gobject-introspection
     gob2
 
-    protonvpn-gui
     protonvpn-cli
-
-    wireshark
-   #  ciscoPacketTracer8
 
     nasm
 
@@ -69,6 +65,5 @@
     maven
     lombok
 
-    anki-bin
   ];
 }

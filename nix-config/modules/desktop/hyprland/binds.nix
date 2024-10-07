@@ -1,7 +1,7 @@
 {
   wayland.windowManager.hyprland.settings = {
 
-    binm = [
+    bindm = [
       "ALT, mouse:272, movewindow"
       "SUPER, mouse:272, movewindow"
       "SUPER, Control_L, movewindow"
@@ -10,7 +10,6 @@
     ];
 
     bind = [
-
       "$mod, R, exec, rofi -show drun"
       "$mod, W, exec, rofi -show window"
       "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"

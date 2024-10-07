@@ -19,8 +19,8 @@
           ];
           layout_strategy = "vertical";
           layout_config = {
-            width = 0.95;
-            height = 0.95;
+            width = 0.93;
+            height = 0.93;
             vertical = {
               mirror = true;
               prompt_position = "top";

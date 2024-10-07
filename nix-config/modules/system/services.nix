@@ -36,17 +36,16 @@
     tlp = { enable = true; };
     gnome.gnome-keyring.enable = true;
     gnome.evolution-data-server.enable = true;
-    # Remap caps to be both escape and ctrl
     xremap = {
-      enable = true;
-      withWlroots = true;
       userName = "sergio";
       config = {
         modmap = [{
-          name = "power caps";
-          remap.CapsLock = {
-            held = "leftctrl";
-            alone = "esc";
+          name = "default";
+          remap = {
+            capslock = {
+              held = "leftctrl";
+              alone = "esc";
+            };
           };
         }];
       };

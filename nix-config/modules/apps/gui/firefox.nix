@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ inputs, ... }: {
   stylix.targets.firefox.enable = true;
   stylix.targets.firefox.profileNames = [ "default" ];
   programs.firefox = {
@@ -10,7 +10,7 @@
         isDefault = true;
         settings = {
           # https://github.com/TLATER/dotfiles
-          "browser.startup.homepage" = "https://github.com";
+          "browser.startup.homepage" = "https://search.nixos.org/packages";
 
           # Disable irritating first-run stuff
           "browser.disableResetPrompt" = true;

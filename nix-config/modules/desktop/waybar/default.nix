@@ -26,7 +26,7 @@
 
     style = with config.lib.stylix.colors; ''
       * {
-        font-family: "Inter";
+        font-family: "";
         font-size: 14px;
         min-height: 0;
         border: none;
@@ -81,17 +81,17 @@
 
       #workspaces button {
         padding: 0 2px;
-        border: 1px solid #${base05};
-        border-radius: 0px;
+        border: 1px solid #${base04};
+        border-radius: 4px;
         margin: 0 2px 0 0;
         background: #${base01};
-        color: #${base05};
+        color: #${base04};
         min-width: 20px;
       }
 
       #workspaces button.active {
-        color: #${base07};
-        border: 3px solid #${base07};
+        color: #${base05};
+        border: 1px solid #${base05};
         background: #${base01};
       }
       #workspaces button.urgent {
