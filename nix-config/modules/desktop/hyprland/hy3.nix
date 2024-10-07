@@ -16,8 +16,8 @@
             rounding = 8;
             render_text = false; # default: true
 
-            "col.active" = "rgb(${base00})";
-            "col.inactive" = "rgb(${base02})";
+            "col.active" = "rgb(${base0B})";
+            "col.inactive" = "rgb(${base01})";
             "col.urgent" = "rgb(${base08})";
           };
         };
