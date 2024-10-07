@@ -6,6 +6,7 @@
     ./lspkind.nix
     ./luasnip.nix
     ./utils.nix
+    ./dap.nix
 
     # Syntax
     ./treesitter.nix
