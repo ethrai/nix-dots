@@ -1,5 +1,6 @@
 {
   imports = [
+    ./vscode
     ./alacritty.nix
     ./chromium.nix
     ./firefox.nix
