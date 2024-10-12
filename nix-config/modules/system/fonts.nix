@@ -3,13 +3,14 @@
     enableDefaultPackages = true;
     fontconfig = {
       defaultFonts = {
-        serif = [ "Roboto" ];
-        sansSerif = [ "Roboto" ];
-        monospace = [ "Roboto Mono" ];
+        serif = [ "Inter" ];
+        sansSerif = [ "Inter" ];
+        monospace = [ "Iosevka SS18" ];
       };
     };
 
     packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       noto-fonts-cjk
       inter
       noto-fonts-emoji

@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports = [ ./modules/desktop ./modules/apps ];
+  imports = [ ./modules/home ];
 
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -18,7 +18,5 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     GOROOT = "${pkgs.go}/share/go";
-
   };
-
 }
