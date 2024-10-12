@@ -10,22 +10,22 @@
     homeManagerIntegration.autoImport = true;
     autoEnable = true;
     base16Scheme = {
-      base00 = "232136"; # #232136
-      base01 = "2a273f"; # #2a273f
-      base02 = "393552"; # #393552
-      base03 = "6e6a86"; # #6e6a86
-      base04 = "908caa"; # #908caa
-      base05 = "e0def4"; # #e0def4
-      base06 = "e0def4"; # #e0def4
-      base07 = "56526e"; # #56526e
-      base08 = "eb6f92"; # #eb6f92
-      base09 = "f6c177"; # #f6c177
-      base0A = "ea9a97"; # #ea9a97
-      base0B = "3e8fb0"; # #3e8fb0
-      base0C = "9ccfd8"; # #9ccfd8
-      base0D = "c4a7e7"; # #c4a7e7
-      base0E = "f6c177"; # #f6c177
-      base0F = "56526e"; # #56526e
+      base00 = "24283b"; # #24283b
+      base01 = "1f2335"; # #1f2335
+      base02 = "292e42"; # #292e42
+      base03 = "565f89"; # #565f89
+      base04 = "a9b1d6"; # #a9b1d6
+      base05 = "c0caf5"; # #c0caf5
+      base06 = "c0caf5"; # #c0caf5
+      base07 = "c0caf5"; # #c0caf5
+      base08 = "f7768e"; # #f7768e
+      base09 = "ff9e64"; # #ff9e64
+      base0A = "e0af68"; # #e0af68
+      base0B = "9ece6a"; # #9ece6a
+      base0C = "1abc9c"; # #1abc9c
+      base0D = "41a6b5"; # #41a6b5
+      base0E = "bb9af7"; # #bb9af7
+      base0F = "ff007c"; # #ff007c
     };
     cursor = {
       package = pkgs.bibata-cursors;
@@ -34,16 +34,11 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.fira-code;
-        name = "Fira Code";
+        package = pkgs.nerdfonts.override { fonts = ["JetBrainsMono"];};
+        name = "JetBrainsMono Nerd Font";
       };
 
       serif = config.stylix.fonts.sansSerif;
-
-      sansSerif = {
-        package = pkgs.fira-sans;
-        name = "Fira Sans";
-      };
 
       emoji = {
         package = pkgs.noto-fonts-emoji;
@@ -54,7 +49,7 @@
         desktop = 14;
         applications = 14;
         popups = 14;
-        terminal = 14;
+        terminal = 13;
       };
     };
   };

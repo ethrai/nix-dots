@@ -20,6 +20,7 @@ local plugins = {
   "vim-easy-align",
 }
 
+
 local Config = require "lazy.core.config"
 -- disable plugin update checking
 Config.options.checker.enabled = false

@@ -1,12 +1,11 @@
 {
   imports = [
-    ./vscode
-    ./alacritty.nix
     ./chromium.nix
     ./firefox.nix
     ./imv.nix
     ./mpv.nix
     ./kitty.nix
+    ./foot.nix
     ./packages.nix
     ./zathura.nix
   ];

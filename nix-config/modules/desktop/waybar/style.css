@@ -1,0 +1,13 @@
+* {
+  font-size: 13px;    
+  border: none;
+  border-radius: 0px;
+}
+
+.modules-right {
+  margin: 0 2px;
+}
+
+#workspaces button {
+  padding: 0 0.5em;
+};

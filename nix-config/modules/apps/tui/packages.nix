@@ -19,6 +19,7 @@
     zip
     unzip
     catppuccinifier-cli
+    pantheon.elementary-capnet-assist
 
     kubectl
     kubernetes

@@ -7,7 +7,7 @@
           silent = true;
           lspBuf = {
             K = "hover";
-            "<F2>" = "rename";
+            "<leader>rn" = "rename";
             "<leader>a" = "code_action";
           };
           diagnostic = {

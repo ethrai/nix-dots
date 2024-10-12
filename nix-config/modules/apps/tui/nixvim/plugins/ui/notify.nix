@@ -4,11 +4,10 @@
       enable = true;
       fps = 30;
       render = "minimal";
-      timeout = 2000;
+      timeout = 1750;
       topDown = true;
       stages = "static";
-      level = 3;
-      maxWidth = 30;
+      maxWidth = 40;
       minimumWidth = 30;
     };
 

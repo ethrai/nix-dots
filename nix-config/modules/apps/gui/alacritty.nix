@@ -2,10 +2,10 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      shell = {
-        program = "tmux";
-        args = [ "new-session" "-ADs" "main" ];
-      };
+      # shell = {
+      #   program = "zellij";
+      #   args = [ "attach" "nixos-config" ];
+      # };
       "colors" = { "draw_bold_text_with_bright_colors" = true; };
       "cursor" = {
         "style" = "Block";

@@ -1,10 +1,10 @@
 {
   programs.nixvim.plugins = {
     lsp.servers.gopls.enable = true;
-    # lsp.servers.golangci-lint-ls = {
-    #   enable = true;
-    #   autostart = false;
-    # };
+    lsp.servers.golangci-lint-ls = {
+      enable = true;
+      autostart = false;
+    };
     none-ls = {
       enable = true;
       sources = {
@@ -14,7 +14,7 @@
         };
         diagnostics = {
           checkmake.enable = true;
-          golangci_lint.enable = true;
+          # golangci_lint.enable = false;
         };
         formatting = {
           gofumpt.enable = true;

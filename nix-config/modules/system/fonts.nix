@@ -3,9 +3,9 @@
     enableDefaultPackages = true;
     fontconfig = {
       defaultFonts = {
-        serif = [ "Fira Sans" ];
-        sansSerif = [ "Fira Sans" ];
-        monospace = [ "Fira Code" ];
+        serif = [ "Roboto" ];
+        sansSerif = [ "Roboto" ];
+        monospace = [ "Roboto Mono" ];
       };
     };
 

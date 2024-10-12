@@ -1,4 +1,4 @@
 {
   imports =
-    [ ./barbar.nix ./dressing.nix ./navic.nix ./lualine.nix ./webdevicons.nix ];
+    [ ./dressing.nix ./noice.nix ./notify.nix ./navic.nix ./lualine.nix ./webdevicons.nix ];
 }

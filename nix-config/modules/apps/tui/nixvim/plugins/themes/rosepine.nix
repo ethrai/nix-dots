@@ -3,8 +3,8 @@
     colorschemes.rose-pine = {
       enable = true;
       settings = {
-        dark_variant = "moon";
-        dim_inactive_windows = true;
+        dark_variant = "main";
+        dim_inactive_windows = false;
         enable = {
           legacy_highlights = false;
           migrations = true;

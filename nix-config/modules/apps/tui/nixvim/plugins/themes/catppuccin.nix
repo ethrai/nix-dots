@@ -25,14 +25,13 @@
           barbar = true;
           harpoon = true;
           navic.enabled = true;
-          neotree = true;
           telescope = {
             enabled = true;
             style = "nvchad";
           };
           illuminate = {
             enabled = true;
-            lsp = false;
+            lsp = true;
           };
         };
       };

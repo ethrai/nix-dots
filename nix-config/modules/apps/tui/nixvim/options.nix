@@ -1,7 +1,7 @@
 {
   programs.nixvim = {
     diagnostics = {
-      virtual_text = false;
+      virtual_text = true;
       virtual_lines = false;
       underline = true;
       signs = true;
@@ -26,7 +26,7 @@
     };
 
     opts = {
-      updatetime = 50; # Faster completion
+      updatetime = 100; # Faster completion
 
       # Line numbers
       relativenumber = true; # Relative line numbers
@@ -50,9 +50,9 @@
       #   patterns
       smartcase =
         true; # Override the 'ignorecase' option if the search pattern contains upper case characters
-      scrolloff = 3; # Number of screen lines to show around the cursor
+      scrolloff = 6; # Number of screen lines to show around the cursor
       cursorline = false; # Highlight the screen line of the cursor
-      colorcolumn = "80";
+      # colorcolumn = "80";
       cursorcolumn = false; # Highlight the screen column of the cursor
       laststatus = 3; # When to use a status line for the last window
       fileencoding = "utf-8"; # File-content encoding for the current buffer
@@ -74,11 +74,11 @@
 
       # Folding
       foldenable = true;
-      foldmethod = "expr";
-      foldnestmax = 3;
-      foldexpr = "nvim_treesitter#foldexpr()";
-      fillchars = "fold:\\";
-      foldminlines = 1;
+      # foldmethod = "expr";
+      # foldnestmax = 3;
+      # foldexpr = "nvim_treesitter#foldexpr()";
+      # fillchars = "fold:\\";
+      # foldminlines = 1;
       foldlevel =
         99; # Folds with a level higher than this number will be closed
     };

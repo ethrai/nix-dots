@@ -7,6 +7,6 @@
     nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;
     gitsigns.enable = true;
-    # illuminate.enable = true;
+    illuminate.enable = false;
   };
 }

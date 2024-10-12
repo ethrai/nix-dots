@@ -1,4 +1,4 @@
-{
+{config, ...}:{
   programs.kitty = {
     enable = true;
     settings = { enable_audio_bell = false; cursor_blink_interval = 0; };

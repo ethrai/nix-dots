@@ -9,6 +9,6 @@
     ./packages.nix
     ./yazi.nix
     ./ytdlp.nix
-    ./zellij/zellij.nix
+    ./zellij.nix
   ];
 }

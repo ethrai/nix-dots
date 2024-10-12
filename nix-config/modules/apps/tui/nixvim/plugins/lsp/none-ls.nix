@@ -2,7 +2,6 @@
   programs.nixvim = {
     plugins.none-ls = {
       enable = true;
-      settings = { updateInInsert = true; };
       sources = {
         diagnostics = {
           checkmake.enable = true;
@@ -10,7 +9,6 @@
         };
         formatting = {
           shfmt.enable = true;
-          google_java_format.enable = true;
         };
       };
     };

@@ -6,26 +6,28 @@
       view = "notify";
     };
     lsp = {
-      override = {
-        "vim.lsp.util.convert_input_to_markdown_lines" = true;
-        "vim.lsp.util.stylize_markdown" = true;
-        "cmp.entry.get_documentation" = true;
-        "command_palette" = false;
-      };
       signature.enabled = true;
-      progress.enabled = false;
-    };
-    popupmenu = {
-      enabled = true;
-      backend = "cmp";
+      progress.enabled = true;
     };
     presets = {
-      bottom_search = true;
-      command_palette = false;
-      inc_rename = false;
-      long_message_to_split = false;
+      lsp_doc_border = true;
+      inc_rename = true;
+      command_palette = true;
+      long_message_to_split = true;
     };
-    notify = { enabled = true; };
+    notify = { enabled = true; view = "notify"; };
+    routes = [
+      {
+        filter = {
+          event = "msg_show";
+          kind = "";
+          find = "written";
+        };
+        opts = {
+          skip = true;
+        };
+      }
+    ];
     cmdline = { enabled = true; };
   };
 }

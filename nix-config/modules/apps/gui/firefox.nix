@@ -1,6 +1,5 @@
 { inputs, ... }: {
-  stylix.targets.firefox.enable = true;
-  stylix.targets.firefox.profileNames = [ "default" ];
+  stylix.targets.firefox.enable = false;
   programs.firefox = {
     enable = true;
     profiles = {

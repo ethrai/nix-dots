@@ -1,1 +1,7 @@
-{ programs.nixvim = { plugins.dressing = { enable = true; }; }; }
+{
+  programs.nixvim = {
+    plugins.dressing = {
+      enable = true;
+    };
+  };
+}

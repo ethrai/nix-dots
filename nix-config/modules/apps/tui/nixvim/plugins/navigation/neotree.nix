@@ -4,7 +4,6 @@
       enable = true;
       autoCleanAfterSessionRestore = true;
       closeIfLastWindow = false;
-      popupBorderStyle = "rounded";
       window = { width = 35; };
     };
     keymaps = [{

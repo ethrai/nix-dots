@@ -17,7 +17,7 @@
       };
       monitor = "eDP-1,1920x1200,0x0,1.25";
       "$mod" = "SUPER";
-      "$term" = "kitty";
+      "$term" = "foot";
       "$browser" = "firefox";
       "$bar" = "waybar";
       "$notes" = "obsidian";
@@ -34,7 +34,7 @@
         kb_layout = "us,ru";
         kb_options = "grp:alt_shift_toggle";
         repeat_rate = 45;
-        repeat_delay = 160;
+        repeat_delay = 200;
         follow_mouse = 1;
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
         touchpad = { natural_scroll = false; };

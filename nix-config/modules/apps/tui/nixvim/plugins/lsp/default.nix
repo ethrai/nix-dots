@@ -1,7 +1,6 @@
 {
   imports = [
     ./lsp.nix
-    ./lsp_signature.nix
     ./none-ls.nix
 
     ./languages/nix.nix

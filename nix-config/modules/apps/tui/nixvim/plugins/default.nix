@@ -17,6 +17,6 @@
 
     ./navigation
 
-    ./themes/rosepine.nix
+    ./themes/tokyonight.nix
   ];
 }

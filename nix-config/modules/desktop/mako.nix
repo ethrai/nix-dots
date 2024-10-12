@@ -2,11 +2,10 @@
   services = {
     mako = {
       enable = true;
-      # font = "JetBrainsMono Nerd Font";
       padding = "12";
       defaultTimeout = 3000;
       borderSize = 6;
-      borderRadius = 0;
+      borderRadius = 10;
       margin = "10,10,30,10";
       layer = "top";
       icons = true;

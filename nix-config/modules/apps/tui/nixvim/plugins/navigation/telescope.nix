@@ -17,21 +17,29 @@
             "*.o"
             "*.class"
           ];
-          layout_strategy = "vertical";
+          layout_strategy = "horizontal";
           layout_config = {
-            width = 0.93;
-            height = 0.93;
+            width = 0.9;
+            height = 0.9;
             vertical = {
               mirror = true;
               prompt_position = "top";
-              preview_cutoff = 20;
+              preview_cutoff = 30;
             };
           };
           sorting_strategy = "ascending";
         };
         pickers = {
-          find_files = { hidden = true; previewer = false; };
-          lsp_document_symbols.previewer = false;
+          find_files = {
+            hidden = true;
+            previewer = false;
+          };
+          lsp_document_symbols = {
+            previewer = false;
+            symbol_width = 30;
+            symbol_type_width = 40;
+            show_line = true;
+          };
           current_buffer_fuzzy_find.previewer = false;
         };
       };
@@ -73,7 +81,7 @@
           action = "lsp_type_definitions";
           options = { desc = "Command History"; };
         };
-        "<leader>b" = {
+        "<leader>fb" = {
           action = "buffers";
           options = { desc = "+buffer"; };
         };

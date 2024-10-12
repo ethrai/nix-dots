@@ -11,9 +11,9 @@
           tab_first_window = true;
 
           tabs = {
-            height = 8;
+            height = 4;
             padding = 0;
-            rounding = 8;
+            rounding = 0;
             render_text = false; # default: true
 
             "col.active" = "rgb(${base0B})";

@@ -1,7 +1,7 @@
 {
   programs.nixvim = {
     plugins.lsp-signature = {
-      enable = true;
+      enable = false;
       settings = {
         toggle_key = "<M-x>";
         hint_enable = false;

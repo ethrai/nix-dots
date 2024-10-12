@@ -1,10 +1,9 @@
 {
   programs.foot = {
-    enable = false;
+    enable = true;
     settings = {
       main = {
         term = "xterm-256color";
-        font = "monospace:size=15";
       };
       cursor = {
         style = "block";
