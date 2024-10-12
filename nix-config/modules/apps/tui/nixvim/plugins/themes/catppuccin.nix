@@ -3,11 +3,7 @@
     colorschemes.catppuccin = {
       enable = true;
       settings = {
-        flavour = "mocha";
-        background = {
-          light = "latte";
-          dark = "mocha";
-        };
+        flavour = "macchiato";
         integrations = {
           cmp = true;
           gitsigns = true;
@@ -27,7 +23,6 @@
           navic.enabled = true;
           telescope = {
             enabled = true;
-            style = "nvchad";
           };
           illuminate = {
             enabled = true;
