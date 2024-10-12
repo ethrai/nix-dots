@@ -9,7 +9,7 @@
     ./gnome-keyring.nix
     ./waybar/waybar.nix
     ./mako.nix
-    ./rofi.nix
+    ./rofi/rofi.nix
     ./dconf.nix
     ./packages.nix
   ];

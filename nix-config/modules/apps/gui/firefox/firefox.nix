@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  stylix.targets.firefox.enable = false;
+  stylix.targets.firefox.enable = true;
   programs.firefox = {
     enable = true;
     profiles = {
@@ -74,9 +74,15 @@
           "extensions.getAddons.showPane" = false;
           "extensions.htmlaboutaddons.recommendations.enabled" = false;
           "extensions.pocket.enabled" = false;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "identity.fxaccounts.enabled" = false;
           "privacy.trackingprotection.enabled" = true;
           "privacy.trackingprotection.socialtracking.enabled" = true;
+
+          "font.name.monospace.x-western" = "JetBrainsMono Nerd Font";
+          "font.name.sans-serif.x-western" = "Inter";
+          "font.name.serif.x-western" = "Inter";
+
         };
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
           tridactyl
@@ -87,7 +93,12 @@
           bitwarden
           darkreader
         ];
+        userChrome = builtins.readFile ./chrome/userChrome.css;
       };
     };
   };
+  # home.file.".mozilla/firefox/default/chrome/img/" = {
+  #   source = ./chrome/img/.;
+  #   recursive = true;
+  # };
 }

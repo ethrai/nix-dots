@@ -4,7 +4,7 @@
       enable = true;
       padding = "12";
       defaultTimeout = 3000;
-      borderSize = 6;
+      borderSize = 2;
       borderRadius = 10;
       margin = "10,10,30,10";
       layer = "top";

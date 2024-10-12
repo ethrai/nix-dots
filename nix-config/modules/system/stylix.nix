@@ -10,22 +10,22 @@
     homeManagerIntegration.autoImport = true;
     autoEnable = true;
     base16Scheme = {
-      base00 = "24283b"; # #24283b
-      base01 = "1f2335"; # #1f2335
-      base02 = "292e42"; # #292e42
-      base03 = "565f89"; # #565f89
-      base04 = "a9b1d6"; # #a9b1d6
-      base05 = "c0caf5"; # #c0caf5
-      base06 = "c0caf5"; # #c0caf5
-      base07 = "c0caf5"; # #c0caf5
-      base08 = "f7768e"; # #f7768e
-      base09 = "ff9e64"; # #ff9e64
-      base0A = "e0af68"; # #e0af68
-      base0B = "9ece6a"; # #9ece6a
-      base0C = "1abc9c"; # #1abc9c
-      base0D = "41a6b5"; # #41a6b5
-      base0E = "bb9af7"; # #bb9af7
-      base0F = "ff007c"; # #ff007c
+      base00 = "24273a"; # base #24273a
+      base01 = "1e2030"; # mantle #1e2030
+      base02 = "363a4f"; # surface0 #363a4f
+      base03 = "494d64"; # surface1 #494d64
+      base04 = "5b6078"; # surface2 #5b6078
+      base05 = "cad3f5"; # text #cad3f5
+      base06 = "f4dbd6"; # rosewater #f4dbd6
+      base07 = "b7bdf8"; # lavender #b7bdf8
+      base08 = "ed8796"; # red #ed8796
+      base09 = "f5a97f"; # peach #f5a97f
+      base0A = "eed49f"; # yellow #eed49f
+      base0B = "a6da95"; # green #a6da95
+      base0C = "8bd5ca"; # teal #8bd5ca
+      base0D = "8aadf4"; # blue #8aadf4
+      base0E = "c6a0f6"; # mauve #c6a0f6
+      base0F = "f0c6c6"; # flamingo #f0c6c6
     };
     cursor = {
       package = pkgs.bibata-cursors;
@@ -34,11 +34,16 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = ["JetBrainsMono"];};
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.iosevka-bin.override { variant =  "SS18" ; };
+        name = "Iosevka SS18";
       };
 
       serif = config.stylix.fonts.sansSerif;
+
+      sansSerif = {
+        package = pkgs.inter;
+        name = "Inter";
+      };
 
       emoji = {
         package = pkgs.noto-fonts-emoji;
@@ -46,10 +51,10 @@
       };
 
       sizes = {
-        desktop = 14;
-        applications = 14;
-        popups = 14;
-        terminal = 13;
+        desktop = 13;
+        applications = 13;
+        popups = 13;
+        terminal = 14;
       };
     };
   };

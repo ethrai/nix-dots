@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   imports = [ ./modules/system ];
 
   programs = {
@@ -27,8 +27,7 @@
   console = {
     font = "ter-132n";
     packages = [ pkgs.terminus_font ];
-    useXkbConfig = true;
-    earlySetup = true;
+    earlySetup = false;
   };
 
   system.stateVersion = "24.05";

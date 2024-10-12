@@ -6,9 +6,8 @@
     settings.main = {
       layer = "top";
       position = "bottom";
-      height = 20;
       fixed-center = false;
-      modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+      modules-left = [ "hyprland/workspaces" ];
       modules-right = [
         "hyprland/language"
         "pulseaudio"

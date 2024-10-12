@@ -1,0 +1,43 @@
+/*
+			REMOVE TAB BAR - START
+*/
+#navigator-toolbox {
+  position: relative !important;
+}
+
+#toolbar-menubar,
+#TabsToolbar> :not(.titlebar-buttonbox-container):not(.private-browsing-indicator) {
+  visibility: collapse !important;
+}
+
+.private-browsing-indicator {
+  background-size: 69%;
+  margin-inline-end: 6px;
+  opacity: 0.7;
+}
+
+/* Workaround v2 (Since #nav-bar is bad at laying out children (it doesnt respect ::after's width on small window widths), just make it get out of the way)*/
+
+#titlebar {
+  appearance: none !important;
+  -moz-appearance: none !important;
+  position: absolute !important;
+  inset: 2px;
+  display: flex !important;
+  align-items: center;
+  justify-content: end;
+  padding: 0 !important;
+
+  pointer-events: none;
+}
+
+#titlebar>* {
+  pointer-events: auto;
+}
+
+.titlebar-button {
+  padding: 8px 13px !important;
+}
+/*
+			REMOVE TAB BAR - END
+*/

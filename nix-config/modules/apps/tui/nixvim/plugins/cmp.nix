@@ -25,6 +25,11 @@
                             behavior = cmp.ConfirmBehavior.Insert,
                             select = true;
                           }'';
+            "<CR>" = ''
+              cmp.mapping.confirm {
+                            behavior = cmp.ConfirmBehavior.Insert,
+                            select = true;
+                          }'';
             "<C-Space>" = "cmp.mapping.complete()";
           };
 
@@ -33,21 +38,10 @@
               "function(args) require('luasnip').lsp_expand(args.body) end";
           };
 
-        window = {
-          completion = {
-            winhighlight =
-              "FloatBorder:NoicePopupBorder";
-            scrollbar = false;
-            sidePadding = 0;
-            border = "rounded";
+          window = {
+            completion.__raw = "cmp.config.window.bordered()";
+            documentation.__raw = "cmp.config.window.bordered()";
           };
-
-          settings.documentation = {
-            border = "rounded";
-            winhighlight =
-              "FloatBorder:NoicePopupBorder";
-          };
-        };
         };
       };
     };

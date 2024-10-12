@@ -1,7 +1,7 @@
 {
   imports = [
+    ./firefox/firefox.nix
     ./chromium.nix
-    ./firefox.nix
     ./imv.nix
     ./mpv.nix
     ./kitty.nix

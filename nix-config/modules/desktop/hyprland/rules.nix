@@ -22,7 +22,7 @@
 
       "workspace 1,class:^(firefox)$"
       # "workspace 2,class:^(kitty)$"
-      "workspace 2,class:^(foot)$"
+      "workspace 2,class:^(kitty)$"
 
       "workspace 3,class:^(org.pwmt.zathura)$"
       "workspace 5,class:^(mpv)$"
