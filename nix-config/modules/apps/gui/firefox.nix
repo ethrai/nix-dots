@@ -8,7 +8,6 @@
         name = "default";
         isDefault = true;
         settings = {
-          # https://github.com/TLATER/dotfiles
           "browser.startup.homepage" = "https://search.nixos.org/packages";
 
           # Disable irritating first-run stuff
@@ -38,9 +37,13 @@
           # Actual settings
           "app.shield.optoutstudies.enabled" = false;
           "app.update.auto" = false;
+          "geo.enabled" = false;
+          "geo.provider.use_corelocation" = false;
+          "geo.provider.use_geoclue" = false;
+          "geo.provider.use_gpsd" = false;
           "browser.bookmarks.restore_default_bookmarks" = false;
           "browser.contentblocking.category" = "strict";
-          "browser.ctrlTab.recentlyUsedOrder" = false;
+          "browser.ctrlTab.recentlyUsedOrder" = true;
           "browser.discovery.enabled" = false;
           "browser.laterrun.enabled" = false;
           "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" =
@@ -77,6 +80,7 @@
         };
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
           tridactyl
+          sidebery
           sponsorblock
           youtube-shorts-block
           ublock-origin
