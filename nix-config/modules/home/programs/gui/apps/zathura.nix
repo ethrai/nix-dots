@@ -1,13 +1,12 @@
 { config, ... }: {
   home.shellAliases.za = "zathura";
-  stylix.targets.zathura.enable = true;
   programs.zathura = {
     enable = true;
     options = {
       ###########
       # Options #
       ###########
-      font = "${config.stylix.fonts.serif.name} 14";
+      font = "Inter 13";
       adjust-open = "width";
       pages-per-row = 1;
       selection-clipboard = "clipboard";

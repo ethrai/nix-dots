@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins = {
     lsp.servers = {
-      ts-ls = {
+      ts_ls = {
         enable = true;
         filetypes =
           [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
@@ -36,7 +36,7 @@
       jsonls.enable = true;
       html.enable = true;
       eslint.enable = true;
-      emmet-ls.enable = true;
+      emmet_ls.enable = true;
       cssls.enable = true;
     };
     none-ls = {

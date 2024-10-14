@@ -1,9 +1,7 @@
-{
-  stylix.targets.hyprland.enable = false;
-  wayland.windowManager.hyprland = {
+{ wayland.windowManager.hyprland = {
     settings = {
       decoration = {
-        rounding = 6;
+        rounding = 0;
         blur.enabled = false;
       };
       general = {
@@ -14,7 +12,7 @@
         border_size = 0;
       };
       animations = {
-        enabled = true;
+        enabled = false;
         bezier = [
           "fluent_decel, 0, 0.2, 0.4, 1"
           "easeOutCirc, 0, 0.55, 0.45, 1"
@@ -26,8 +24,8 @@
           "easeInOutCubic,0.65,0,0.35,1"
         ];
         animation = [
-          "windowsIn,1,3,easeOutBack,popin"
-          "windowsOut,1,3,easeInBack,popin"
+          "windowsIn,1,2,easeOutBack,popin"
+          "windowsOut,1,2,easeInBack,popin"
           "fadeIn,0"
           "fadeOut,1,3,easeInCubic"
           "workspaces,1,2,easeInOutCubic,slide"

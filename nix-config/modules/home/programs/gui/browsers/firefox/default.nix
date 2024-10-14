@@ -1,5 +1,4 @@
-{ inputs, ... }: {
-  stylix.targets.firefox.enable = true;
+{ inputs, pkgs, ... }: {
   programs.firefox = {
     enable = true;
     profiles = {
@@ -79,12 +78,12 @@
           "privacy.trackingprotection.enabled" = true;
           "privacy.trackingprotection.socialtracking.enabled" = true;
 
-          "font.name.monospace.x-western" = "JetBrainsMono Nerd Font";
+          "font.name.monospace.x-western" = "Iosevka SS18";
           "font.name.sans-serif.x-western" = "Inter";
           "font.name.serif.x-western" = "Inter";
 
         };
-        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        extensions = with inputs.firefox-addons.packages."${pkgs.system}"; [
           tridactyl
           sidebery
           sponsorblock

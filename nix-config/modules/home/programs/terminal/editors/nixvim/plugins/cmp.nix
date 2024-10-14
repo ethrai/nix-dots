@@ -12,7 +12,10 @@
             { name = "path"; }
             { name = "luasnip"; }
             { name = "buffer"; }
+            { name = "nvim-lsp-signature-help"; }
+            { name = "cmp-conventionalcommits."; }
           ];
+
           mapping = {
             "<C-j>" = ''
               cmp.mapping.select_next_item { behavior =
@@ -38,10 +41,6 @@
               "function(args) require('luasnip').lsp_expand(args.body) end";
           };
 
-          window = {
-            completion.__raw = "cmp.config.window.bordered()";
-            documentation.__raw = "cmp.config.window.bordered()";
-          };
         };
       };
     };

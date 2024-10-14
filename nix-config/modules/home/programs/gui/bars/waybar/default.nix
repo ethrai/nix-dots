@@ -70,7 +70,7 @@
         format = "{:%d/%m/%Y}";
       };
     };
-    style = with config.lib.stylix.colors; ''
+    style = ''
       * {
         font-family: "";
         font-size: 14px;
@@ -85,8 +85,8 @@
       }
 
       window#waybar {
-        background: #${base01};
-        color: #${base05};
+        background: #0f0f0f;
+        color: #f0f0f0;
         border: none;
         margin: 0 5px;
         border-radius: 4px;
@@ -107,15 +107,15 @@
         border: none;
         padding: 0px 2px;
         margin: 0px 4px;
-        background: #${base01};
+        background: #0f0f0f;
         font-size: 20px;
-        color: #${base05};
+        color: #f0f0f0;
       }
 
       #pulseaudio.muted
       {
-          background: #${base01};
-          color: #${base08};
+          background: #0f0f0f;
+          color: #ffaaaa;
       }
 
       #workspaces {
@@ -127,23 +127,23 @@
 
       #workspaces button {
         padding: 0 2px;
-        border: 1px solid #${base04};
+        border: 2px solid #aaaaaa;
         border-radius: 4px;
         margin: 0 2px 0 0;
-        background: #${base01};
-        color: #${base04};
+        background: #0f0f0f;
+        color: #aaaaaa;
         min-width: 20px;
       }
 
       #workspaces button.active {
-        color: #${base05};
-        border: 1px solid #${base05};
-        background: #${base01};
+        color: #f0f0f0;
+        border: 2px solid #f0f0f0;
+        background: #0f0f0f;
       }
       #workspaces button.urgent {
-        color: #${base08};
-        border: 2px solid #${base08};
-        background: #${base01};
+        color: #FFaaaa;
+        border: 2px solid #ffaaaa;
+        background: #0f0f0f;
       }
     '';
   };

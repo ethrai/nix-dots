@@ -2,8 +2,10 @@
   programs.nixvim = {
     plugins.auto-session = {
       enable = true;
-      autoRestore.enabled = true;
-      autoSave.enabled = true;
+      settings = {
+        auto_restore = true;
+        auto_save = true;
+      };
     };
   };
 }

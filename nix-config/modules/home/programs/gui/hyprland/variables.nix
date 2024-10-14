@@ -16,6 +16,11 @@
           disable_logs = true;
           enable_stdout_logs = false;
         };
+        cursor = {
+          enable_hyprcursor = true;
+          sync_gsettings_theme = true;
+        };
+
         monitor = "eDP-1,1920x1200,0x0,1.25";
 
         "$term" = "${getExe pkgs.kitty}";
@@ -30,9 +35,8 @@
         exec-once = [
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
-          "$term"
           "$browser"
-          "telegram-desktop"
+          "hyprctl setcursor Bibata-Modern-Ice 24"
         ];
         xwayland = { force_zero_scaling = true; };
         cursor = { no_warps = true; };

@@ -2,19 +2,22 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
+    ./thinkpad.nix
+
     ./bootloader.nix
+
     ./users.nix
     ./virt.nix
     ./security.nix
     ./services.nix
-    ./autologin.nix
+
     ./pipewire.nix
-    ./quiet-boot.nix
+
     ./network.nix
-    ./stylix.nix
-    ./fonts.nix
     ./environment.nix
-    ./thinkpad.nix
+
     ./xremap.nix
+
+    ./fonts.nix
   ];
 }

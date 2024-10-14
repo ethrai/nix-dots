@@ -5,7 +5,7 @@
     mouse_mode false
     pane_frames false
     simplified_ui true
-    theme "catppuccin-macchiato"
+    theme "tokyo-night-storm"
     ui {
     	pane_frames {
     		rounded_corners true

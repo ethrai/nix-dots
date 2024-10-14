@@ -1,6 +1,6 @@
 {
   imports = [
-    ./wms
+    ./hyprland
     ./apps
     ./bars
     ./notifications

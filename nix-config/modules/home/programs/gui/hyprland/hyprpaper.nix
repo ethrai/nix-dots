@@ -1,5 +1,4 @@
 { config, pkgs, lib, inputs, ... }: {
-  stylix.targets.hyprpaper.enable = lib.mkForce false;
   services.hyprpaper = {
     enable = true;
     package = pkgs.hyprpaper;

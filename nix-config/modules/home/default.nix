@@ -1,8 +1,6 @@
 {
   imports = [
-    ./system
-    ./theming
-    ./suites
+    ./desktop
     ./services
 
     ./programs/gui

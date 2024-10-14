@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun";
+    modi: "drun";
     lines: 8;
     font: "Inter 13";
     show-icons: true;

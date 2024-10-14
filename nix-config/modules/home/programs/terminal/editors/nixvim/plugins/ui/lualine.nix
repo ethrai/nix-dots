@@ -32,14 +32,6 @@
           lualine_b = [ "branch" ];
           lualine_c = [ "navic" ];
           lualine_x = [
-            {
-              __unkeyed-1 = {
-                __raw = ''
-                  require("noice").api.status.mode.get,
-                  cond = require("noice").api.status.mode.has,
-                '';
-              };
-            }
             
             "diff"
             "diagnostics"

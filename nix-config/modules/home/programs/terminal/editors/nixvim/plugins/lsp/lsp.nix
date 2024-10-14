@@ -24,7 +24,7 @@
           dockerls.enable = true; # Docker
           bashls.enable = true; # Bash
           yamlls.enable = true; # YAML
-          lua-ls = { # Lua
+          lua_ls = { # Lua
             enable = true;
             settings.telemetry.enable = false;
           };

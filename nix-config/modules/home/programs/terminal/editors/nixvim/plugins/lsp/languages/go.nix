@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins = {
     lsp.servers.gopls.enable = true;
-    lsp.servers.golangci-lint-ls = {
+    lsp.servers.golangci_lint_ls = {
       enable = true;
       autostart = false;
     };

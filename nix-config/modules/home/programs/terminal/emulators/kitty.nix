@@ -1,7 +1,10 @@
-{config, ...}:{
+{ pkgs, ... }: {
   programs.kitty = {
     enable = true;
-    settings = { enable_audio_bell = false; cursor_blink_interval = 0; };
+    settings = {
+      enable_audio_bell = false;
+      cursor_blink_interval = 0;
+    };
     extraConfig = ''
       # Seti-UI + Custom
       symbol_map U+E5FA-U+E6AC Symbols Nerd Font

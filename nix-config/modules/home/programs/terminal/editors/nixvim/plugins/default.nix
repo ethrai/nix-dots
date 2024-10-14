@@ -17,6 +17,6 @@
 
     ./navigation
 
-    ./themes/catppuccin.nix
+    ./themes/tokyonight.nix
   ];
 }

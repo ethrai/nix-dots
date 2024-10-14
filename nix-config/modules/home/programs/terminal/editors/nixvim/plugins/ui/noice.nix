@@ -7,10 +7,11 @@
     };
     lsp = {
       signature.enabled = true;
-      progress.enabled = true;
+      progress.enabled = false;
     };
     presets = {
-      lsp_doc_border = true;
+      bottom_search = false;
+      lsp_doc_border = false;
       inc_rename = true;
       command_palette = true;
       long_message_to_split = true;

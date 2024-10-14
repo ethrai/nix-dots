@@ -5,7 +5,7 @@
       defaultFonts = {
         serif = [ "Inter" ];
         sansSerif = [ "Inter" ];
-        monospace = [ "Iosevka SS18" ];
+        monospace = [ "JetBrains Mono" ];
       };
     };
 

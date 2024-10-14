@@ -25,9 +25,9 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "ter-132n";
+    font = "ter-132b";
     packages = [ pkgs.terminus_font ];
-    earlySetup = false;
+    earlySetup = true;
   };
 
   system.stateVersion = "24.05";
